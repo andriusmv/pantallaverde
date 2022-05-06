@@ -7,7 +7,7 @@ export function LogoImage(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <>
         <Group>
-    <Text size="xm" weight={1000}> PANTALLA VERDE</Text><Text> DOCS </Text>
+    <Text weight={1000}> PANTALLA VERDE</Text><Text> DOCS </Text>
      
     </Group>
     </>
