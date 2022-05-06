@@ -74,13 +74,13 @@ export default function Account({ user }: { user: User }) {
           title="Your Plan"
           description={
             subscription
-              ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+              ? `Actualmente eres ${subscription?.prices?.products?.name} plan.`
               : ''
           }
           footer={
             <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
               <p className="pb-4 sm:pb-0">
-                Manage your subscription on Stripe.
+                Administra tu suscripciòn en Stripe.
               </p>
               <Button
                 variant="slim"
@@ -88,7 +88,7 @@ export default function Account({ user }: { user: User }) {
                 disabled={loading || !subscription}
                 onClick={redirectToCustomerPortal}
               >
-                Open customer portal
+                Abrir portal de usuario
               </Button>
             </div>
           }
@@ -102,7 +102,7 @@ export default function Account({ user }: { user: User }) {
               `${subscriptionPrice}/${subscription?.prices?.interval}`
             ) : (
               <Link href="/">
-                <a>Choose your plan</a>
+                <a>Escoge tu plan</a>
               </Link>
             )}
           </div>
@@ -128,7 +128,7 @@ export default function Account({ user }: { user: User }) {
         <Card
           title="Your Email"
           description="Please enter the email address you want to use to login."
-          footer={<p>We will email you to verify the change.</p>}
+          footer={<p>Te enviaremos un email para confirmar los cambios.</p>}
         >
           <p className="text-xl mt-8 mb-4 font-semibold">
             {user ? user.email : undefined}

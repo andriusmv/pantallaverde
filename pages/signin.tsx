@@ -12,6 +12,8 @@ import Logo from 'components/icons/Logo';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
 
+
+
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -65,9 +67,7 @@ const SignIn = () => {
     return (
       <div className="flex justify-center height-screen-helper">
         <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
-          <div className="flex justify-center pb-12 ">
-            <Logo width="64px" height="64px" />
-          </div>
+          
           <div className="flex flex-col space-y-4">
             {message.content && (
               <div
@@ -126,7 +126,7 @@ const SignIn = () => {
                   loading={loading}
                   disabled={!password.length || !email.length}
                 >
-                  Sign in
+                  Iniciar sesión
                 </Button>
               </form>
             )}
@@ -148,11 +148,11 @@ const SignIn = () => {
             </span>
 
             <span className="pt-1 text-center text-sm">
-              <span className="text-zinc-200">Don't have an account?</span>
+              <span className="text-zinc-200">No tienes una cuenta?</span>
               {` `}
               <Link href="/signup">
                 <a className="text-accent-9 font-bold hover:underline cursor-pointer">
-                  Sign up.
+                  Regístrate.
                 </a>
               </Link>
             </span>

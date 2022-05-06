@@ -5,6 +5,7 @@ import Navbar from 'components/ui/Navbar';
 import Footer from 'components/ui/Footer';
 import { ReactNode } from 'react';
 import { PageMeta } from '../types';
+import { MantineProvider } from '@mantine/core';
 
 interface Props {
   children: ReactNode;
@@ -39,9 +40,11 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
+      
       <Navbar />
       <main id="skip">{children}</main>
       <Footer />
+      
     </>
   );
 }
