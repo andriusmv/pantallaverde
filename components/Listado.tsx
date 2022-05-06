@@ -16,7 +16,6 @@ import {
   CircleDashed,
   Palette,
 } from 'tabler-icons-react';
-import { Logo } from './Header/Logo/Logo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
