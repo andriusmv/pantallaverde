@@ -19,8 +19,6 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { UserContext } from 'D:/Pantalla Verde Web/next-firebase-course/lib/context.js';
-import { auth } from 'D:/Pantalla Verde Web/next-firebase-course/lib/firebase.js';
 import { Button, Space } from '@mantine/core';
 
 
