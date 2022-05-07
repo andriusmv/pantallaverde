@@ -2,9 +2,8 @@ import 'styles/main.css';
 import 'styles/chrome-bug.css';
 import { useEffect } from 'react';
 import React from 'react';
-import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button } from '@mantine/core';
+import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid } from '@mantine/core';
 import { useContext, useState } from 'react';
-
 
 import Layout from 'components/Layout';
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
@@ -14,44 +13,50 @@ import { MyUserContextProvider } from 'utils/useUser';
 import { Logo } from '@/components/icons/Logo';
 import Link from 'next/link';
 import Listado from '@/components/Listado';
+import { useHotkeys, useLocalStorageValue } from '@mantine/hooks';
+import LightAndDarkModeButton from '@/components/LightDarkButton';
+import ProMode from '@/components/ProMode';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
 
+  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+    key: 'mantine-color-scheme',
+    defaultValue: 'light',
+  });
+
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+
+  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+
   return (
     <div>
       
       <UserProvider supabaseClient={supabaseClient}>
         <MyUserContextProvider supabaseClient={supabaseClient}>
+        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          colorScheme: 'dark',
-
-          colors: {
-            // Add your color
-            'deep-blue': ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-            // or replace default theme color
-            blue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-            
-          },
-  
-          shadows: {
-            // other shadows (xs, sm, lg) will be merged from default theme
-            md: '1px 1px 3px rgba(0,0,0,.25)',
-            xl: '5px 5px 3px rgba(0,0,0,.25)',
-          },
-  
-          headings: {
-            fontFamily: ', sans-serif',
-            sizes: {
-              h1: { fontSize: 50 },
-            },
-          },
-        }}>
+                // Theme is deeply merged with default theme
+                colorScheme,
+        
+                shadows: {
+                  // other shadows (xs, sm, lg) will be merged from default theme
+                  md: '1px 1px 3px rgba(0,0,0,.25)',
+                  xl: '5px 5px 3px rgba(0,0,0,.25)',
+                },
+        
+                headings: {
+                  fontFamily: 'Roboto, sans-serif',
+                  sizes: {
+                    h1: { fontSize: 60 }
+                  }}
+                }}>
           <AppShell
       padding="md"
       navbarOffsetBreakpoint="sm"
@@ -68,7 +73,7 @@ export default function App(props: AppProps) {
           <Text>Creado con ❤️ por Andrés Moreno Vásquez</Text>
         </Footer>
       }
-      header={<Header height={70} p="xl">
+      header={<div><Header height={100} p="xl">
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
               <Burger
                 opened={opened}
@@ -78,12 +83,16 @@ export default function App(props: AppProps) {
                 mr="xl"
               />
  </MediaQuery>
- <Group position="apart">
- <Link href="/"><Logo /></Link>
- <Link href="/pro"><Button>PantallaVerde⭐PRO</Button></Link>
-</Group>
+ <MediaQuery smallerThan="xs" styles={{ display: 'none' }}>
 
-      </Header>}
+ <Grid justify="space-between" align="center">
+  <Grid.Col span={4} style={{ minHeight: 70 }}><Link href="/"><Logo /></Link></Grid.Col>
+  <Grid.Col span={3} style={{ minHeight: 70 }}><LightAndDarkModeButton /></Grid.Col>
+  <Grid.Col span={2} style={{ minHeight: 70 }}><ProMode /></Grid.Col>
+ </Grid>
+ </MediaQuery>
+
+      </Header></div>}
       styles={(theme) => ({
         main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       })}
@@ -91,6 +100,7 @@ export default function App(props: AppProps) {
             <Component {...pageProps} />
       </AppShell>
             </MantineProvider>
+            </ColorSchemeProvider>
         </MyUserContextProvider>
       </UserProvider>
     </div>

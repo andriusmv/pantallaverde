@@ -31,9 +31,14 @@ export default function Listado() {
       <Space h="xl" />
       <ScrollArea>
       <SimpleGrid cols={1} spacing="md">
-      <Link href={'/'}><Button compact size="md" fullWidth variant="filled">👋 Bienvenidos</Button></Link>
-      <Link href={'/signin'}><Button compact size="md" fullWidth variant="filled">🚀 Ingreso/Registro</Button></Link>
-
+      <Link href={'/'}><Accordion>
+        <Accordion.Item label="👋 Bienvenidos">
+        </Accordion.Item>
+      </Accordion></Link>
+      <Link href={'/signin'}><Accordion>
+        <Accordion.Item label="🚀 Ingreso/Registro">
+        </Accordion.Item>
+      </Accordion></Link>
         <Paper withBorder>
       <Accordion>
       <Accordion.Item icon={
