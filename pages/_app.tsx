@@ -1,11 +1,8 @@
-import 'styles/main.css';
-import 'styles/chrome-bug.css';
 import { useEffect } from 'react';
 import React from 'react';
-import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid } from '@mantine/core';
+import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor } from '@mantine/core';
 import { useContext, useState } from 'react';
 
-import Layout from 'components/Layout';
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 import { AppProps } from 'next/app';
@@ -24,7 +21,7 @@ export default function App(props: AppProps) {
 
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
     key: 'mantine-color-scheme',
-    defaultValue: 'light',
+    defaultValue: 'dark',
   });
 
   const toggleColorScheme = (value?: ColorScheme) =>
@@ -57,6 +54,7 @@ export default function App(props: AppProps) {
                     h1: { fontSize: 60 }
                   }}
                 }}>
+
           <AppShell
       padding="md"
       navbarOffsetBreakpoint="sm"
@@ -70,7 +68,7 @@ export default function App(props: AppProps) {
 
       footer={
         <Footer height={60} p="md">
-          <Text>Creado con ❤️ por Andrés Moreno Vásquez</Text>
+          <Text>Created with ❤️ by <Anchor href="https://github.com/andriusmv">Andrés Moreno Vásquez</Anchor></Text>
         </Footer>
       }
       header={<div><Header height={100} p="xl">
@@ -78,17 +76,18 @@ export default function App(props: AppProps) {
               <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
-                size="sm"
+                size="xl"
                 color={theme.colors.gray[6]}
                 mr="xl"
               />
  </MediaQuery>
- <MediaQuery smallerThan="xs" styles={{ display: 'none' }}>
+ <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
 
- <Grid justify="space-between" align="center">
+ <Grid justify="center" align="center">
   <Grid.Col span={4} style={{ minHeight: 70 }}><Link href="/"><Logo /></Link></Grid.Col>
   <Grid.Col span={3} style={{ minHeight: 70 }}><LightAndDarkModeButton /></Grid.Col>
-  <Grid.Col span={2} style={{ minHeight: 70 }}><ProMode /></Grid.Col>
+  <Grid.Col span={2} style={{ minHeight: 70 }}><ProMode />
+</Grid.Col>
  </Grid>
  </MediaQuery>
 

@@ -5,6 +5,7 @@ import { Check, Drone } from 'tabler-icons-react';
 import { useRef } from 'react';
 import { useFullscreen } from '@mantine/hooks';
 import Checkprogress from '@/components/Checkprogress';
+import AuthCheck from '@/components/AuthCheck';
 
 const opts = {
     height: "390",
@@ -31,7 +32,7 @@ return (
       <Text><Anchor variant="text" size="md" href={'/integracion#fotogrametriabasica'}>⛰️ Fotogrametría Básica</Anchor></Text>
       <Text><Anchor variant="text" size="md" href={'/integracion#apuntesfinales'}>🧾 Apuntes Finales</Anchor></Text>                </Aside>
               </MediaQuery>
-
+<AuthCheck>
     <Title id="instrucciones">📝 Instrucciones</Title>
     <Title order={2}>👉 Pre-requisitos</Title>
     <List>
@@ -41,6 +42,7 @@ return (
     <List.Item>Mente abierta a conocer nuevas herramientas!</List.Item>
 
     </List>
+    </AuthCheck>
     <Text size='md'>NOTA: no es necesario tener un dron (opcional), ni tener conocimientos previos en edición de video. Esto lo veremos desde cero.</Text>
     <Title order={2}>👉 Qué esperar del curso?</Title>
     <List>

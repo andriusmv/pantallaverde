@@ -7,6 +7,8 @@ import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
 import { Price, ProductWithPrice } from 'types';
+import { SimpleGrid, Paper, Text, Title, Group, Space } from '@mantine/core';
+import Link from 'next/link';
 
 interface Props {
   products: ProductWithPrice[];
@@ -47,61 +49,33 @@ export default function Pricing({ products }: Props) {
 
   if (!products.length)
     return (
-      <section className="bg-black">
-        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center"></div>
-          <p className="text-6xl font-extrabold text-white sm:text-center sm:text-6xl">
-            No subscription pricing plans found. Create them in your{' '}
-            <a
-              className="text-pink-500 underline"
-              href="https://dashboard.stripe.com/products"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Stripe Dashboard
-            </a>
-            .
-          </p>
-        </div>
-      </section>
-    );
+      <>
+      <Space />
+      <SimpleGrid cols={1} spacing="md">
+        <Paper withBorder>
+          <Text>No subscription pricing plans found. Create them in your{' '}
+<Link href={'https://dashboard.stripe.com/products'}>Stripe Dashboard</Link></Text>
+        </Paper>
+      </SimpleGrid>
+      </>);
 
   return (
-    <section className="bg-black">
-      <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            PantallaVerde⭐PRO
-          </h1>
-          <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            Escoge la opción de pago que más te guste.
-          </p>
-          <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
-            <button
-              onClick={() => setBillingInterval('month')}
-              type="button"
-              className={`${
-                billingInterval === 'month'
-                  ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
-                  : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
-              } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
-            >
-              Pago mensual
-            </button>
-            <button
-              onClick={() => setBillingInterval('year')}
-              type="button"
-              className={`${
-                billingInterval === 'year'
-                  ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
-                  : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
-              } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
-            >
-              Pago anual
-            </button>
-          </div>
-        </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+    <>
+      <SimpleGrid cols={2}>
+        <Paper withBorder p="xl">
+          <Title>Upgrade Your Membership ⭐</Title>
+          <Space h="xl" />
+          <Text size="xl">Choose a premium membership! They are awesome!</Text>     
+        </Paper>
+
+          <Space h="xl" />
+          <Text size="xl">Available memberships:</Text>
+          <Space h="xl" />
+          </SimpleGrid>
+
+          <Group>
+           
+        <div>
           {products.map((product) => {
             const price = product?.prices?.find(
               (price) => price.interval === billingInterval
@@ -113,30 +87,19 @@ export default function Pricing({ products }: Props) {
               minimumFractionDigits: 0
             }).format((price?.unit_amount || 0) / 100);
             return (
-              <div
-                key={product.id}
-                className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
-                  {
-                    'border border-pink-500': subscription
-                      ? product.name === subscription?.prices?.products?.name
-                      : product.name === 'Freelancer'
-                  }
-                )}
-              >
-                <div className="p-6">
-                  <h2 className="text-2xl leading-6 font-semibold text-white">
+              <Paper withBorder p="xl">
+              <div>
+                <div>
+                  <Title order={2}>
                     {product.name}
-                  </h2>
-                  <p className="mt-4 text-zinc-300">{product.description}</p>
-                  <p className="mt-8">
-                    <span className="text-5xl font-extrabold white">
+                  </Title>
+                  <Text>{product.description}</Text>
+                  <Text>
                       {priceString}
-                    </span>
-                    <span className="text-base font-medium text-zinc-100">
+                      <Text>
                       /{billingInterval}
-                    </span>
-                  </p>
+                  </Text>
+                  </Text>
                   <Button
                     variant="slim"
                     type="button"
@@ -149,14 +112,11 @@ export default function Pricing({ products }: Props) {
                       ? 'Manage'
                       : 'Subscribe'}
                   </Button>
-                </div>
               </div>
+                </div></Paper>
             );
           })}
         </div>
-        
-        
-      </div>
-    </section>
-  );
+        </Group>
+      </>);
 }

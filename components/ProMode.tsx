@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createStyles, Switch, Group, useMantineColorScheme, Text } from '@mantine/core';
+import { createStyles, Switch, Group, useMantineColorScheme, Text, Button, Anchor } from '@mantine/core';
 import { Rocket, RocketOff } from 'tabler-icons-react';
 import Link from 'next/link';
 
@@ -35,12 +35,8 @@ export default function ProMode() {
 
   return (
     <Group position="center">
-      <div className={classes.root}>
-        <Rocket className={cx(classes.icon, classes.iconLight)} size={18} />
-        <RocketOff className={cx(classes.icon, classes.iconDark)} size={18} />
-        <Link href="/pro"><Switch size="md" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} /></Link>
-      </div>
-      <Text>Volverse PRO</Text>
+        <Anchor href="/pro">
+      <Button variant="default">Upgrade ⭐</Button></Anchor>
     </Group>
   );
 }

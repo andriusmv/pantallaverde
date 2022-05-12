@@ -11,6 +11,7 @@ import LoadingDots from 'components/ui/LoadingDots';
 import Logo from 'components/icons/Logo';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
+import { Text, Title } from '@mantine/core'
 
 
 
@@ -104,7 +105,7 @@ const SignIn = () => {
             )}
 
             {showPasswordInput && (
-              <form onSubmit={handleSignin} className="flex flex-col space-y-4">
+              <form onSubmit={handleSignin}>
                 <Input
                   type="email"
                   placeholder="Email"
@@ -131,10 +132,9 @@ const SignIn = () => {
               </form>
             )}
 
-            <span className="pt-1 text-center text-sm">
+            <Text>
               <a
                 href="#"
-                className="text-zinc-200 text-accent-9 hover:underline cursor-pointer"
                 onClick={() => {
                   if (showPasswordInput) setPassword('');
                   setShowPasswordInput(!showPasswordInput);
@@ -145,17 +145,17 @@ const SignIn = () => {
                   showPasswordInput ? 'magic link' : 'password'
                 }.`}
               </a>
-            </span>
+            </Text>
 
-            <span className="pt-1 text-center text-sm">
-              <span className="text-zinc-200">No tienes una cuenta?</span>
+            <Text>
+              Are you a new user?
               {` `}
               <Link href="/signup">
-                <a className="text-accent-9 font-bold hover:underline cursor-pointer">
-                  Regístrate.
-                </a>
+                <Text underline>
+                  SIGN UP HERE.
+                </Text>
               </Link>
-            </span>
+            </Text>
           </div>
 
           <div className="flex items-center my-6">

@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <main>
       <Paper shadow="md" p="md" withBorder>
-      <Title>PantallaVerde📚Labs</Title>
+      <Title>Welcome to this tiny SaaS 📚</Title>
         <Text size='xl' weight={400}>
-          Aquí encuentras los cursos de PantallaVerde.
+          This is gonna be a succesful site. Please consider upgrading to one of our premium memberships: Gold or Silver.
         </Text>
       </Paper>
     </main>
