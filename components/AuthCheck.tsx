@@ -5,7 +5,7 @@ import { useUser } from '@/utils/useUser';
 const AuthCheck = (props: { children: any; fallback: any; }) => {
     const { user } = useUser();
 
-    return user ? props.children : props.fallback || <Link href="/signin"><Button>Debes iniciar sesión</Button></Link>;
+    return user ? props.children : props.fallback || <Link href="/signin"><Button>You must be logged in</Button></Link>;
 }
     
     export default AuthCheck;

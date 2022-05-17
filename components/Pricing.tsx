@@ -61,8 +61,8 @@ export default function Pricing({ products }: Props) {
 
   return (
     <>
-      <SimpleGrid cols={2}>
-        <Paper withBorder p="xl">
+      <main>
+        <Paper shadow="md" p="md" withBorder>
           <Title>Upgrade Your Membership ⭐</Title>
           <Space h="xl" />
           <Text size="xl">Choose a premium membership! They are awesome!</Text>     
@@ -71,7 +71,7 @@ export default function Pricing({ products }: Props) {
           <Space h="xl" />
           <Text size="xl">Available memberships:</Text>
           <Space h="xl" />
-          </SimpleGrid>
+          </main>
 
           <Group>
            

@@ -8,6 +8,7 @@ import { useUser } from 'utils/useUser';
 import { Price, ProductWithPrice } from 'types';
 import { SimpleGrid, Paper, Text, Title, Group, Space } from '@mantine/core';
 import Link from 'next/link';
+import AuthCheckSilver from 'components/AuthCheckSilver'
 
 interface Props {
   products: ProductWithPrice[];
@@ -66,6 +67,11 @@ export default function Pricing({ products }: Props) {
 </Text>
 
           </Paper>
+
+          <Paper withBorder p="xl">
+<AuthCheckSilver fallback={null}>
+<Text size="xl">🍪🍪🍪</Text></AuthCheckSilver>
+</Paper>
 
           </SimpleGrid>
 

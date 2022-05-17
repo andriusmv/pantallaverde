@@ -8,10 +8,9 @@ import Button from 'components/ui/Button';
 import GitHub from 'components/icons/GitHub';
 import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
-import Logo from 'components/icons/Logo';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Text, Title } from '@mantine/core'
+import { Paper, Space, Text, Title } from '@mantine/core'
 
 
 
@@ -66,10 +65,11 @@ const SignIn = () => {
 
   if (!user)
     return (
-      <div className="flex justify-center height-screen-helper">
-        <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+      <div>
+        <Paper shadow="md" p="md" withBorder>
           
-          <div className="flex flex-col space-y-4">
+          <div>
+            <Title>Please Sign In 👨‍🌾</Title>
             {message.content && (
               <div
                 className={`${
@@ -127,11 +127,10 @@ const SignIn = () => {
                   loading={loading}
                   disabled={!password.length || !email.length}
                 >
-                  Iniciar sesión
+                  Sign-in
                 </Button>
               </form>
             )}
-
             <Text>
               <a
                 href="#"
@@ -146,14 +145,16 @@ const SignIn = () => {
                 }.`}
               </a>
             </Text>
-
+                <Space h="xl" />
+        
+        
             <Text>
               Are you a new user?
               {` `}
               <Link href="/signup">
-                <Text underline>
-                  SIGN UP HERE.
-                </Text>
+                <Title order={2}>
+                  Sign up here 👈
+                </Title>
               </Link>
             </Text>
           </div>
@@ -179,7 +180,8 @@ const SignIn = () => {
             <GitHub />
             <span className="ml-2">Continue with GitHub</span>
           </Button>
-        </div>
+        
+        </Paper>
       </div>
     );
 
