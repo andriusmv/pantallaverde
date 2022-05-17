@@ -7,8 +7,9 @@ import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
 import { Price, ProductWithPrice } from 'types';
-import { SimpleGrid, Paper, Text, Title, Group, Space } from '@mantine/core';
+import { SimpleGrid, Paper, Text, Title, Group, Space, Anchor, Code, List, Alert } from '@mantine/core';
 import Link from 'next/link';
+import { AlertCircle } from 'tabler-icons-react';
 
 interface Props {
   products: ProductWithPrice[];
@@ -65,7 +66,11 @@ export default function Pricing({ products }: Props) {
         <Paper shadow="md" p="md" withBorder>
           <Title>Upgrade Your Membership ⭐</Title>
           <Space h="xl" />
-          <Text size="xl">Choose a premium membership! They are awesome!</Text>     
+          <Text size="xl">Choose a premium membership! They are awesome!<Space h="xl" />
+          <Alert>⚠️ Since this is running in test-mode, you can use any of <Anchor href="https://stripe.com/docs/testing" target="_blank">Stripe's Test cards</Anchor>, for example:
+Jon Doe, Card number 4242424242424242, Exp date 12/34, CVC 123.</Alert>
+          </Text>
+               
         </Paper>
 
           <Space h="xl" />
@@ -73,7 +78,7 @@ export default function Pricing({ products }: Props) {
           <Space h="xl" />
           </main>
 
-          <Group>
+        <Group spacing="lg">
            
         <div>
           {products.map((product) => {
