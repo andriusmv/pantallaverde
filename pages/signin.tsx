@@ -5,7 +5,6 @@ import { useUser } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 
 import Button from 'components/ui/Button';
-import GitHub from 'components/icons/GitHub';
 import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';

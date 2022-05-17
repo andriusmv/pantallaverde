@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { useMantineTheme, Text, Group, Paper, Code } from '@mantine/core';
+import { useMantineTheme, Text, Group, Code } from '@mantine/core';
 
 export function Logo() {
   const theme = useMantineTheme();
