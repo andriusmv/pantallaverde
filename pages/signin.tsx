@@ -85,7 +85,7 @@ const SignIn = () => {
             )}
 
             {!showPasswordInput && (
-              <form onSubmit={handleSignin} className="flex flex-col space-y-4">
+              <form onSubmit={handleSignin}>
                 <Input
                   type="email"
                   placeholder="Email"
