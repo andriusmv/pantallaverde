@@ -7,15 +7,15 @@ function LightAndDarkModeButton() {
 
   return (
     <ActionIcon
-      variant="outline"
-      color={dark ? 'yellow' : 'blue'}
+      variant="default"
+      color={dark ? 'white' : 'grey'}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
     >
       {dark ? (
-        <Sun style={{ width: 18, height: 18 }} />
+        <Sun style={{ width: 28, height: 28 }} />
       ) : (
-        <Moon style={{ width: 18, height: 18 }} />
+        <Moon style={{ width: 28, height: 28 }} />
       )}
     </ActionIcon>
   );

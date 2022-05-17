@@ -10,7 +10,8 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Paper, Space, Text, Title } from '@mantine/core'
+import { Group, Paper, SimpleGrid, Space, Text, Title } from '@mantine/core'
+import { BrandGithub, BrandGoogle } from 'tabler-icons-react'
 
 
 
@@ -64,12 +65,13 @@ const SignIn = () => {
   }, [user]);
 
   if (!user)
+
     return (
       <div>
         <Paper shadow="md" p="md" withBorder>
           
-          <div>
-            <Title>Please Sign In 👨‍🌾</Title>
+          <div >
+            <Title id="pleasesignin">Please Sign In 👨‍🌾</Title>
             {message.content && (
               <div
                 className={`${
@@ -170,17 +172,27 @@ const SignIn = () => {
               aria-hidden="true"
             ></div>
           </div>
-
+<Group>
           <Button
             variant="slim"
             type="submit"
             disabled={loading}
             onClick={() => handleOAuthSignIn('github')}
           >
-            <GitHub />
-            <span className="ml-2">Continue with GitHub</span>
+            
+            <Group><BrandGithub /> Continue with GitHub</Group>
           </Button>
-        
+
+          <Button
+            variant="slim"
+            type="submit"
+            disabled={loading}
+            onClick={() => handleOAuthSignIn('google')}
+          >
+            
+            <Group><BrandGoogle /> Continue with Google</Group>
+          </Button>
+          </Group>
         </Paper>
       </div>
     );

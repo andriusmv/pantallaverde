@@ -1,19 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import { LogoImage } from './LogoImage';
-import useStyles from './Logo.styles';
+import { useMantineTheme, Text, Group, Paper, Code } from '@mantine/core';
 
-export function Logo({ className, ...others }: any) {
-  const { classes, cx } = useStyles();
+export function Logo() {
+  const theme = useMantineTheme();
 
   return (
-    <div className={classes.wrapper}>
-      <Link href="/" {...others}>
-        <a href="/" className={cx(classes.logo, className)} aria-label="PantallaVerdeDocs">
-          <LogoImage className={classes.image} />
-        </a>
-      </Link>
-    </div>
+    <>
+    <Link href="/">
+<Group>
+    <Text weight={1000}>PANTALLA VERDE</Text><Code>DOCS</Code>
+    </Group></Link>
+    </>
   );
 }
 

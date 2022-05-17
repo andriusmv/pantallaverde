@@ -83,7 +83,7 @@ export default function App(props: AppProps) {
  </MediaQuery>
  <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
 
- <Grid justify="center" align="center">
+ <Grid justify="space-around" align="center">
   <Grid.Col span={4} style={{ minHeight: 70 }}><Link href="/"><Logo /></Link></Grid.Col>
   <Grid.Col span={3} style={{ minHeight: 70 }}><LightAndDarkModeButton /></Grid.Col>
   <Grid.Col span={2} style={{ minHeight: 70 }}><ProMode />

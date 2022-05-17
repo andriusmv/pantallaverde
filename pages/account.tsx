@@ -80,7 +80,7 @@ export default function Account({ user }: { user: User }) {
           footer={
             <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
               <p className="pb-4 sm:pb-0">
-                Administra tu suscripciòn en Stripe.
+                Administra tu suscripción en Stripe.
               </p>
               <Button
                 variant="slim"

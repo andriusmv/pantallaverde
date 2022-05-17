@@ -16,7 +16,7 @@ export default function Listado() {
         <Paper withBorder>
         <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
         <Link href={'/'}><Button variant="default">👋 Welcome</Button></Link>
-        <Link href={'/signin'}><Button variant="default">🚀 Sign-in/Sign-up</Button></Link>
+        <Link href={'/signin#pleasesignin'}><Button variant="default">🚀 Sign-in/Sign-up</Button></Link>
         <Link href={'/pro'}><Button variant="default">⭐ Upgrade Membership</Button></Link>
         <Link href={'/free'}><Button variant="light">🤟 FREE content</Button></Link>
         <Link href={'/gold'}><Button variant="light">🥇 GOLD members only</Button></Link>
