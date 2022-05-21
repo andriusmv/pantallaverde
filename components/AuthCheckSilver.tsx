@@ -16,10 +16,13 @@ interface Props {
 
 export const getServerSideProps = withAuthRequired({ redirectTo: '/signin' });
 
+
+
 export default function AuthCheckSilver({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-
+const AuthCheckSilver = (props: { children: any; fallback: null; }) => {
+  const { user } = useUser();
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -43,10 +46,10 @@ export default function AuthCheckSilver({ user }: { user: User }) {
     
     <div>
     
-    {subscription?  'hola' : <Link href="/pro">
+    {user? props.children : props.fallback || <Link href="/pro">
       <Button>This content is exclusive to Silver Members only 🔒
         </Button>
         </Link>}
         </div>
   );
-}
+}}

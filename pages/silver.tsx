@@ -9,7 +9,9 @@ import { Price, ProductWithPrice } from 'types';
 import { SimpleGrid, Paper, Text, Title, Group, Space } from '@mantine/core';
 import Link from 'next/link';
 import AuthCheckSilver from 'components/AuthCheckSilver'
-import { withAuthRequired, User } from '@supabase/supabase-auth-helpers/nextjs';
+import { withAuthRequired, User} from '@supabase/supabase-auth-helpers/nextjs';
+import { userInfo } from 'os';
+import { useUuid } from '@mantine/hooks';
 
 
 interface Props {
@@ -71,7 +73,7 @@ export default function Pricing({ products }: Props) {
           </Paper>
 
           <Paper withBorder p="xl">
-<AuthCheckSilver user={undefined}>
+<AuthCheckSilver fallback={null}>
 <Text size="xl">🍪🍪🍪</Text></AuthCheckSilver>
 </Paper>
 
