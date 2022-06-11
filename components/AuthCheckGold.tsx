@@ -2,16 +2,14 @@ import Link from 'next/link';
 import { Button } from '@mantine/core'
 import { useUser } from '@/utils/useUser';
 import { supabase } from '@/utils/supabase-client';
+import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 
-async function AuthCheckGold() {
-let { data: subscriptions, error } = await supabase
-  .from('subscriptions')
-  .select('status')
-  
+const AuthCheckGold = (props: { children: any; fallback: any; }) => {
+  const { user } = useUser();
 
-    return subscriptions = 'active' ? <Button>Welcome</Button> : <Link href="/pro">
-      <Button>This content is exclusive to Gold Members only 🔒
-        </Button>
-        </Link>
+  return user ? props.children : props.fallback || <Link href="/signin"><Button>You must be logged in 🔒</Button></Link>;
 }
+  supabaseClient.auth.api.getUserById.name
+  
+  export default AuthCheckGold;
     
