@@ -5,14 +5,16 @@ import { supabase } from '@/utils/supabase-client';
 import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 
 interface EnsayoProps {
-    lessons: string
+    lessons: {id: string; title: string}[];
 }
+
+
 
 export default function Ensayo({ lessons }: EnsayoProps) {
     console.log({ lessons });
     return (
         <div>
-            {lessons.map((lesson: { id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; }) => (
+            {lessons.map((lesson: { id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
                 <p key={lesson.id}>{lesson.title}</p>
             ))}
         </div>
