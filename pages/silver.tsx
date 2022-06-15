@@ -73,8 +73,8 @@ export default function Pricing({ products }: Props) {
           </Paper>
 
           <Paper withBorder p="xl">
-<AuthCheckSilver fallback={null}>
-<Text size="xl">🍪🍪🍪</Text></AuthCheckSilver>
+
+<Text size="xl">🍪🍪🍪</Text>
 </Paper>
 
           </SimpleGrid>
