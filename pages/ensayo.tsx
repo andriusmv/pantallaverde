@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useUser } from '@/utils/useUser';
 import { GetStaticProps } from 'next'
 import { supabase } from '@/utils/supabase-client';
-import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
+import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
 
 interface EnsayoProps {
-    lessons: {id: string; title: string}[];
+    lessons: {id: string; title: string; description: string}[];
 }
 
 
@@ -14,8 +14,10 @@ export default function Ensayo({ lessons }: EnsayoProps) {
     console.log({ lessons });
     return (
         <div>
-            {lessons.map((lesson: { id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => (
-                <p key={lesson.id}>{lesson.title}</p>
+            {lessons.map((lesson: {
+                description: ReactNode; id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined 
+}) => (
+                <p key={lesson.id}>{lesson.title}<br />{lesson.description}</p>
             ))}
         </div>
     );
