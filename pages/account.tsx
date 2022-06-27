@@ -5,6 +5,7 @@ import LoadingDots from 'components/ui/LoadingDots';
 import Button from 'components/ui/Button';
 import { useUser } from 'utils/useUser';
 import { postData } from 'utils/helpers';
+import { Text } from '@mantine/core';
 
 import { withAuthRequired, User } from '@supabase/supabase-auth-helpers/nextjs';
 
@@ -102,7 +103,7 @@ export default function Account({ user }: { user: User }) {
               `${subscriptionPrice}/${subscription?.prices?.interval}`
             ) : (
               <Link href="/pro">
-                <a>Escoge tu plan</a>
+                <Text>Escoge tu plan</Text>
               </Link>
             )}
           </div>

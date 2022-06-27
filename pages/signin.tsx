@@ -9,7 +9,7 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Group, Paper, SimpleGrid, Space, Text, Title } from '@mantine/core'
+import { Anchor, Group, Paper, SimpleGrid, Space, Text, Title } from '@mantine/core'
 import { BrandGithub, BrandGoogle } from 'tabler-icons-react'
 
 
@@ -133,18 +133,18 @@ const SignIn = () => {
               </form>
             )}
             <Text>
-              <a
+              <Anchor
                 href="#"
                 onClick={() => {
                   if (showPasswordInput) setPassword('');
                   setShowPasswordInput(!showPasswordInput);
                   setMessage({});
                 }}
-              >
+              ><Text>
                 {`Or sign in with ${
                   showPasswordInput ? 'magic link' : 'password'
-                }.`}
-              </a>
+                }.`}</Text>
+              </Anchor>
             </Text>
                 <Space h="xl" />
         
@@ -152,11 +152,11 @@ const SignIn = () => {
             <Text>
               Are you a new user?
               {` `}
-              <Link href="/signup">
-                <Title order={2}>
+              <Anchor href="/signup">
+                
                   Sign up here 👈
-                </Title>
-              </Link>
+                
+              </Anchor>
             </Text>
           </div>
 
