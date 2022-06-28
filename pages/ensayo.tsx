@@ -3,9 +3,12 @@ import { useUser } from '@/utils/useUser';
 import { GetStaticProps } from 'next'
 import { supabase } from '@/utils/supabase-client';
 import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
+import React from 'react'
+import ReactPlayer from 'react-player/lazy'
+
 
 interface EnsayoProps {
-    lessons: {id: string; title: string; description: string}[];
+    lessons: {id: string; title: string; description: string; video_url: string}[];
 }
 
 
@@ -15,9 +18,11 @@ export default function Ensayo({ lessons }: EnsayoProps) {
     return (
         <div>
             {lessons.map((lesson: {
-                description: ReactNode; id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined 
-}) => (
-                <p key={lesson.id}>{lesson.title}<br />{lesson.description}</p>
+                description: ReactNode; id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
+                video_url: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;}) => (
+                <p key={lesson.id}>{lesson.title}<br />{lesson.description}<br />
+                </p> 
+                //<ReactPlayer url={lesson.video_url} />
             ))}
         </div>
     );

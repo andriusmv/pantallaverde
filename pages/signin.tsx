@@ -9,7 +9,7 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Anchor, Group, Paper, SimpleGrid, Space, Text, Title } from '@mantine/core'
+import { Anchor, Group, Paper, Space, Text, Title } from '@mantine/core'
 import { BrandGithub, BrandGoogle } from 'tabler-icons-react'
 
 

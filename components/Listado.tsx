@@ -22,7 +22,7 @@ export default function Listado() {
         <Link href={'/gold'}><Button variant="light">🥇 GOLD members only</Button></Link>
         <Link href={'/silver'}><Button variant="light">🥈 SILVER members only</Button></Link>
         <Link href={'/account'}><Button variant="default">👨‍🚀 My account</Button></Link>
-        <Link href={'/signout'}><Button variant="default">🚪 Logout</Button></Link>
+        <Link href={'/api/auth/logout'}><Button variant="default">🚪 Logout</Button></Link>
     </Stack>
 
     
