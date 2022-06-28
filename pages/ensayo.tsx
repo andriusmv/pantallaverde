@@ -19,10 +19,9 @@ export default function Ensayo({ lessons }: EnsayoProps) {
         <div>
             {lessons.map((lesson: {
                 description: ReactNode; id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
-                video_url: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;}) => (
+                video_url: string;}) => (
                 <p key={lesson.id}>{lesson.title}<br />{lesson.description}<br />
-                </p> 
-                //<ReactPlayer url={lesson.video_url} />
+                <ReactPlayer url={lesson.video_url} /></p>
             ))}
         </div>
     );
