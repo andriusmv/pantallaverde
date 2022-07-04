@@ -6,6 +6,8 @@ import Button from 'components/ui/Button';
 import { useUser } from 'utils/useUser';
 import { postData } from 'utils/helpers';
 import { Text } from '@mantine/core';
+import { Avatar, AvatarsGroup } from '@mantine/core';
+
 
 import { withAuthRequired, User } from '@supabase/supabase-auth-helpers/nextjs';
 
@@ -125,6 +127,19 @@ export default function Account({ user }: { user: User }) {
               </div>
             )}
           </div>
+          <div className="text-xl mt-8 mb-4 font-semibold">
+            {userDetails ? (
+              `${
+                userDetails.avatar_url ??
+                `${userDetails.avatar_url}`
+              }`
+            ) : (
+              <div className="h-8 mb-6">
+                <LoadingDots />
+              </div>
+            )}
+          </div>
+          
         </Card>
         <Card
           title="Your Email"

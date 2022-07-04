@@ -27,6 +27,7 @@ export default function Ensayo({ lessons }: EnsayoProps) {
     );
 }
 
+
 export const getStaticProps: GetStaticProps = async (context) => {
     const { data: lessons } = await supabase.from("lesson").select("*")
     
