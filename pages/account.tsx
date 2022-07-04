@@ -150,6 +150,16 @@ export default function Account({ user }: { user: User }) {
             {user ? user.email : undefined}
           </p>
         </Card>
+        <Card
+          title="Your Avatar"
+          description="Please enter the avatar address you want to use to login."
+          footer={<p>Avatar.</p>}
+        >
+          <p className="text-xl mt-8 mb-4 font-semibold">
+            {userDetails ? userDetails.avatar_url : undefined}
+          </p>
+          <img src={userDetails ? userDetails.avatar_url : undefined}></img>
+        </Card>
       </div>
     </section>
   );
