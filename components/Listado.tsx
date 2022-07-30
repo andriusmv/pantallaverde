@@ -15,14 +15,14 @@ export default function Listado() {
       <SimpleGrid cols={1} spacing="md">
         <Paper withBorder>
         <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
-        <Link href={'/'}><Button variant="default">👋 Welcome</Button></Link>
-        <Link href={'/signin#pleasesignin'}><Button variant="default">🚀 Sign-in/Sign-up</Button></Link>
-        <Link href={'/pro'}><Button variant="default">⭐ Upgrade Membership</Button></Link>
-        <Link href={'/free'}><Button variant="light">🤟 FREE content</Button></Link>
-        <Link href={'/gold'}><Button variant="light">🥇 GOLD members only</Button></Link>
-        <Link href={'/silver'}><Button variant="light">🥈 SILVER members only</Button></Link>
-        <Link href={'/account'}><Button variant="default">👨‍🚀 My account</Button></Link>
-        <Link href={'/api/auth/logout'}><Button variant="default">🚪 Logout</Button></Link>
+        <Link href={'/'}><Button variant="default">👋 Bienvenidos</Button></Link>
+        <Link href={'/signin#pleasesignin'}><Button variant="default">🚀 Iniciar/Registro</Button></Link>
+        <Link href={'/free'}><Button variant="light">🤟 Cursos GRATUITOS</Button></Link>
+        <Link href={'/pro'}><Button variant="default">⭐ Volverse PRO</Button></Link>
+        <Link href={'/gold'}><Button variant="light">🥇 Curso Tours Virtuales</Button></Link>
+        <Link href={'/silver'}><Button variant="light">🥈 Curso Drones con 3D</Button></Link>
+        <Link href={'/account'}><Button variant="default">👨‍🚀 Mi cuenta</Button></Link>
+        <Link href={'/api/auth/logout'}><Button variant="default">🚪 Salir</Button></Link>
     </Stack>
 
     

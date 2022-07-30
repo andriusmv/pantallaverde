@@ -6,7 +6,7 @@ import Button from 'components/ui/Button';
 import { useUser } from 'utils/useUser';
 import { postData } from 'utils/helpers';
 import { Text } from '@mantine/core';
-import { Avatar, AvatarsGroup } from '@mantine/core';
+import { Avatar } from '@mantine/core';
 
 
 import { withAuthRequired, User } from '@supabase/supabase-auth-helpers/nextjs';
@@ -68,9 +68,24 @@ export default function Account({ user }: { user: User }) {
             Account
           </h1>
           <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            We partnered with Stripe for a simplified billing.
+            This are your account details.
           </p>
         </div>
+        <div className="text-xl mt-8 mb-4 font-semibold">
+            {userDetails ? (
+              `${
+                userDetails.full_name ??
+                `${userDetails.first_name} ${userDetails.last_name}`
+              }`
+            ) : (
+              <div className="h-8 mb-6">
+                <LoadingDots />
+              </div>
+            )}
+          </div>
+      <div>
+        <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
+      </div>
       </div>
       <div className="p-4">
         <Card
@@ -127,19 +142,7 @@ export default function Account({ user }: { user: User }) {
               </div>
             )}
           </div>
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? (
-              `${
-                userDetails.avatar_url ??
-                `${userDetails.avatar_url}`
-              }`
-            ) : (
-              <div className="h-8 mb-6">
-                <LoadingDots />
-              </div>
-            )}
-          </div>
-          
+                    
         </Card>
         <Card
           title="Your Email"
@@ -156,9 +159,9 @@ export default function Account({ user }: { user: User }) {
           footer={<p>Avatar.</p>}
         >
           <p className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? userDetails.avatar_url : undefined}
+            {userDetails ? userDetails.avatar_url : null}
           </p>
-          <img src={userDetails ? userDetails.avatar_url : undefined}></img>
+          <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
         </Card>
       </div>
     </section>

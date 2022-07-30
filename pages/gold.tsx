@@ -1,14 +1,13 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import Button from 'components/ui/Button';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
 import { Price, ProductWithPrice } from 'types';
-import { SimpleGrid, Paper, Text, Title, Group, Space } from '@mantine/core';
-import Link from 'next/link';
-import AuthCheckGold from '@/components/AuthCheckGold';
+import { SimpleGrid, Paper, Text, Title, Group, Space, List, ThemeIcon, Button } from '@mantine/core';
+import { CircleCheck, CircleDashed, UserCheck, UserPlus, UserSearch } from 'tabler-icons-react';
+import ListadoTours from 'components/ListadoTours';
 
 interface Props {
   products: ProductWithPrice[];
@@ -53,29 +52,84 @@ export default function Pricing({ products }: Props) {
     <>
       <SimpleGrid cols={1} spacing="xl">
         <Paper withBorder p="xl">
-          <Title>Gold Membership 🥇</Title>
+          <Title>Curso Tours Virtuales 🥇</Title>
           <Space h="xl" />
-          <Text size="xl">This content is exclusive to Gold Members only 🔒</Text>
+          <Text size="xl">Disponible para miembros Pro 🔒</Text>
           <Space h="xl" />
+          <Button>Comenzar</Button>
           
         </Paper>
         <Paper withBorder p="xl">
-
-          <Text size="xl">Exclusive content:</Text>
-          <Text size="xl">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum 🍪🍪🍪."
-
-</Text>
+          <Text size="xl">De qué se trata?</Text>
+          <Space h="xl" />
+          <List
+      spacing="xs"
+      size="xl"
+      center
+      icon={
+        <ThemeIcon color="teal" size={24} radius="xl">
+          <CircleCheck size={16} />
+        </ThemeIcon>
+      }
+    >
+      <List.Item>Es un curso básico, para principiantes.</List.Item>
+      <List.Item>Es un curso en línea, a tu propio ritmo.</List.Item>
+      <List.Item>Es un curso que puedes completar en aproximadamente 3 días.</List.Item>
+      <List.Item
+        icon={
+          <ThemeIcon color="blue" size={24} radius="xl">
+            <CircleDashed size={16} />
+          </ThemeIcon>
+        }
+      >
+        Está enfocado en el sector inmobiliario y arquitectónico.
+      </List.Item>
+    </List>
 
           </Paper>
           <Paper withBorder p="xl">
+<Text size="xl">Contenido del curso:</Text>
+        <Space h="xl" />
+          <ListadoTours />
+</Paper>
+<Paper withBorder p="xl">
+<Text size="xl">A quién va dirigido?</Text>
+<Space h="xl" />
 
-<Text size="xl">🍪🍪🍪</Text>
+<List
+      spacing="xs"
+      size="xl"
+      center
+      icon={
+        <ThemeIcon color="teal" size={24} radius="xl">
+          <UserCheck size={16} />
+        </ThemeIcon>
+      }
+    >
+      <List.Item>Promotores/agencias inmobiliarias (marketing, fotografía, ventas).</List.Item>
+      <List.Item
+        icon={
+          <ThemeIcon color="blue" size={24} radius="xl">
+            <UserSearch size={16} />
+          </ThemeIcon>
+        }
+      >
+        Arquitectos que quieran crear recorridos virtuales con sus modelos 3D (Revit, Lumion, Blender, etc).
+      </List.Item>
+      <List.Item
+        icon={
+          <ThemeIcon color="gray" size={24} radius="xl">
+            <UserPlus size={16} />
+          </ThemeIcon>
+        }
+      >
+        Amateurs o curiosos del tema que quieran aprender a hacerlo.
+      </List.Item>
+    </List>
+        <Space h="xl" />
 </Paper>
           </SimpleGrid>
-
           <Group spacing="xl">
-           
-
         </Group>
       </>);
 }
