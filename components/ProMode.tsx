@@ -7,7 +7,7 @@ export default function ProMode() {
   return (
     <Group position="center">
         <Anchor href="/pro">
-      <Button variant="default">Upgrade ⭐</Button></Anchor>
+      <Button size="md" compact variant="outline" color="teal">Hacerse Pro</Button></Anchor>
     </Group>
   );
 }

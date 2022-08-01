@@ -41,6 +41,7 @@ export default function App(props: AppProps) {
         theme={{
                 // Theme is deeply merged with default theme
                 colorScheme,
+                
         
                 shadows: {
                   // other shadows (xs, sm, lg) will be merged from default theme
@@ -49,9 +50,10 @@ export default function App(props: AppProps) {
                 },
         
                 headings: {
-                  fontFamily: 'Roboto, sans-serif',
+                  fontFamily: 'DIN 1451',
+                  fontWeight: 700,
                   sizes: {
-                    h1: { fontSize: 60 }
+                    h1: { fontSize: 50 }
                   }}
                 }}>
 

@@ -1,16 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import { useMantineTheme, Text, Group, Code } from '@mantine/core';
+import { useMantineTheme, Text, Group, Code, Badge, Anchor, Button } from '@mantine/core';
+import { DeviceLaptop } from 'tabler-icons-react';
 
 export function Logo() {
   const theme = useMantineTheme();
 
   return (
     <>
-    <Link href="/">
-<Group>
-    <Text weight={1000}>PANTALLA VERDE</Text><Code>DOCS</Code>
-    </Group></Link>
+    
+    <Group>
+    <Anchor href="/" style={{ textDecoration: 'none'}}>
+    <Button leftIcon={<DeviceLaptop size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA VERDE</Button>
+    </Anchor>
+    </Group>
     </>
   );
 }
