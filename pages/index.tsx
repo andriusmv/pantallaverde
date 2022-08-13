@@ -18,7 +18,10 @@ export default function Home() {
       <MediaQuery
        smallerThan="xs" styles={{ fontSize: 'xs' }}>
       <Paper shadow="md" p="md" withBorder>
-      <Title order={1} align="center">Tutoriales cortos en video para</Title><Title order={1} align="center">emprendedores inmobiliarios 📚</Title>
+      <Title order={1} align="center"
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos en video para</Title>
+      <Title order={1} align="center"
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black, })}>emprendedores inmobiliarios 📚</Title>
         <Text size="xl" weight={600} align="center" color="teal">
           Inyecciones de tecnología para proyectos inmobiliarios
         </Text>

@@ -9,7 +9,7 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Anchor, Group, Paper, Space, Text, Title } from '@mantine/core'
+import { Anchor, Group, Paper, Space, Stack, Text, Title } from '@mantine/core'
 import { BrandGithub, BrandGoogle } from 'tabler-icons-react'
 
 
@@ -42,7 +42,7 @@ const SignIn = () => {
     if (!password) {
       setMessage({
         type: 'note',
-        content: 'Check your email for the magic link.'
+        content: 'Revisa tu correo para el link mágico.'
       });
     }
     setLoading(false);
@@ -69,8 +69,10 @@ const SignIn = () => {
       <div>
         <Paper shadow="md" p="md" withBorder>
           
-          <div >
-            <Title id="pleasesignin">Please Sign In 👨‍🌾</Title>
+            <Title id="pleasesignin">Inicia Sesión 👀</Title>
+            <Space h="xl" />
+          <div>              
+
             {message.content && (
               <div
                 className={`${
@@ -100,7 +102,7 @@ const SignIn = () => {
                   loading={loading}
                   disabled={!email.length}
                 >
-                  Send magic link
+                  Enviar link mágico
                 </Button>
               </form>
             )}
@@ -116,7 +118,7 @@ const SignIn = () => {
                 />
                 <Input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   value={password}
                   onChange={setPassword}
                   required
@@ -128,7 +130,7 @@ const SignIn = () => {
                   loading={loading}
                   disabled={!password.length || !email.length}
                 >
-                  Sign-in
+                  Inicia Sesión
                 </Button>
               </form>
             )}
@@ -141,8 +143,8 @@ const SignIn = () => {
                   setMessage({});
                 }}
               ><Text>
-                {`Or sign in with ${
-                  showPasswordInput ? 'magic link' : 'password'
+                {`... o ingresa tu  ${
+                  showPasswordInput ? 'link mágico' : 'contraseña'
                 }.`}</Text>
               </Anchor>
             </Text>
@@ -150,11 +152,11 @@ const SignIn = () => {
         
         
             <Text>
-              Are you a new user?
+              No te has registrado todavía?
               {` `}
               <Anchor href="/signup">
                 
-                  Sign up here 👈
+                  Regístrate aquí 👈
                 
               </Anchor>
             </Text>
@@ -165,7 +167,8 @@ const SignIn = () => {
               className="border-t border-zinc-600 flex-grow mr-3"
               aria-hidden="true"
             ></div>
-            <div className="text-zinc-400">Or</div>
+            <div className="text-zinc-400">o...</div>
+            <Space h="xl" />
             <div
               className="border-t border-zinc-600 flex-grow ml-3"
               aria-hidden="true"
@@ -179,7 +182,7 @@ const SignIn = () => {
             onClick={() => handleOAuthSignIn('github')}
           >
             
-            <Group><BrandGithub /> Continue with GitHub</Group>
+            <Group><BrandGithub /> Identifícate con GitHub</Group>
           </Button>
 
           <Button
@@ -189,7 +192,7 @@ const SignIn = () => {
             onClick={() => handleOAuthSignIn('google')}
           >
             
-            <Group><BrandGoogle /> Continue with Google</Group>
+            <Group><BrandGoogle /> Identifícate con Google</Group>
           </Button>
           </Group>
         </Paper>

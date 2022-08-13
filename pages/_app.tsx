@@ -42,6 +42,7 @@ export default function App(props: AppProps) {
                 // Theme is deeply merged with default theme
                 colorScheme,
                 
+                
         
                 shadows: {
                   // other shadows (xs, sm, lg) will be merged from default theme
