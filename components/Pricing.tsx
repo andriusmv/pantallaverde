@@ -1,8 +1,9 @@
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-
+import { SegmentedControl } from '@mantine/core';
 import Button from 'components/ui/Button';
+import { SegmentedPricing } from 'components/SegmentedPricing';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
@@ -47,10 +48,10 @@ export default function Pricing({ products }: Props) {
 
   if (!products.length)
     return (
-      <section className="bg-black">
-        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center"></div>
-          <p className="text-6xl font-extrabold text-white sm:text-center sm:text-6xl">
+      <section>
+        <div>
+          <div></div>
+          <p>
             No subscription pricing plans found. Create them in your{' '}
             <a
               className="text-pink-500 underline"
@@ -67,17 +68,17 @@ export default function Pricing({ products }: Props) {
     );
 
   return (
-    <section className="bg-black">
-      <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+    <section>
+      <div>
+        <div>
+          <h1>
             Pricing Plans
           </h1>
-          <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
+          <p>
             Start building for free, then add a site plan to go live. Account
             plans unlock additional features.
           </p>
-          <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
+          <div>
             <button
               onClick={() => setBillingInterval('month')}
               type="button"
@@ -166,7 +167,9 @@ export default function Pricing({ products }: Props) {
             );
           })}
         </div>
+      <SegmentedPricing />
       </div>
     </section>
+
   );
 }
