@@ -11,7 +11,7 @@ import Link from 'next/link';
 import AuthCheckSilver from 'components/AuthCheckSilver'
 import { withAuthRequired, User} from '@supabase/supabase-auth-helpers/nextjs';
 import { userInfo } from 'os';
-import { useUuid } from '@mantine/hooks';
+import { useId } from '@mantine/hooks';
 
 
 interface Props {

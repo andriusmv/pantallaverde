@@ -10,7 +10,7 @@ import { MyUserContextProvider } from 'utils/useUser';
 import { Logo } from '@/components/icons/Logo';
 import Link from 'next/link';
 import Listado from '@/components/Listado';
-import { useHotkeys, useLocalStorageValue } from '@mantine/hooks';
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import LightAndDarkModeButton from '@/components/LightDarkButton';
 import ProMode from '@/components/ProMode';
 
@@ -19,7 +19,7 @@ export default function App(props: AppProps) {
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
 
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'dark',
   });

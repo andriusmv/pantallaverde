@@ -8,6 +8,7 @@ import { Price, ProductWithPrice } from 'types';
 import { SimpleGrid, Paper, Text, Title, Group, Space, List, ThemeIcon, Button } from '@mantine/core';
 import { CircleCheck, CircleDashed, UserCheck, UserPlus, UserSearch } from 'tabler-icons-react';
 import ListadoTours from 'components/ListadoTours';
+import Link from 'next/link';
 
 interface Props {
   products: ProductWithPrice[];
@@ -56,7 +57,9 @@ export default function Pricing({ products }: Props) {
           <Space h="xl" />
           <Text size="xl">Disponible para miembros Pro 🔒</Text>
           <Space h="xl" />
-          <Button>Comenzar</Button>
+          <Link href={'/toursvirtuales'}>
+            <Button>Comenzar</Button>
+            </Link>
           
         </Paper>
         <Paper withBorder p="xl">

@@ -5,23 +5,40 @@ import { supabase } from '@/utils/supabase-client';
 import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
+import { Title, Text, Space, Accordion } from '@mantine/core';
+import { ClipboardText } from 'tabler-icons-react';
 
 
 interface EnsayoProps {
-    lessons: {id: string; title: string; description: string; video_url: string}[];
+    toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
 }
 
 
 
-export default function Ensayo({ lessons }: EnsayoProps) {
-    console.log({ lessons });
+export default function Ensayo({ toursvirtuales }: EnsayoProps) {
     return (
         <div>
-            {lessons.map((lesson: {
-                description: ReactNode; id: Key | null | undefined; title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
+            {toursvirtuales.map((toursvirtuales: {
+                description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+                id: Key | null | undefined;
+                title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
                 video_url: string;}) => (
-                <p key={lesson.id}>{lesson.title}<br />{lesson.description}<br />
-                <ReactPlayer url={lesson.video_url} /></p>
+                <>
+                <Title key={toursvirtuales.id}>{toursvirtuales.title}</Title>
+                <Space h='xl' />
+                <ReactPlayer url={toursvirtuales.video_url} />
+                <Space h='xl' />
+                <Accordion variant="contained">
+                  <Accordion.Item value="Descripción">
+                   <Accordion.Control icon={<ClipboardText size={20} color='teal' />}>
+                    Descripción de la lección en texto e imágenes
+                    </Accordion.Control>
+                    <Accordion.Panel>
+                    <Text>{toursvirtuales.description}</Text>
+                    </Accordion.Panel>
+                    </Accordion.Item>
+                </Accordion>
+                </>
             ))}
         </div>
     );
@@ -29,11 +46,11 @@ export default function Ensayo({ lessons }: EnsayoProps) {
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const { data: lessons } = await supabase.from("lesson").select("*")
+    const { data: toursvirtuales } = await supabase.from("toursvirtuales").select("*")
     
     return {
         props: {
-            lessons,
+            toursvirtuales,
         },
     };
 };
