@@ -10,15 +10,14 @@ import { usePagination } from '@mantine/hooks';
 
 interface toursvirtualesProps {
     toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
-    
-}
+    }
 
-const data = toursvirtuales;
 
 export default function toursvirtuales({ toursvirtuales }: toursvirtualesProps) {
   
   const [activePage, setPage] = useState(1);
 
+  
 
     return (
       <>
@@ -29,11 +28,7 @@ export default function toursvirtuales({ toursvirtuales }: toursvirtualesProps) 
         
         <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
                 <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-        {toursvirtuales.map((toursvirtuales: {
-                description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
-                id: Key | null | undefined;
-                title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
-                video_url: string;}) => (
+        {toursvirtuales.map((toursvirtuales) => (
                 <>
                 <Text key={toursvirtuales.id}>{toursvirtuales.title}</Text></>))}
       </Aside>
@@ -41,11 +36,7 @@ export default function toursvirtuales({ toursvirtuales }: toursvirtualesProps) 
               
         </div>
         <div>
-            {toursvirtuales.map((toursvirtuales: {
-                description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
-                id: Key | null | undefined;
-                title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
-                video_url: string;}) => (
+            {toursvirtuales.map((toursvirtuales) => (
                 <>
                 <Title key={toursvirtuales.id}>{toursvirtuales.title}</Title>
                 <Space h='xl' />
@@ -78,7 +69,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             toursvirtuales,
         },
-    };
+    }; 
 
 
     

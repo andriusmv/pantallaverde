@@ -14,6 +14,7 @@ interface Props {
 }
 
 type BillingInterval = 'year' | 'month' | 'one-time';
+type SubscriptionQuantity = '1' | '2' | '3';
 
 export default function Pricing({ products }: Props) {
   const router = useRouter();
@@ -21,6 +22,8 @@ export default function Pricing({ products }: Props) {
     useState<BillingInterval>('month');
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
   const { user, isLoading, subscription } = useUser();
+  const [subscriptionQuantity, setSubscriptionQuantity] =
+  useState<SubscriptionQuantity>('1');
 
   const handleCheckout = async (price: Price) => {
     setPriceIdLoading(price.id);
@@ -133,7 +136,7 @@ export default function Pricing({ products }: Props) {
                   {
                     'border border-pink-500': subscription
                       ? product.name === subscription?.prices?.products?.name
-                      : product.name === 'Freelancer'
+                      : product.name === 'Pro'
                   }
                 )}
               >
