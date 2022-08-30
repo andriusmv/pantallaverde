@@ -18,6 +18,7 @@ The all-in-one starter kit for high-performance SaaS applications.
 ## Architecture
 
 ![Architecture diagram](./public/architecture_diagram.svg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fandriusmv%2Fpantallaverde.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fandriusmv%2Fpantallaverde?ref=badge_shield)
 
 ## Deploy with Vercel
 
@@ -170,3 +171,7 @@ npm run dev
 yarn
 yarn dev
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fandriusmv%2Fpantallaverde.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fandriusmv%2Fpantallaverde?ref=badge_large)
