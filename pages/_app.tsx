@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import React from 'react';
 import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor } from '@mantine/core';
 import { useContext, useState } from 'react';
@@ -28,6 +27,7 @@ export default function App(props: AppProps) {
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
   useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  
 
   return (
     <div>

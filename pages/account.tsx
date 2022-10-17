@@ -65,11 +65,11 @@ export default function Account({ user }: { user: User }) {
       <div className="max-w-6xl mx-auto pt-8 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Account
+            Tu cuenta
           </h1>
-          <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            This are your account details.
-          </p>
+      <div>
+        <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
+      </div>
         </div>
         <div className="text-xl mt-8 mb-4 font-semibold">
             {userDetails ? (
@@ -83,16 +83,13 @@ export default function Account({ user }: { user: User }) {
               </div>
             )}
           </div>
-      <div>
-        <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
-      </div>
       </div>
       <div className="p-4">
         <Card
           title="Your Plan"
           description={
             subscription
-              ? `Actualmente eres ${subscription?.prices?.products?.name} plan.`
+              ? `Estás en el plan ${subscription?.prices?.products?.name}.`
               : ''
           }
           footer={
@@ -153,16 +150,7 @@ export default function Account({ user }: { user: User }) {
             {user ? user.email : undefined}
           </p>
         </Card>
-        <Card
-          title="Your Avatar"
-          description="Please enter the avatar address you want to use to login."
-          footer={<p>Avatar.</p>}
-        >
-          <p className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? userDetails.avatar_url : null}
-          </p>
-          <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
-        </Card>
+
       </div>
     </section>
   );

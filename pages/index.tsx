@@ -58,23 +58,7 @@ export default function Home() {
     </SimpleGrid>
       </Paper>
       <Space h="xl"/>
-      <Grid grow>
-      <Grid.Col span={1}><Paper shadow="md" p="md" withBorder><div><Image radius="md" src="terrain-min.png" /></div>
-      <div></div>
-        </Paper></Grid.Col>
-      <Grid.Col span={4}><Paper shadow="md" p="md" withBorder>
-        <Text size='xl' weight={400}>
-          Más de 500 millones de personas hablan español en el mundo:
-          <Space h="xl"/>
-          <div>México 124 millones 🌶️🌶️🌶️🌶️🌶️</div>
-          <div>USA 57 millones 🦅🦅🦅</div>
-          <div>Colombia 50 millones ☕☕</div>
-          <div>España 47 millones 🐂🐂</div>
-          <div>(Argentina, Venezuela, Chile, ...)</div>
-          <Space h="xl"/>
-          <div>Todos los días, esos +500 millones de personas trabajan, duermen, comen y tienen hijos. La demanda por vivienda, bodegas, locales comerciales y hoteles es descomunal. El sector inmobiliario que vivimos es tan grande, que admite nuevos jugadores cada día. Y tú, qué le vas a vender a esos +500 millones?!</div>
-        </Text></Paper></Grid.Col>      
-    </Grid>
+      
     </main>
   );
 }

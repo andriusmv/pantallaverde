@@ -73,15 +73,7 @@ export default function Pricing({ products }: Props) {
   return (
     <section>
       <div>
-        <div>
-          <h1>
-            Pricing Plans
-          </h1>
-          <p>
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
-          </p>
-          <div>
+          {/* <div>
             <button
               onClick={() => setBillingInterval('month')}
               type="button"
@@ -169,9 +161,10 @@ export default function Pricing({ products }: Props) {
               </div>
             );
           })}
-        </div>
+         */}
+         </div>
       <SegmentedPricing />
-      </div>
+      
     </section>
 
   );

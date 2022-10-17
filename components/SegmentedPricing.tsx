@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput } from '@mantine/core';
+import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Notification, Group } from '@mantine/core';
+import { CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef('icon');
@@ -105,7 +106,7 @@ export function SegmentedPricing() {
         infinitas posibilidades</Title>
         <Space h="xl" />
         <Text size="xl" weight={600} align="center" color="teal">
-        Learn the skills you need to advance your career and build real-world business focused professional projects on the job and for your portfolio
+        El mundo se mueve rápido. Nosotros también.
         </Text>
         <Space h="xl" />
 
@@ -129,6 +130,11 @@ export function SegmentedPricing() {
               required
               ref={ref}
         />
+        <Space h="lg" />
+        <Group>
+        <Button disabled size="lg" color="teal">Pagar</Button>
+        <Text color="red">El botón de pago está en versión de prueba.</Text>
+        </Group>
         </Paper>
         </>
   );
