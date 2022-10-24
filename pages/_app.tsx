@@ -10,8 +10,8 @@ import { Logo } from '@/components/icons/Logo';
 import Link from 'next/link';
 import Listado from '@/components/Listado';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
-import LightAndDarkModeButton from '@/components/LightDarkButton';
 import ProMode from '@/components/ProMode';
+import Configuration from '@/components/Configuration';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -63,18 +63,18 @@ export default function App(props: AppProps) {
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       fixed
-      navbar={<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+/*      navbar={<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
 
               <Listado />
 
-</Navbar>}
-
+</Navbar>} */
+/*
       footer={
         <Footer height={60} p="md">
           <Text>Created with ❤️ by <Anchor href="https://github.com/andriusmv">Andrés Moreno Vásquez</Anchor></Text>
-        </Footer>
-      }
-      header={<div><Header height={100} p="xl">
+        </Footer> 
+      } */
+      header={<div><Header height={75} p="xl">
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
               <Burger
                 opened={opened}
@@ -88,15 +88,13 @@ export default function App(props: AppProps) {
 
  <Grid justify="space-around" align="center">
   <Grid.Col span={4} style={{ minHeight: 70 }}><Link href="/"><Logo /></Link></Grid.Col>
-  <Grid.Col span={3} style={{ minHeight: 70 }}><LightAndDarkModeButton /></Grid.Col>
-  <Grid.Col span={2} style={{ minHeight: 70 }}><ProMode />
-</Grid.Col>
+  <Grid.Col span={2} style={{ minHeight: 70 }}><Group><ProMode /><Configuration /></Group></Grid.Col>
  </Grid>
  </MediaQuery>
 
       </Header></div>}
       styles={(theme) => ({
-        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
+        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0] },
       })}
     >
             <Component {...pageProps} />
