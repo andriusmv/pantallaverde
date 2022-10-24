@@ -2,7 +2,7 @@ import Pricing from 'components/Pricing';
 import { getActiveProductsWithPrices } from 'utils/supabase-client';
 import { Product } from 'types';
 import { GetStaticPropsResult } from 'next';
-import { Paper, Title, Text, Image, SimpleGrid, Space, Button, MediaQuery, Group, Grid } from '@mantine/core';
+import { Container, Paper, Title, Text, Image, SimpleGrid, Space, Button, MediaQuery, Group, Grid } from '@mantine/core';
 import Avatars from '@/components/Avatars';
 import SpanishSpeaking from 'components/SpanishSpeaking';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ export default function Home() {
     <main>
       <MediaQuery
        smallerThan="xs" styles={{ fontSize: 'xs' }}>
-      <Paper shadow="md" p="md" withBorder>
+      <Container>
       <Title order={1} align="center"
       sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos en video para</Title>
       <Title order={1} align="center"
@@ -25,10 +25,10 @@ export default function Home() {
         <Text size="xl" weight={600} align="center" color="teal">
           Inyecciones de tecnología para proyectos inmobiliarios
         </Text>
-      </Paper>
+      </Container>
         </MediaQuery>
       <Space h="xl"/>
-      <Paper shadow="md" p="md" withBorder>
+      <Container>
       <SimpleGrid
       cols={2}
       spacing="lg"
@@ -56,7 +56,7 @@ export default function Home() {
 
 
     </SimpleGrid>
-      </Paper>
+      </Container>
       <Space h="xl"/>
       
     </main>
