@@ -22,11 +22,12 @@ export default function Home() {
       sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos en video para</Title>
       <Title order={1} align="center"
       sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black, })}>emprendedores inmobiliarios 📚</Title>
-        <Text size="xl" weight={600} align="center" color="teal">
+        <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología para proyectos inmobiliarios
         </Text>
       </Container>
         </MediaQuery>
+      <Space h="xl"/>
       <Space h="xl"/>
       <Container>
       <SimpleGrid

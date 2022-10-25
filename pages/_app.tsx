@@ -74,8 +74,8 @@ export default function App(props: AppProps) {
           <Text>Created with ❤️ by <Anchor href="https://github.com/andriusmv">Andrés Moreno Vásquez</Anchor></Text>
         </Footer> 
       } */
-      header={<div><Header height={75} p="xl">
-                    <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+      header={<div><Header height={75} p="xl" sx={{ borderBottom: 0 }} >
+              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
               <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
@@ -86,15 +86,15 @@ export default function App(props: AppProps) {
  </MediaQuery>
  <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
 
- <Grid justify="space-around" align="center">
-  <Grid.Col span={4} style={{ minHeight: 70 }}><Link href="/"><Logo /></Link></Grid.Col>
-  <Grid.Col span={2} style={{ minHeight: 70 }}><Group><ProMode /><Configuration /></Group></Grid.Col>
+ <Grid justify="space-around" align="center" >
+  <Grid.Col span={2}><Link href="/"><Logo /></Link></Grid.Col>
+  <Grid.Col span={2}><Group><ProMode /><Configuration /></Group></Grid.Col>
  </Grid>
  </MediaQuery>
 
       </Header></div>}
       styles={(theme) => ({
-        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0] },
+        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white },
       })}
     >
             <Component {...pageProps} />
