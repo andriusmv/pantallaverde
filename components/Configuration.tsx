@@ -1,33 +1,27 @@
-import Link from 'next/link';
-import { Popover, Stack, ActionIcon, Text, Group } from '@mantine/core';
-import { Settings, User } from 'tabler-icons-react';
+import { NextLink } from '@mantine/next';
+import { Popover, Stack, ActionIcon, Text, Group, Menu, Button } from '@mantine/core';
+import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User } from 'tabler-icons-react';
 import LightAndDarkModeButton from '@/components/LightDarkButton';
 
 
 export default function Configuration() {
   return (
-    <Popover width={300} trapFocus position="bottom" withArrow shadow="md">
-      <Popover.Target>
-      <ActionIcon component="a" variant="subtle" color="dark">
-      <Settings size="md" />
-      </ActionIcon>
-      </Popover.Target>
-      <Popover.Dropdown sx={(theme) => ({ background: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white })}>
-      <Stack>
-    <Group>
-      <Link href="/account" passHref>
-      <ActionIcon component="a" variant="default">
-      <User size="md" />
-      </ActionIcon>
-    </Link><Text>Mi cuenta</Text>
-    </Group>
-    <Group>
-      <ActionIcon component="a">
-      <LightAndDarkModeButton />
-      </ActionIcon><Text>Prender las luces</Text>
-    </Group>
-      </Stack>
-      </Popover.Dropdown>
-    </Popover>
+    <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
+      <Menu.Target>
+        <Button leftIcon={<Settings size={25} strokeWidth={2} />} variant="subtle" color="dark" style={{ fontSize:20}} />
+      </Menu.Target>
+
+      <Menu.Dropdown>
+        <Menu.Label>Opciones</Menu.Label>
+        <Menu.Item icon={<User size={25} />} component={NextLink} href="/account">Mi cuenta</Menu.Item>
+        <Menu.Item icon={<Settings size={25} />} component={NextLink} href="/ajustes">Ajustes</Menu.Item>
+        <Menu.Item icon={<Search size={25} />} rightSection={<Text size="xs" color="dimmed">Ctrl+K</Text>}>Buscar</Menu.Item>
+        <Menu.Divider />
+
+        <Menu.Label>Cuidado</Menu.Label>
+        <Menu.Item icon={<ArrowsLeftRight size={25} />}>Descargar mis datos</Menu.Item>
+        <Menu.Item color="red" icon={<Trash size={25} />}>Eliminar mi cuenta</Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
   );
 }

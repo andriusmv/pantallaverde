@@ -59,7 +59,7 @@ export default function App(props: AppProps) {
                 }}>
 
           <AppShell
-      padding="md"
+      padding="sm"
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       fixed

@@ -6,9 +6,9 @@ import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 
 import Button from 'components/ui/Button';
 import Input from 'components/ui/Input';
-import Logo from 'components/icons/Logo';
 import { updateUserName } from 'utils/supabase-client';
 import { User } from '@supabase/gotrue-js';
+import { Center } from '@mantine/core';
 
 const SignUp = () => {
   const [newUser, setNewUser] = useState<User | null>(null);
@@ -56,9 +56,9 @@ const SignUp = () => {
 
   return (
     <div className="flex justify-center height-screen-helper">
+    <Center>
       <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
         <div className="flex justify-center pb-12 ">
-          <Logo />
         </div>
         <form onSubmit={handleSignup} className="flex flex-col space-y-4">
           {message.content && (
@@ -107,7 +107,7 @@ const SignUp = () => {
             </Link>
           </span>
         </form>
-      </div>
+      </div></Center>
     </div>
   );
 };
