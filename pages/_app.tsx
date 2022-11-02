@@ -1,17 +1,19 @@
 import React from 'react';
-import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor } from '@mantine/core';
+import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor, Center } from '@mantine/core';
 import { useContext, useState } from 'react';
 
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
 import { AppProps } from 'next/app';
 import { MyUserContextProvider } from 'utils/useUser';
-import { Logo } from '@/components/icons/Logo';
+import { Logo, LogoSmall } from '@/components/icons/Logo';
 import Link from 'next/link';
 import Listado from '@/components/Listado';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import ProMode from '@/components/ProMode';
+import ProModeSmall from '@/components/ProModeSmall';
 import Configuration from '@/components/Configuration';
+import { Cast } from 'tabler-icons-react';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -58,47 +60,50 @@ export default function App(props: AppProps) {
                   }}
                 }}>
 
-          <AppShell
-      padding="sm"
-      navbarOffsetBreakpoint="sm"
-      asideOffsetBreakpoint="sm"
-      fixed
-/*      navbar={<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+        <AppShell
+            padding="sm"
+            navbarOffsetBreakpoint="sm"
+            asideOffsetBreakpoint="sm"
+            fixed
+            /*      navbar={<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
 
-              <Listado />
+                          <Listado />
 
-</Navbar>} */
-/*
-      footer={
-        <Footer height={60} p="md">
-          <Text>Created with ❤️ by <Anchor href="https://github.com/andriusmv">Andrés Moreno Vásquez</Anchor></Text>
-        </Footer> 
-      } */
-      header={<div><Header height={75} p="xl" sx={{ borderBottom: 0 }} >
-              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-              <Burger
-                opened={opened}
-                onClick={() => setOpened((o) => !o)}
-                size="xl"
-                color={theme.colors.gray[6]}
-                mr="xl"
-              />
- </MediaQuery>
- <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+            </Navbar>} */
+            
+                  /* footer={
+                    <Footer height={60} p="md">
+                      <Grid justify="space-between" align="center" >
+                      <Grid.Col span={2}><Text>Creado por <Link href="https://github.com/andriusmv" passHref><Anchor component="a">Andrés Moreno Vásquez</Anchor></Link></Text></Grid.Col>
+                      <Grid.Col span={2}><Group><Center><Configuration /></Center></Group></Grid.Col>
+                  </Grid>
+                    </Footer> 
+                  } */
+            header={
+            <div>
+              <Header height={75} p="xl" sx={{ borderBottom: 0 }} >
+                    <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                    <div>
+                    <Grid justify="space-between" align="center" >
+                      <Grid.Col span={2}><LogoSmall /></Grid.Col>
+                      <Grid.Col span={2}><Group><Center><Configuration /></Center></Group></Grid.Col>
+                  </Grid></div>
+                    </MediaQuery>
 
- <Grid justify="space-around" align="center" >
-  <Grid.Col span={2}><Link href="/"><Logo /></Link></Grid.Col>
-  <Grid.Col span={2}><Group><ProMode /><Configuration /></Group></Grid.Col>
- </Grid>
- </MediaQuery>
-
-      </Header></div>}
-      styles={(theme) => ({
-        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white },
-      })}
-    >
+                    <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+                  
+                    <Grid justify="space-around" align="center" >
+                      <Grid.Col span={2}><Link href="/"><Logo /></Link></Grid.Col>
+                      <Grid.Col span={2}><Group><Center><ProMode /><Configuration /></Center></Group></Grid.Col>
+                  </Grid>
+                  </MediaQuery>
+                </Header></div>}
+            styles={(theme) => ({
+              main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white },
+            })}
+          >
             <Component {...pageProps} />
-      </AppShell>
+        </AppShell>
             </MantineProvider>
             </ColorSchemeProvider>
         </MyUserContextProvider>

@@ -1,14 +1,12 @@
 import { NextLink } from '@mantine/next';
 import { Popover, Stack, ActionIcon, Text, Group, Menu, Button } from '@mantine/core';
 import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User } from 'tabler-icons-react';
-import LightAndDarkModeButton from '@/components/LightDarkButton';
-
 
 export default function Configuration() {
   return (
     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
       <Menu.Target>
-        <Button leftIcon={<Settings size={25} strokeWidth={2} />} variant="subtle" color="dark" style={{ fontSize:20}} />
+        <Button variant="subtle" color="dark" style={{ fontSize:20}}><Settings size={25} strokeWidth={2} /></Button>
       </Menu.Target>
 
       <Menu.Dropdown>

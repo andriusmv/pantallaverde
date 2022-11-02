@@ -20,14 +20,12 @@ export default function Home() {
       
       <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
       <Title order={1} align="center"
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos para <br/> emprendedores inmobiliarios 📚</Title>
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br/>para emprendedores<br/>inmobiliarios 📚</Title>
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología para tus proyectos
         </Text>
         <Space h="xl"/>
-        <Center><Image radius="lg" width={600} src="city-low-resol.png" alt="Inmobiliario"
-        withPlaceholder
-        placeholder={<Text align="center">Cargando imagen...</Text>}/></Center>
+        <Center><Image radius="lg" width={600} src="city-low-resol.png"/></Center>
         <Space h="xl"/>
         <Center><Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
@@ -77,13 +75,11 @@ Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas 
       <SimpleGrid cols={1}><Space h="xl"/>
       
       <Title size={30} align="center"
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos para<br/>emprendedores<br/>inmobiliarios 📚</Title>
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br/>para emprendedores<br/>inmobiliarios 📚</Title>
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología<br/>para tus proyectos
         </Text>
-        <Center><Image radius="md" width={300} src="city-low-resol.png" alt="Inmobiliario"
-        withPlaceholder
-        placeholder={<Text align="center">Cargando imagen...</Text>}/></Center>
+        <Center><Image radius="md" width={300} src="city-low-resol.png"/></Center>
         <Center>
         <Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>

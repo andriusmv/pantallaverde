@@ -1,12 +1,12 @@
 import React from 'react';
 import { Group, Button, Anchor } from '@mantine/core';
 
-export default function ProMode() {
+export default function ProModeSmall() {
 
   return (
     <Group position="center">
         <Anchor href="/pro">
-      <Button size="md" compact variant="outline" color="teal">Hacerse Pro</Button></Anchor>
+      <Button size="md" compact variant="outline" color="teal">Pro</Button></Anchor>
     </Group>
   );
 }
