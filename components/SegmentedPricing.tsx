@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Notification, Group } from '@mantine/core';
+import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Notification, Group, Select, Center } from '@mantine/core';
 import { CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -64,13 +64,13 @@ const useStyles = createStyles((theme, _params, getRef) => {
 
 const tabs = {
   month: [
-    { link: '', label: '€ 13' },
+    { link: '', label: '5', currency: '€' },
   ],
   year: [
-    { link: '', label: '€ 159' },
+    { link: '', label: '50' },
   ],
   lifetime: [
-    { link: '', label: '€ 300' },
+    { link: '', label: '100' },
   ],
 };
 
@@ -90,7 +90,8 @@ export function SegmentedPricing() {
         setActive(item.label);
       }}
     >
-      <span>{item.label}</span>
+      <Text>{item.label}</Text>
+      
     </a>
 
   ));
@@ -110,19 +111,30 @@ export function SegmentedPricing() {
         </Text>
         <Space h="xl" />
 
-        <SegmentedControl
-          value={section}
-          onChange={(value: 'month' | 'year' | 'lifetime') => setSection(value)}
-          transitionTimingFunction="ease"
-          
-          data={[
-            { label: 'Mensualidad', value: 'month' },
-            { label: 'Anualidad', value: 'year' },
-            { label: 'Un solo pago', value: 'lifetime' },
-          ]}
-        />
 
-        {links}
+        
+        <Center inline>
+          {links}
+          <Select
+      label="Moneda"
+      placeholder="Moneda"
+      data={[
+        { value: 'euro', label: 'EUR euro €' },
+        { value: 'dólar', label: 'USD dólar $' }
+      ]}
+      defaultValue='euro'
+    /></Center><br/>
+      <SegmentedControl
+        value={section}
+        onChange={(value: 'month' | 'year' | 'lifetime') => setSection(value)}
+        transitionTimingFunction="ease"
+        color="teal" 
+        data={[
+          { label: 'Mensualidad', value: 'month' },
+          { label: 'Anualidad', value: 'year' },
+          { label: 'Un solo pago', value: 'lifetime' },
+        ]}
+      />
         <NumberInput
               defaultValue={1}
               placeholder="usuarios"

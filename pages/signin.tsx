@@ -10,7 +10,7 @@ import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
 import { Anchor, Group, Paper, Space, Text, Title, Center } from '@mantine/core'
-import { BrandGithub, BrandGoogle } from 'tabler-icons-react'
+import { BrandGithub, BrandGoogle, Key } from 'tabler-icons-react'
 
 
 
@@ -67,10 +67,11 @@ const SignIn = () => {
 
     return (
       <div>
+        <Space h={100} />
         <Center>
         <Paper shadow="md" p="md" withBorder>
           
-            <Title id="pleasesignin">Inicia Sesión 👀</Title>
+            <Title id="pleasesignin" order={2}>Inicia Sesión <Key /></Title>
             <Space h="xl" />
           <div>              
 
@@ -143,7 +144,8 @@ const SignIn = () => {
                   setShowPasswordInput(!showPasswordInput);
                   setMessage({});
                 }}
-              ><Text>
+              >
+                <Text>
                 {`... o ingresa tu  ${
                   showPasswordInput ? 'link mágico' : 'contraseña'
                 }.`}</Text>

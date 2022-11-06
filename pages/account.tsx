@@ -5,7 +5,7 @@ import LoadingDots from 'components/ui/LoadingDots';
 import Button from 'components/ui/Button';
 import { useUser } from 'utils/useUser';
 import { postData } from 'utils/helpers';
-import { Text } from '@mantine/core';
+import { Center, SimpleGrid, Space, Text } from '@mantine/core';
 import { Avatar } from '@mantine/core';
 
 
@@ -20,13 +20,13 @@ interface Props {
 
 function Card({ title, description, footer, children }: Props) {
   return (
-    <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
-      <div className="px-5 py-4">
-        <h3 className="text-2xl mb-1 font-medium">{title}</h3>
-        <p className="text-zinc-300">{description}</p>
+    <div>
+      <div>
+        <h3>{title}</h3>
+        <p>{description}</p>
         {children}
       </div>
-      <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+      <div>
         {footer}
       </div>
     </div>
@@ -61,30 +61,32 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   return (
-    <section className="bg-black mb-32">
-      <div className="max-w-6xl mx-auto pt-8 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+    <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
+      <Center>
+      <div>
+        <div>
+          <h1>
             Tu cuenta
           </h1>
       <div>
         <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
+        {user ? user.email : undefined}
       </div>
         </div>
-        <div className="text-xl mt-8 mb-4 font-semibold">
+        <div>
             {userDetails ? (
               `${
                 userDetails.full_name ??
                 `${userDetails.first_name} ${userDetails.last_name}`
               }`
             ) : (
-              <div className="h-8 mb-6">
+              <div>
                 <LoadingDots />
               </div>
             )}
           </div>
       </div>
-      <div className="p-4">
+      <div>
         <Card
           title="Your Plan"
           description={
@@ -93,8 +95,8 @@ export default function Account({ user }: { user: User }) {
               : ''
           }
           footer={
-            <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-              <p className="pb-4 sm:pb-0">
+            <div>
+              <p>
                 Administra tu suscripción en Stripe.
               </p>
               <Button
@@ -108,50 +110,21 @@ export default function Account({ user }: { user: User }) {
             </div>
           }
         >
-          <div className="text-xl mt-8 mb-4 font-semibold">
+          <div>
             {isLoading ? (
-              <div className="h-12 mb-6">
+              <div>
                 <LoadingDots />
               </div>
             ) : subscription ? (
               `${subscriptionPrice}/${subscription?.prices?.interval}`
             ) : (
               <Link href="/pro">
-                <Text>Escoge tu plan</Text>
+                <Button>Escoge tu plan</Button>
               </Link>
             )}
           </div>
-        </Card>
-        <Card
-          title="Your Name"
-          description="Please enter your full name, or a display name you are comfortable with."
-          footer={<p>Please use 64 characters at maximum.</p>}
-        >
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? (
-              `${
-                userDetails.full_name ??
-                `${userDetails.first_name} ${userDetails.last_name}`
-              }`
-            ) : (
-              <div className="h-8 mb-6">
-                <LoadingDots />
-              </div>
-            )}
-          </div>
-                    
-        </Card>
-        <Card
-          title="Your Email"
-          description="Please enter the email address you want to use to login."
-          footer={<p>Te enviaremos un email para confirmar los cambios.</p>}
-        >
-          <p className="text-xl mt-8 mb-4 font-semibold">
-            {user ? user.email : undefined}
-          </p>
-        </Card>
-
-      </div>
-    </section>
+        </Card></div>
+        </Center>
+    </SimpleGrid>
   );
 }
