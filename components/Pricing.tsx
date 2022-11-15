@@ -13,7 +13,7 @@ interface Props {
   products: ProductWithPrice[];
 }
 
-type BillingInterval = 'year' | 'month' | 'one-time';
+type BillingInterval = 'year' | 'month' | 'One-time';
 type SubscriptionQuantity = '1' | '2' | '3';
 
 export default function Pricing({ products }: Props) {
@@ -73,7 +73,7 @@ export default function Pricing({ products }: Props) {
   return (
     <section>
       <div>
-          {/* <div>
+           <div>
             <button
               onClick={() => setBillingInterval('month')}
               type="button"
@@ -83,7 +83,7 @@ export default function Pricing({ products }: Props) {
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
-              Monthly billing
+              Mensualidad
             </button>
             <button
               onClick={() => setBillingInterval('year')}
@@ -94,18 +94,18 @@ export default function Pricing({ products }: Props) {
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
-              Yearly billing
+              Anualidad
             </button>
             <button
-              onClick={() => setBillingInterval('one-time')}
+              onClick={() => setBillingInterval('One-time')}
               type="button"
               className={`${
-                billingInterval === 'one-time'
+                billingInterval === 'One-time'
                   ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
-              One-time billing
+              Un sólo pago
             </button>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function Pricing({ products }: Props) {
               </div>
             );
           })}
-         */}
+         
          </div>
       <SegmentedPricing />
       
