@@ -109,39 +109,32 @@ export default function Pricing({ products }: Props) {
             </button>
           </div>
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+        <div>
           {products.map((product) => {
             const price = product?.prices?.find(
               (price) => price.interval === billingInterval
-            );
-            if (!price) return null;
-            const priceString = new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency: price.currency,
-              minimumFractionDigits: 0
-            }).format((price?.unit_amount || 0) / 100);
-            return (
-              <div
+              );
+              if (!price) return null;
+              const priceString = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: price.currency,
+                minimumFractionDigits: 0
+              }).format((price?.unit_amount || 0) / 100);
+              return (
+                <div
                 key={product.id}
-                className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
-                  {
-                    'border border-pink-500': subscription
-                      ? product.name === subscription?.prices?.products?.name
-                      : product.name === 'Pro'
-                  }
-                )}
+                
               >
-                <div className="p-6">
-                  <h2 className="text-2xl leading-6 font-semibold text-white">
+                <div>
+                  <h2>
                     {product.name}
                   </h2>
-                  <p className="mt-4 text-zinc-300">{product.description}</p>
-                  <p className="mt-8">
-                    <span className="text-5xl font-extrabold white">
+                  <p>{product.description}</p>
+                  <p>
+                    <span>
                       {priceString}
                     </span>
-                    <span className="text-base font-medium text-zinc-100">
+                    <span>
                       /{billingInterval}
                     </span>
                   </p>
@@ -154,8 +147,8 @@ export default function Pricing({ products }: Props) {
                     className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
                   >
                     {product.name === subscription?.prices?.products?.name
-                      ? 'Manage'
-                      : 'Subscribe'}
+                      ? 'Administrar'
+                      : 'Inscribirme'}
                   </Button>
                 </div>
               </div>
