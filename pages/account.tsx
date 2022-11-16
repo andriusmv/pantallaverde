@@ -62,7 +62,7 @@ export default function Account({ user }: { user: User }) {
 
   return (
     <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
-      <Center>
+      
       <div>
         <div>
           <h1>
@@ -124,7 +124,7 @@ export default function Account({ user }: { user: User }) {
             )}
           </div>
         </Card></div>
-        </Center>
+        
     </SimpleGrid>
   );
 }

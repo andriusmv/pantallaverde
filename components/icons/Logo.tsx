@@ -35,7 +35,7 @@ export function LogoSmall() {
     <>
     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400} withArrow>
       <Menu.Target>
-        <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA<br/>VERDE</Button>
+        <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:15}}>PANTALLA<br/>VERDE</Button>
       </Menu.Target>
 
       <Menu.Dropdown>
