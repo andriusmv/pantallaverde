@@ -1,12 +1,12 @@
 import { NextLink } from '@mantine/next';
-import { Popover, Stack, ActionIcon, Text, Group, Menu, Button } from '@mantine/core';
-import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User } from 'tabler-icons-react';
+import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger } from '@mantine/core';
+import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
 
 export default function Configuration() {
   return (
     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
       <Menu.Target>
-        <Button variant="subtle" color="dark" style={{ fontSize:20}}><Settings size={25} strokeWidth={2} /></Button>
+        <Button variant="subtle" color="dark" style={{ fontSize:20}}><Menu2 size={25} strokeWidth={2} /></Button>
       </Menu.Target>
 
       <Menu.Dropdown>

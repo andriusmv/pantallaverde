@@ -84,19 +84,11 @@ export default function App(props: AppProps) {
               <Header height={75} p="xl" sx={{ borderBottom: 0 }} >
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                     <div>
-                    <Grid justify="space-between" align="center" >
-                      <Grid.Col span={2}><LogoSmall /></Grid.Col>   
-                      <Grid.Col span={1}><Burger size="md" color="teal"
-      opened={opened}
-      onClick={() => setOpened((o) => !o)}
-      
-    /></Grid.Col>
-                      <Grid.Col span={2}><Group><Center><Burger size="md" color="teal"
-      opened={opened}
-      onClick={() => setOpened((o) => !o)}
-      
-    /></Center></Group></Grid.Col>
-                  </Grid></div>
+                    <SimpleGrid cols={3}>
+                      <div><Configuration /></div>   
+                      <div><Group><Center><LogoSmall /></Center></Group></div>
+                      
+                  </SimpleGrid></div>
                     </MediaQuery>
 
                     <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
