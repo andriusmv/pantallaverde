@@ -1,11 +1,12 @@
 import React from 'react';
 import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor, Center } from '@mantine/core';
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { UserProvider } from '@supabase/supabase-auth-helpers/react';
-import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { AppProps } from 'next/app';
 import { MyUserContextProvider } from 'utils/useUser';
+import type { Database } from 'types_db';
 import { Logo, LogoSmall } from '@/components/icons/Logo';
 import Link from 'next/link';
 import Listado from '@/components/Listado';
@@ -16,6 +17,12 @@ import Configuration from '@/components/Configuration';
 import { Cast } from 'tabler-icons-react';
 
 export default function App(props: AppProps) {
+  const [supabaseClient] = useState(() =>
+  createBrowserSupabaseClient<Database>()
+);
+useEffect(() => {
+  document.body.classList?.remove('loading');
+}, []);
   const { Component, pageProps } = props;
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
@@ -34,8 +41,8 @@ export default function App(props: AppProps) {
   return (
     <div>
       
-      <UserProvider supabaseClient={supabaseClient}>
-        <MyUserContextProvider supabaseClient={supabaseClient}>
+      <SessionContextProvider supabaseClient={supabaseClient}>
+        <MyUserContextProvider>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
         withGlobalStyles
@@ -108,7 +115,7 @@ export default function App(props: AppProps) {
             </MantineProvider>
             </ColorSchemeProvider>
         </MyUserContextProvider>
-      </UserProvider>
-    </div>
+        </SessionContextProvider>
+            </div>
   );
 }

@@ -5,11 +5,10 @@ import LoadingDots from 'components/ui/LoadingDots';
 import Button from 'components/ui/Button';
 import { useUser } from 'utils/useUser';
 import { postData } from 'utils/helpers';
+import { User } from '@supabase/supabase-js';
+import { withPageAuth } from '@supabase/auth-helpers-nextjs';
 import { Center, SimpleGrid, Space, Text } from '@mantine/core';
 import { Avatar } from '@mantine/core';
-
-
-import { withAuthRequired, User } from '@supabase/supabase-auth-helpers/nextjs';
 
 interface Props {
   title: string;
