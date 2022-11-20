@@ -32,7 +32,7 @@ function Card({ title, description, footer, children }: Props) {
   );
 }
 
-export const getServerSideProps = withAuthRequired({ redirectTo: '/signin' });
+export const getServerSideProps = withPageAuth({ redirectTo: '/signin' });
 
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
@@ -60,8 +60,8 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   return (
+    <Center>
     <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
-      
       <div>
         <div>
           <h1>
@@ -124,6 +124,6 @@ export default function Account({ user }: { user: User }) {
           </div>
         </Card></div>
         
-    </SimpleGrid>
+    </SimpleGrid></Center>
   );
 }
