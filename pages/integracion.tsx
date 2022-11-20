@@ -5,7 +5,6 @@ import { Check, Drone } from 'tabler-icons-react';
 import { useRef } from 'react';
 import { useFullscreen } from '@mantine/hooks';
 import Checkprogress from '@/components/Checkprogress';
-import AuthCheck from '@/components/AuthCheck';
 
 const opts = {
     height: "390",
