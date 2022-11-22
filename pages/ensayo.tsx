@@ -5,19 +5,35 @@ import { supabase } from '@/utils/supabase-client';
 import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import { Title, Text, Space, Accordion } from '@mantine/core';
+import { Title, Text, Space, Accordion, Center, SimpleGrid, Navbar, Anchor } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
+import { chunk } from "lodash";
+import toursvirtuales from './toursvirtuales';
+import { randomId } from "@mantine/hooks";
+
 
 
 interface EnsayoProps {
     toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
 }
 
+const data = chunk(
+    Array(9)
+      .fill(0)
+      .map((_, index) => ({ id: index, name: randomId() })),
+    5
+  );
 
 
 export default function Ensayo({ toursvirtuales }: EnsayoProps) {
     return (
         <div>
+        {/* <Navbar height={600} p="xs" width={{ base: 300 }}>
+            This is the Navbar
+            <Anchor href="/">Home</Anchor>
+        </Navbar> */}
+            <Center>
+                <SimpleGrid cols={1}>
             {toursvirtuales.map((toursvirtuales: {
                 description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
                 id: Key | null | undefined;
@@ -28,7 +44,7 @@ export default function Ensayo({ toursvirtuales }: EnsayoProps) {
                 <Space h='xl' />
                 <ReactPlayer url={toursvirtuales.video_url} />
                 <Space h='xl' />
-                <Accordion variant="contained">
+                <Accordion variant="separated" >
                   <Accordion.Item value="Descripción">
                    <Accordion.Control icon={<ClipboardText size={20} color='teal' />}>
                     Descripción de la lección en texto e imágenes
@@ -40,7 +56,7 @@ export default function Ensayo({ toursvirtuales }: EnsayoProps) {
                 </Accordion>
                 </>
             ))}
-        </div>
+        </SimpleGrid></Center></div>
     );
 }
 

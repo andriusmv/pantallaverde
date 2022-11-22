@@ -9,21 +9,8 @@ export function Logo() {
 
   return (
     <>
-    <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400} withArrow>
-      <Menu.Target>
-        <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA VERDE</Button>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        
-        <Menu.Item component={NextLink} href="/cursos">Cursos actuales</Menu.Item>
-        <Menu.Item component={NextLink} href="/servicios">Servicio consultoría</Menu.Item>
-        <Menu.Item component={NextLink} color="teal" href="/soporte">Ayuda o soporte</Menu.Item>
-
-        <Menu.Divider />
-        <Menu.Item component={NextLink} href="/">Volver al inicio</Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
+      <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA VERDE</Button>
+      
     </>
   );
 }
@@ -33,21 +20,9 @@ export function LogoSmall() {
 
   return (
     <>
-    <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400} withArrow>
-      <Menu.Target>
+    
         <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:15}}>PANTALLA<br/>VERDE</Button>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        
-        <Menu.Item component={NextLink} href="/cursos">Cursos actuales</Menu.Item>
-        <Menu.Item component={NextLink} href="/servicios">Servicio consultoría</Menu.Item>
-        <Menu.Item component={NextLink} color="teal" href="/soporte">Ayuda o soporte</Menu.Item>
-
-        <Menu.Divider />
-        <Menu.Item component={NextLink} href="/">Volver al inicio</Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
+   
     </>
   );
 }
