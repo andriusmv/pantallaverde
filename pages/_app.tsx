@@ -42,7 +42,7 @@ useEffect(() => {
     <div>
       
       <SessionContextProvider supabaseClient={supabaseClient}>
-        <MyUserContextProvider>
+        <MyUserContextProvider supabaseClient={supabaseClient}>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
         withGlobalStyles
