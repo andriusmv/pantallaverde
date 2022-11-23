@@ -9,8 +9,8 @@ export function Logo() {
 
   return (
     <>
-      <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA VERDE</Button>
-      
+      <Link href="/"><Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:20}}>PANTALLA VERDE</Button>
+      </Link>
     </>
   );
 }
@@ -20,9 +20,9 @@ export function LogoSmall() {
 
   return (
     <>
-    
+    <Link href="/">
         <Button leftIcon={<Cast size={25} strokeWidth={3} />} variant="subtle" color="dark" style={{ fontSize:15}}>PANTALLA<br/>VERDE</Button>
-   
+        </Link>
     </>
   );
 }

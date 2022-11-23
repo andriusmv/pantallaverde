@@ -24,6 +24,7 @@ const SignIn = () => {
   const router = useRouter();
   const user = useUser();
   const supabaseClient = useSupabaseClient();
+  
   const handleSignin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -214,9 +215,9 @@ const SignIn = () => {
     );
 
   return (
-    <div className="m-6">
+    <Center>
       <LoadingDots />
-    </div>
+    </Center>
   );
 };
 

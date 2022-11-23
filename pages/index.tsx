@@ -2,17 +2,17 @@ import Pricing from 'components/Pricing';
 import { getActiveProductsWithPrices } from 'utils/supabase-client';
 import { Product } from 'types';
 import { GetStaticPropsResult } from 'next';
-import { Container, Paper, Title, Text, Image, SimpleGrid, Space, Button, MediaQuery, Group, Grid, BackgroundImage, Box, Center, Stack } from '@mantine/core';
+import { Container, Paper, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Grid, Loader, Box, Center, Stack } from '@mantine/core';
 import Avatars from '@/components/Avatars';
 import SpanishSpeaking from 'components/SpanishSpeaking';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Props {
   products: Product[];
 }
 
 export default function Home() {
-  
   return (
     <main>
       <MediaQuery
@@ -25,7 +25,11 @@ export default function Home() {
           Inyecciones de tecnología para tus proyectos
         </Text>
         <Space h="xl"/>
-        <Center><Image radius="lg" width={600} src="city-low-resol.png"/></Center>
+        <Center><Box       sx={(theme) => ({
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+        textAlign: 'center',
+        borderRadius: theme.radius.md
+      })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" /></Box></Center>
         <Space h="xl"/>
         <Center><Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
@@ -79,7 +83,7 @@ Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas 
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología<br/>para tus proyectos
         </Text>
-        <Center><Image radius="md" width={300} src="city-low-resol.png"/></Center>
+        <Center><Container><Image src="/city-low-resol.png" width={400} height={225} /></Container></Center>
         <Center>
         <Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
