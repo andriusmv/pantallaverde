@@ -1,49 +1,47 @@
-import Link from 'next/link';
-import { useUser } from '@/utils/useUser';
 import { GetStaticProps } from 'next'
 import { supabase } from '@/utils/supabase-client';
-import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
+import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal, useState } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import { Title, Text, Space, Accordion, Center, SimpleGrid, Navbar, Anchor } from '@mantine/core';
+import { Title, Text, Space, Accordion, Pagination, MediaQuery, Anchor, Aside } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
-import { chunk } from "lodash";
-import toursvirtuales from './toursvirtuales';
-import { randomId } from "@mantine/hooks";
+import { usePagination } from '@mantine/hooks';
 
-
-interface EnsayoProps {
+interface toursvirtualesProps {
     toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
-}
-
-const data = chunk(
-    Array(9)
-      .fill(0)
-      .map((_, index) => ({ id: index, name: randomId() })),
-    5
-  );
+    }
 
 
-export default function Ensayo({ toursvirtuales }: EnsayoProps) {
+export default function toursvirtuales({ toursvirtuales }: toursvirtualesProps) {
+  
+  const [activePage, setPage] = useState(1);
+
+  
+
     return (
+      <>
+         {/* <div>
+        <Pagination  position="center" page={activePage} onChange={setPage} total={10} color="teal" withEdges /> 
+        </div> */}
         <div>
-        {/* <Navbar height={600} p="xs" width={{ base: 300 }}>
-            This is the Navbar
-            <Anchor href="/">Home</Anchor>
-        </Navbar> */}
-            <Center>
-                <SimpleGrid cols={1}>
-            {toursvirtuales.map((toursvirtuales: {
-                description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
-                id: Key | null | undefined;
-                title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
-                video_url: string;}) => (
+        
+        <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+                <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+        {toursvirtuales.map((toursvirtuales) => (
+                <>
+                <Text key={toursvirtuales.id}>{toursvirtuales.title}</Text></>))}
+      </Aside>
+              </MediaQuery>
+              
+        </div>
+        <div>
+            {toursvirtuales.map((toursvirtuales) => (
                 <>
                 <Title key={toursvirtuales.id}>{toursvirtuales.title}</Title>
                 <Space h='xl' />
                 <ReactPlayer url={toursvirtuales.video_url} />
                 <Space h='xl' />
-                <Accordion variant="separated" >
+                <Accordion variant="contained">
                   <Accordion.Item value="Descripción">
                    <Accordion.Control icon={<ClipboardText size={20} color='teal' />}>
                     Descripción de la lección en texto e imágenes
@@ -54,8 +52,11 @@ export default function Ensayo({ toursvirtuales }: EnsayoProps) {
                     </Accordion.Item>
                 </Accordion>
                 </>
+
+
             ))}
-        </SimpleGrid></Center></div>
+                    </div></>
+
     );
 }
 
@@ -67,5 +68,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             toursvirtuales,
         },
-    };
+    }; 
+
+
+    
 };
+

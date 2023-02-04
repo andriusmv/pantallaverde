@@ -2,9 +2,9 @@ import Pricing from 'components/Pricing';
 import { getActiveProductsWithPrices } from 'utils/supabase-client';
 import { Product } from 'types';
 import { GetStaticPropsResult } from 'next';
-import { Container, Paper, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Grid, Loader, Box, Center, Stack } from '@mantine/core';
+import { Container, Paper, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Grid, Loader, Box, Center, Stack, Card, Badge } from '@mantine/core';
 import Avatars from '@/components/Avatars';
-import SpanishSpeaking from 'components/SpanishSpeaking';
+import { CardsServices } from 'components/CardsServices';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -34,7 +34,7 @@ export default function Home() {
         <Center><Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
         <Space />
-        <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
+        <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
         </Group></Center>
         <Container size="xs" px="xs">
         <Space h="xl"/><Space h="xl"/>
@@ -55,7 +55,7 @@ Y es que por más que lo intentes, siempre va a surgir algo más. Ya no se trata
         </Text>
         <Space h="xl"/>
         <Text size='xl' weight={400} align="-moz-initial">
-Esas noticias que ves por ahí sobre inteligencia artificial, robots y nuevas cosas, te llaman la atención pero sabes 
+Esas noticias que ves por ahí sobre inteligencia artificial, robots y cosas nuevas, te llaman la atención pero sabes 
 que no tienes tiempo para aprender una cosa más. Si pudieras inyectártelas de una sola vez como en la 
 Matrix lo harías, pero no sabes cómo... hasta hoy.
         </Text>
@@ -68,7 +68,8 @@ lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias.
         <Text size='xl' weight={400} align="-moz-initial">
 Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más.
         </Text>
-        <Space h="xl"/>     
+        <Space h="lg"/><Space h="lg"/>    
+        <CardsServices />
       </Container>
       </SimpleGrid>
         </MediaQuery>
@@ -88,7 +89,7 @@ Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas 
         <Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
         <Space />
-        <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
+        <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
         </Group></Center>
       <Space h="xl"/>
 
@@ -111,7 +112,7 @@ Y es que por más que lo intentes, siempre va a surgir algo más. Ya no se trata
         </Text>
         <Space h="md"/>
         <Text size='md' weight={400} align="-moz-initial">
-Esas noticias que ves por ahí sobre inteligencia artificial, robots y nuevas cosas, te llaman la atención pero sabes 
+Esas noticias que ves por ahí sobre inteligencia artificial, robots y cosas nuevas, te llaman la atención pero sabes 
 que no tienes tiempo para aprender una cosa más. Si pudieras inyectártelas de una sola vez como en la 
 Matrix lo harías, pero no sabes cómo... hasta hoy.
         </Text>
@@ -124,8 +125,9 @@ lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias.
         <Text size='md' weight={400} align="-moz-initial">
 Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más.
         </Text>
-        <Space h="md"/>     
-      </Container>
+        <Space h="lg"/>
+        <CardsServices />
+          </Container>
       </SimpleGrid>
         </MediaQuery>
 

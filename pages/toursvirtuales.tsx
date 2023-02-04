@@ -1,77 +1,69 @@
-import { GetStaticProps } from 'next'
+import Link from "next/link";
 import { supabase } from '@/utils/supabase-client';
 import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal, useState } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import { Title, Text, Space, Accordion, Pagination, MediaQuery, Anchor, Aside } from '@mantine/core';
+import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center, Group, Grid, Col } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
-import { usePagination } from '@mantine/hooks';
+import { FeaturesToursVirtuales } from '@/components/FeaturesToursVirtuales';
 
 
-interface toursvirtualesProps {
-    toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
-    }
+export default function toursvirtuales() {
 
-
-export default function toursvirtuales({ toursvirtuales }: toursvirtualesProps) {
-  
-  const [activePage, setPage] = useState(1);
-
-  
+const problemaToursVirtuales = "> ¿Quieres aprender a crear tus propios recorridos virtuales? <";
+const tituloToursVirtuales = "Curso Tours Virtuales";
+const subtituloToursVirtuales1 = "Desde cuál cámara comprar hasta tu primer recorrido 360° en la web.";
+const subtituloToursVirtuales2 = "Todo lo que necesitas para vender tu servicio de recorridos interactivos.";
 
     return (
-      <>
-         <div>
-         <Pagination  position="center" page={activePage} onChange={setPage} total={10} color="teal" withEdges />
-        </div>
+        <main>
+        <MediaQuery
+         smallerThan="sm" styles={{ display: 'none' }}>
+        <SimpleGrid cols={1} spacing="xl">
         <div>
+        <Space h="lg" />    
+        <Text italic align="center" sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.colors.gray[3] : theme.black })}>
+            {problemaToursVirtuales}
+            </Text>
+        <Title order={1} align="center" size={80}
+        sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>{tituloToursVirtuales}</Title>
+        <Text size={24} weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
+            {subtituloToursVirtuales2}<br/>{subtituloToursVirtuales1}
+          </Text></div>
+          
+          <div>
+          <Center>
+            <Image width={400} height={225} radius="lg" src="/unit-min.png" />
+          </Center>
+          </div>
+          <Center>
+          <Link href="/pro"><Button color="teal" size="xl">Comenzar</Button></Link>
+          </Center>
+          <Space h="lg" />
+          
+          </SimpleGrid>
+
+    </MediaQuery>
+          
+    <Container size={1000} px={10}>
+      <FeaturesToursVirtuales />
+      
+    </Container>  
+    <Center>
+        <ReactPlayer url="https://youtu.be/d6hWcz0UH8c"/>
+    </Center>
+  
+    <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
         
-        <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-                <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-        {toursvirtuales.map((toursvirtuales) => (
-                <>
-                <Text key={toursvirtuales.id}>{toursvirtuales.title}</Text></>))}
-      </Aside>
-              </MediaQuery>
-              
-        </div>
-        <div>
-            {toursvirtuales.map((toursvirtuales) => (
-                <>
-                <Title key={toursvirtuales.id}>{toursvirtuales.title}</Title>
-                <Space h='xl' />
-                <ReactPlayer url={toursvirtuales.video_url} />
-                <Space h='xl' />
-                <Accordion variant="contained">
-                  <Accordion.Item value="Descripción">
-                   <Accordion.Control icon={<ClipboardText size={20} color='teal' />}>
-                    Descripción de la lección en texto e imágenes
-                    </Accordion.Control>
-                    <Accordion.Panel>
-                    <Text>{toursvirtuales.description}</Text>
-                    </Accordion.Panel>
-                    </Accordion.Item>
-                </Accordion>
-                </>
-
-
-            ))}
-                    </div></>
-
+        <SimpleGrid cols={1}><Space h="xl"/>
+        
+        
+        </SimpleGrid>
+          </MediaQuery>
+  
+  
+        
+        
+      </main>
     );
-}
-
-
-export const getStaticProps: GetStaticProps = async (context) => {
-    const { data: toursvirtuales } = await supabase.from("toursvirtuales").select("*")
-    
-    return {
-        props: {
-            toursvirtuales,
-        },
-    }; 
-
-
-    
-};
-
+  }
