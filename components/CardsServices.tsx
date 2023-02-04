@@ -72,7 +72,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/Suzzane.jpg"
+    src="/Suzzane.png"
     alt="Blender"
     />
 </Card.Section>
