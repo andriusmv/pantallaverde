@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useFullscreen } from '@mantine/hooks';
 import Checkprogress from '@/components/Checkprogress';
 
+
 const opts = {
     height: "390",
     width: "640",

@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player/lazy'
 import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center, Group, Grid, Col } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
 import { FeaturesToursVirtuales } from '@/components/FeaturesToursVirtuales';
-
+import FaqToursVirtuales from '@/components/FaqToursVirtuales';
 
 export default function toursvirtuales() {
 
@@ -37,7 +37,7 @@ const subtituloToursVirtuales2 = "Todo lo que necesitas para vender tu servicio 
           </Center>
           </div>
           <Center>
-          <Link href="/pro"><Button color="teal" size="xl">Comenzar</Button></Link>
+          <Link href="/pro"><Button variant="outline" color="teal" size="xl">Comenzar</Button></Link>
           </Center>
           <Space h="lg" />
           
@@ -52,6 +52,7 @@ const subtituloToursVirtuales2 = "Todo lo que necesitas para vender tu servicio 
     <Center>
         <ReactPlayer url="https://youtu.be/d6hWcz0UH8c"/>
     </Center>
+        <FaqToursVirtuales />
   
     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
         

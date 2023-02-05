@@ -1,5 +1,5 @@
 import { NextLink } from '@mantine/next';
-import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger } from '@mantine/core';
+import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger, Modal } from '@mantine/core';
 import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
 
 export default function Configuration() {

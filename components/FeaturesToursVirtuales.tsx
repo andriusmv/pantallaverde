@@ -1,5 +1,6 @@
-import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col, Avatar, Space } from '@mantine/core';
-import { Clock2, Lock, CircleDotted, DevicesPc } from 'tabler-icons-react';
+import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col, Avatar, Space, Group } from '@mantine/core';
+import Link from 'next/link';
+import { Home2, Lock, DevicesPc, Photo, Download, ThreeDCubeSphere } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -18,26 +19,26 @@ const useStyles = createStyles((theme) => ({
 
 const features = [
   {
-    icon: Clock2,
-    title: 'Rápido y al grano',
-    description: 'All packages are published under MIT license, you can use Mantine in any project',
+    icon: ThreeDCubeSphere,
+    title: 'El formato 360°',
+    description: 'Qué es una foto 360°, un render 360° y en qué sectores se están aplicando. Cómo sacar provecho de esto.',
+  },
+  {
+    icon: Home2,
+    title: 'Preparar el sitio',
+    description: 'Qué equipo seleccionar y qué tener en cuenta a la hora de realizar una visita. Cómo adecuar el sitio previo a realizar la toma de imágenes.',
+  },
+  {
+    icon: Photo,
+    title: 'Realizar las tomas',
+    description:
+      'Cómo realizar las tomas 360° en cada espacio. Tipos de tomas y cómo se articulan.',
   },
   {
     icon: DevicesPc,
-    title: 'Con tus herramientas',
-    description: 'Build type safe applications, all components and hooks export types',
-  },
-  {
-    icon: CircleDotted,
-    title: 'Actualización continua',
+    title: 'Procesamiento y edición',
     description:
-      'With new :focus-visible selector focus ring will appear only when user navigates with keyboard',
-  },
-  {
-    icon: Lock,
-    title: 'Personal y privado',
-    description:
-      'Customize colors, spacing, shadows, fonts and many other settings with global theme object',
+      '¿Cómo subir a la nube y qué software (Saas) utilizar dependiendo del presupuesto? ¿Qué editar de cada fotografía?',
   },
 ];
 
@@ -74,7 +75,11 @@ export function FeaturesToursVirtuales() {
             cómo agruparlas en un recorrido y cómo publicarlo en una plataforma web.
           </Text>
           <Space h="lg" />
+          <Group>
           <Avatar src="amv.jfif" alt="Instructor Andres Moreno Vasquez" size="lg" radius="xl" />
+          <Link href="https://drive.google.com/file/d/1cC9jWuapmiOc-MP1p0V9y4z5LfGPaaM3/view?usp=sharing">
+            <Button color="gray" rightIcon={<Download size={14} />}>Contenido del curso PDF</Button>
+          </Link></Group>
         </Col>
         <Col span={12} md={7}>
           <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
