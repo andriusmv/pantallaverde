@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player/lazy'
 import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center } from '@mantine/core';
 import { FeaturesToursVirtuales } from '@/components/FeaturesToursVirtuales';
 import FaqToursVirtuales from '@/components/FaqToursVirtuales';
-import { GoBack } from "@/components/goBack";
+import { GoBack } from "@/components/GoBack";
 
 export default function toursvirtuales() {
 
