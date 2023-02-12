@@ -20,29 +20,29 @@ const useStyles = createStyles((theme) => ({
 const features = [
   {
     icon: ThreeDCubeSphere,
-    title: 'El formato 360°',
-    description: 'Qué es una foto 360°, un render 360° y en qué sectores se están aplicando. Cómo sacar provecho de esto.',
+    title: 'El Efecto Chroma',
+    description: 'Lo que se conoce como "pantalla verde". Aprenderás a reemplazar un color sólido de fondo en video usando un editor de video.',
   },
   {
     icon: Home2,
-    title: 'Preparar el sitio',
-    description: 'Qué equipo seleccionar y qué tener en cuenta a la hora de realizar una visita. Cómo adecuar el sitio previo a realizar la toma de imágenes.',
+    title: 'Camera Tracking',
+    description: 'Traqueo de cámara con Blender con puntos de referencia. Integrarás modelos 3d en videos reales tomados con tu dron.',
   },
   {
     icon: Photo,
     title: 'Realizar las tomas',
     description:
-      'Cómo realizar las tomas 360° en cada espacio. Tipos de tomas y cómo se articulan.',
+      'Cómo realizar las tomas con tu dron para que se integren correctamente con tu modelo 3d. Cómo te desplazarte con tu dron.',
   },
   {
     icon: DevicesPc,
     title: 'Procesamiento y edición',
     description:
-      '¿Cómo subir a la nube y qué software (Saas) utilizar dependiendo del presupuesto? ¿Qué editar de cada fotografía?',
+      '¿Cómo hacer la edición de video y publicar tu video finalizado?¿Cómo usar un editor de video desde cero?',
   },
 ];
 
-export function FeaturesToursVirtuales() {
+export function FeaturesIntegracion() {
   const { classes } = useStyles();
 
   const items = features.map((feature) => (
@@ -68,20 +68,21 @@ export function FeaturesToursVirtuales() {
       <Grid gutter={80}>
         <Col span={12} md={5}>
           <Title className={classes.title} order={2}>
-            Un curso completo para aprender a hacer recorridos virtuales
+            Un curso para integrar Blender & Lumion con drones
           </Title>
           <Text color="dimmed">
-            Aprende desde el principio los conceptos básicos – El formato de foto 360°,
-            cómo agruparlas en un recorrido y cómo publicarlo en una plataforma web.
+            Aprenderás los principios del camera tracking y el efecto chroma – Drones,
+            cómo volarlos para integrar con tu modelo 3D desde cualquier software.
           </Text>
           <Space h="lg" />
           <Group>
           <Avatar src="amv.jfif" alt="Instructor Andres Moreno Vasquez" size="lg" radius="xl" />
-          <Button
+          
+            <Button
             component="a"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1cC9jWuapmiOc-MP1p0V9y4z5LfGPaaM3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1-TcePaoP9HEW0RRpZKs6JeKoiRPE3A1c/view?usp=share_link"
             color="gray"
             rightIcon={<Download size={14} />}>
               Contenido del curso PDF

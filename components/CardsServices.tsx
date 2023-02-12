@@ -7,7 +7,7 @@ export function CardsServices() {
     <>
 <Divider my="xl" label="CURSOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 
-<SimpleGrid cols={2}>
+<SimpleGrid cols={1}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -91,7 +91,7 @@ export function CardsServices() {
 
 </SimpleGrid>
 <Divider my="xl" label="SERVICIOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
-<SimpleGrid cols={2}>
+<SimpleGrid cols={1}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
