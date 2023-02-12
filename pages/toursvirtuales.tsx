@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player/lazy'
 import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center } from '@mantine/core';
 import { FeaturesToursVirtuales } from '@/components/FeaturesToursVirtuales';
 import FaqToursVirtuales from '@/components/FaqToursVirtuales';
+import { GoBack } from "@/components/goBack";
 
 export default function toursvirtuales() {
 
@@ -19,6 +20,7 @@ const videoURL = "https://youtu.be/d6hWcz0UH8c"
          smallerThan="sm" styles={{ display: 'none' }}>
         <SimpleGrid cols={1} spacing="xl">
         <div>
+        <GoBack />
         <Space h="lg" />    
         <Text italic align="center" color="teal.2">
             {problemaToursVirtuales}

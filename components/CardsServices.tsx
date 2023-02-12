@@ -1,4 +1,4 @@
-import { Card, Group, Image, Text, Badge, Button, SimpleGrid, Divider } from "@mantine/core";
+import { Card, Group, Image, Text, Tabs, Button, SimpleGrid, Divider, MediaQuery } from "@mantine/core";
 import Link from "next/link";
 
 export function CardsServices() {
@@ -7,7 +7,7 @@ export function CardsServices() {
     <>
 <Divider my="xl" label="CURSOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 
-<SimpleGrid cols={1}>
+<SimpleGrid cols={2}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -19,7 +19,6 @@ export function CardsServices() {
 <Group position="center" mt="md" mb="xs">
   <Text weight={500}>Tours Virtuales</Text>
 </Group>
-
 <Text size="sm" color="dimmed">
   Aprende a crear recorridos virtuales desde cero. Desde cuál cámara 360 comprar hasta cómo crear tu propia plataforma web.
 </Text>
@@ -31,7 +30,7 @@ export function CardsServices() {
 <Card.Section>
   <Image
     src="/terrain-min.png"
-    alt="Tours Virtuales"
+    alt="GIS"
     />
 </Card.Section>
 
@@ -90,8 +89,10 @@ export function CardsServices() {
 </Card>
 
 </SimpleGrid>
+
 <Divider my="xl" label="SERVICIOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
-<SimpleGrid cols={1}>
+
+<SimpleGrid cols={2}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -131,8 +132,9 @@ export function CardsServices() {
 <Link href={'https://calendly.com/pantallaverdeweb/llamar'}><Button variant="light" color="blue" fullWidth mt="xs" radius="md">  Agendar videollamada
 </Button></Link>
 </Card>
-
 </SimpleGrid>
+
+
 </>
   );
 }

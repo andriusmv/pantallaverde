@@ -2,11 +2,14 @@ import Pricing from 'components/Pricing';
 import { getActiveProductsWithPrices } from 'utils/supabase-client';
 import { Product } from 'types';
 import { GetStaticPropsResult } from 'next';
-import { Container, Paper, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Grid, Loader, Box, Center, Stack, Card, Badge } from '@mantine/core';
+import { Container, Paper, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Grid, Loader, Box, Center, Stack, Card, Badge, Tabs } from '@mantine/core';
 import Avatars from '@/components/Avatars';
 import { CardsServices } from 'components/CardsServices';
 import Link from 'next/link';
 import Image from 'next/image';
+import { LayoutGrid, List } from 'tabler-icons-react';
+import Logo from '@/components/icons/Logo';
+import { ListServices } from '@/components/ListServices';
 
 interface Props {
   products: Product[];
@@ -20,7 +23,7 @@ export default function Home() {
       
       <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
       <Title order={1} align="center"
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br/>para emprendedores<br/>inmobiliarios 📚</Title>
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos para<br/>emprendedores<br />inmobiliarios 📚</Title>
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología para tus proyectos
         </Text>
@@ -69,7 +72,25 @@ lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias.
 Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más.
         </Text>
         <Space h="lg"/><Space h="lg"/>    
-        <CardsServices />
+
+        <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+      <Tabs.List grow>
+        <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
+        <Tabs.Tab value="square" icon={<List size={14} />}>Lista</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="gallery" pt="xs">
+      <CardsServices />
+      </Tabs.Panel>
+
+      <Tabs.Panel value="square" pt="xs">
+        <ListServices />
+        </Tabs.Panel>
+
+      <Tabs.Panel value="settings" pt="xs">
+        Settings tab content
+      </Tabs.Panel>
+    </Tabs>
       </Container>
       </SimpleGrid>
         </MediaQuery>
@@ -127,6 +148,24 @@ Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas 
         </Text>
         <Space h="lg"/>
         <CardsServices />
+        <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+      <Tabs.List>
+        <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
+        <Tabs.Tab value="square" icon={<List size={14} />}>Lista</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="gallery" pt="xs">
+      <CardsServices />
+      </Tabs.Panel>
+
+      <Tabs.Panel value="square" pt="xs">
+        <Logo />
+        </Tabs.Panel>
+
+      <Tabs.Panel value="settings" pt="xs">
+        Settings tab content
+      </Tabs.Panel>
+    </Tabs>
           </Container>
       </SimpleGrid>
         </MediaQuery>

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import React from 'react'
-import ReactPlayer from 'react-player/lazy'
+import React from 'react';
+import ReactPlayer from 'react-player/lazy';
 import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center } from '@mantine/core';
 import { FeaturesIntegracion } from '@/components/FeaturesIntegracion';
+import { GoBack } from '@/components/goBack'
 import FaqToursVirtuales from '@/components/FaqToursVirtuales';
 
 export default function integracion() {
@@ -20,6 +21,7 @@ const mainImage = "/integracion/dron1.png"
          smallerThan="sm" styles={{ display: 'none' }}>
         <SimpleGrid cols={1} spacing="xl">
         <div>
+        <GoBack />
         <Space h="lg" />    
         <Text italic align="center" color="teal.2">
             {problemaToursVirtuales}
