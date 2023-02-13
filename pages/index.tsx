@@ -76,22 +76,20 @@ Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas 
         <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
       <Tabs.List grow>
         <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
-        <Tabs.Tab value="square" icon={<List size={14} />}>Lista</Tabs.Tab>
+        <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="gallery" pt="xs">
       <CardsServices />
       </Tabs.Panel>
 
-      <Tabs.Panel value="square" pt="xs">
+      <Tabs.Panel value="list" pt="xs">
         <ListServices />
         </Tabs.Panel>
-
-      <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
-      </Tabs.Panel>
     </Tabs>
+
       </Container>
+
       </SimpleGrid>
         </MediaQuery>
 
@@ -146,25 +144,23 @@ lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias.
         <Text size='md' weight={400} align="-moz-initial">
 Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más.
         </Text>
+
         <Space h="lg"/>
-        <CardsServices />
+        
         <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
       <Tabs.List>
         <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
-        <Tabs.Tab value="square" icon={<List size={14} />}>Lista</Tabs.Tab>
+        <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="gallery" pt="xs">
       <CardsServices />
       </Tabs.Panel>
 
-      <Tabs.Panel value="square" pt="xs">
-        <Logo />
+      <Tabs.Panel value="list" pt="xs">
+        <ListServices />
         </Tabs.Panel>
 
-      <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
-      </Tabs.Panel>
     </Tabs>
           </Container>
       </SimpleGrid>
