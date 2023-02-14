@@ -6,7 +6,7 @@ export function ListServices() {
     return (
       <>
 
-<Divider label="CURSOS" size="xs" labelPosition="center" />
+<Divider my="xl" label="CURSOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 <Stack spacing="lg" justify="flex-start">
 <Grid grow align="center" gutter={5}>
 <Grid.Col span="auto">
@@ -60,7 +60,7 @@ export function ListServices() {
 </Grid.Col>
     </Grid>
 
-<Divider label="SERVICIOS" size="xs" labelPosition="center" />
+<Divider my="xl" label="SERVICIOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 
 
 <Grid grow align="center" gutter={5}>

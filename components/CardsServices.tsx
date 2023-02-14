@@ -1,4 +1,4 @@
-import { Card, Group, Image, Text, Tabs, Button, SimpleGrid, Divider, MediaQuery } from "@mantine/core";
+import { Card, Group, Image, Text, Tabs, Button, Grid, Divider, MediaQuery } from "@mantine/core";
 import Link from "next/link";
 
 export function CardsServices() {
@@ -7,7 +7,9 @@ export function CardsServices() {
     <>
 <Divider my="xl" label="CURSOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 
-<SimpleGrid cols={2}>
+<Grid>
+<Grid.Col span="auto" md={9} lg={6}>
+
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -24,8 +26,9 @@ export function CardsServices() {
 </Text>
 <Link href={'/toursvirtuales'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
-</Card>
+</Card></Grid.Col>
 
+<Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -45,8 +48,10 @@ export function CardsServices() {
 
 <Link href={'/gis'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
-</Card>
+</Card></Grid.Col></Grid>
 
+<Grid>
+<Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -66,8 +71,9 @@ export function CardsServices() {
 
 <Link href={'/integracion'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
-</Card>
+</Card></Grid.Col>
 
+<Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -86,13 +92,15 @@ export function CardsServices() {
 
 <Link href={'/blender'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
-</Card>
+</Card></Grid.Col>
 
-</SimpleGrid>
+</Grid>
 
 <Divider my="xl" label="SERVICIOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 
-<SimpleGrid cols={2}>
+<Grid>
+
+<Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -111,8 +119,9 @@ export function CardsServices() {
 <Link href={'https://calendly.com/pantallaverdeweb/llamar'}><Button variant="light" color="blue" fullWidth mt="xs" radius="md">
   Solicitar cotización
 </Button></Link>
-</Card>
+</Card></Grid.Col>
 
+<Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -131,8 +140,8 @@ export function CardsServices() {
 
 <Link href={'https://calendly.com/pantallaverdeweb/llamar'}><Button variant="light" color="blue" fullWidth mt="xs" radius="md">  Agendar videollamada
 </Button></Link>
-</Card>
-</SimpleGrid>
+</Card></Grid.Col>
+</Grid>
 
 
 </>
