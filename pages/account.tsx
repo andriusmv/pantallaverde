@@ -67,15 +67,15 @@ export default function Account({ user }: { user: User }) {
     <Center>
       <SimpleGrid cols={1}><Space h="xl" /><Space h="xl" />
         <div>
-          <Group>
+          <Group position="apart">
             <Title>
               Tu cuenta
             </Title>
+              <Avatar src={userDetails ? userDetails.avatar_url : undefined} />
+          </Group>
             <div>
-              <Avatar src={userDetails ? userDetails.avatar_url : undefined}></Avatar>
               <Text>{user ? user.email : undefined}</Text>
             </div>
-          </Group>
 
           <div>
             {userDetails ? (
@@ -122,9 +122,9 @@ export default function Account({ user }: { user: User }) {
               )}
             </div>
           </Card></div>
-          <Alert icon={<Mail size={16} />} title="¿Necesitas ayuda aquí?" color="teal" radius="md" variant="outline">
-      Escríbeme a esta dirección de correo electrónico con los detalles a emailpantallaverde@gmail.com
-      <CopyButton value="mailto:emailpantallaverde@gmail.com" timeout={2000}>
+          <Alert icon={<Mail size={16} />} title="¿Necesitas ayuda con algo de esto?" color="teal" radius="md" variant="outline">
+      Escríbeme a esta dirección de correo electrónico <br /> con los detalles a emailpantallaverde@gmail.com
+      <CopyButton value="emailpantallaverde@gmail.com" timeout={2000}>
       {({ copied, copy }) => (
         <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
         <ActionIcon color={copied ? 'teal' : 'gray'} onClick={copy}>
