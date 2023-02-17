@@ -15,6 +15,10 @@ interface Props {
   products: Product[];
 }
 
+const tituloppal = "PantallaVerde"
+const problemaGen = "Tutoriales en video para inmobiliarios con prisa"
+const subtitppal = "Inyecciones de tecnología para tus proyectos inmobiliarios."
+const subtitppal2 = "Implementa nuevas técnicas a tu flujo de trabajo en tiempo récord."
 const parrafo1 = "Estás en la oficina ahí, entregando como puedes el último diseño, el último plano, rezando un Padre Nuestro para que el render salga más rápido. Los clientes están esperando tu presentación y el estrés comienza a subir."
 const parrafo2 = "No sabes cómo pero entregas. Tu jefe está feliz y el proyecto logró fondos para comenzar obra lo antes posible. Pero adivina qué? Ya tienes que seguir con el siguiente proyecto, y con el siguiente y el siguiente del siguiente... y así infinitamente."
 const parrafo3 = "Y es que por más que lo intentes, siempre va a surgir algo más. Ya no se trata de velocidad, se trata de estrategia."
@@ -28,19 +32,23 @@ export default function Home() {
       <MediaQuery
        smallerThan="sm" styles={{ display: 'none' }}>
       
-      <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>
-      <Title order={1} align="center"
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos para<br/>emprendedores<br />inmobiliarios 📚</Title>
+      <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>  
+        <Text italic align="center" color="teal.2">
+            {problemaGen}
+            </Text>
+      <Title order={1} align="center" size={80}
+      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
+        {tituloppal}</Title>
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
-          Inyecciones de tecnología para tus proyectos
+          {subtitppal}<br/>{subtitppal2}
         </Text>
         <Space h="xl"/>
-        <Center><Box       sx={(theme) => ({
+        <Center><Box sx={(theme) => ({
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
         textAlign: 'center',
         borderRadius: theme.radius.md
       })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" /></Box></Center>
-        <Space h="xl"/>
+        <Space />
         <Center><Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
         <Space />

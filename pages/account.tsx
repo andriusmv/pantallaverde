@@ -92,7 +92,7 @@ export default function Account({ user }: { user: User }) {
           <Card
             title="Tus cursos"
             description={subscription
-              ? `Estás en el plan ${subscription?.prices?.products?.name}.`
+              ? `Tienes en tu cuenta ${subscription?.prices?.products?.name}.`
               : ''}
             footer={<div>
               <p>
@@ -123,8 +123,10 @@ export default function Account({ user }: { user: User }) {
             </div>
           </Card></div>
           <Alert icon={<Mail size={16} />} title="¿Necesitas ayuda con algo de esto?" color="teal" radius="md" variant="outline">
-      Escríbeme a esta dirección de correo electrónico <br /> con los detalles a emailpantallaverde@gmail.com
-      <CopyButton value="emailpantallaverde@gmail.com" timeout={2000}>
+      Escríbeme a esta dirección de correo electrónico <br /> con los detalles a <br />
+      <Group>
+        <Text> emailpantallaverde@gmail.com</Text>
+        <CopyButton value="emailpantallaverde@gmail.com" timeout={2000}>
       {({ copied, copy }) => (
         <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
         <ActionIcon color={copied ? 'teal' : 'gray'} onClick={copy}>
@@ -132,7 +134,7 @@ export default function Account({ user }: { user: User }) {
         </ActionIcon>
       </Tooltip>
       )}
-    </CopyButton>
+    </CopyButton></Group>
     </Alert>
 
       </SimpleGrid>
