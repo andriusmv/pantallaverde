@@ -17,9 +17,9 @@ interface EnsayoProps {
 }
 
 const data = chunk(
-    Array(9)
+    Array(10)
       .fill(0)
-      .map((_, index) => ({ id: index, name: randomId() })),
+      .map(toursvirtuales),
     5
   );
 

@@ -1,9 +1,15 @@
 import { NextLink } from '@mantine/next';
-import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger, Modal } from '@mantine/core';
+import { useState } from 'react';
+import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger, Modal, LoadingOverlay } from '@mantine/core';
 import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
 
 export default function Configuration() {
+  const [visible, setVisible] = useState(false);
+  
   return (
+<>
+
+        
     <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
       <Menu.Target>
         <Button variant="subtle" color="dark" style={{ fontSize:20}}><Menu2 size={25} strokeWidth={2} /></Button>
@@ -21,5 +27,7 @@ export default function Configuration() {
         <Menu.Item color="red" icon={<Trash size={25} />}>Eliminar mi cuenta</Menu.Item>
       </Menu.Dropdown>
     </Menu>
+      
+    </>
   );
 }

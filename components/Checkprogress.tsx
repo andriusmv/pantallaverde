@@ -6,7 +6,7 @@ export default function Checkprogress() {
   
   return (
     
-    <Checkbox size="xl" color="theme" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} 
+    <Checkbox size="md" color="theme" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} 
     label="Marcar como completado 👍" />
     
   );

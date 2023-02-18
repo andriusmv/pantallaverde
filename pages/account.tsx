@@ -114,7 +114,10 @@ export default function Account({ user }: { user: User }) {
                   <LoadingDots />
                 </div>
               ) : subscription ? (
-                `${subscriptionPrice}/${subscription?.prices?.interval}`
+                `${subscriptionPrice}/${subscription?.prices?.interval}`+
+                <Link href="/pro">
+                  <Button>Ir al contenido</Button>
+                </Link>
               ) : (
                 <Link href="/pro">
                   <Button>Escoge tu plan</Button>

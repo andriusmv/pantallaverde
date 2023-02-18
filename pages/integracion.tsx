@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from 'react';
 import ReactPlayer from 'react-player/lazy';
-import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center } from '@mantine/core';
+import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center, List, Anchor } from '@mantine/core';
 import { FeaturesIntegracion } from '@/components/FeaturesIntegracion';
 import { GoBack } from '@/components/GoBack'
 import FaqToursVirtuales from '@/components/FaqToursVirtuales';
+import FaqIntegracion from "@/components/FaqIntegracion";
 
 export default function integracion() {
 
@@ -50,6 +51,8 @@ const mainImage = "/integracion/dron1.png"
         <ReactPlayer url={videoURL}/>
     </Center>
         <FaqToursVirtuales />
+
+      
           </SimpleGrid>
 
     </MediaQuery>
@@ -87,6 +90,7 @@ const mainImage = "/integracion/dron1.png"
         <ReactPlayer width={288} height={162} url={videoURL}/>
     </Center>
         <FaqToursVirtuales />
+
           </SimpleGrid>
 
     </MediaQuery>
