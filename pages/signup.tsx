@@ -44,7 +44,7 @@ const SignUp = () => {
       } else {
         setMessage({
           type: 'note',
-          content: 'Check your email for the confirmation link.'
+          content: 'Revisa tu email para el link de confirmación.'
         });
       }
     }

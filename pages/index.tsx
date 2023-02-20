@@ -46,7 +46,7 @@ export default function Home() {
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
         textAlign: 'center',
         borderRadius: theme.radius.md
-      })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" /></Box></Center>
+      })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" alt={''} /></Box></Center>
         <Space />
         <Center><Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
@@ -104,7 +104,7 @@ export default function Home() {
 <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           Inyecciones de tecnología<br/>para tus proyectos
         </Text>
-        <Center><Container><Image src="/city-low-resol.png" width={400} height={225} /></Container></Center>
+        <Center><Container><Image src="/city-low-resol.png" width={400} height={225} alt={''} /></Container></Center>
         <Center>
         <Group spacing="xs">
         <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
