@@ -49,7 +49,7 @@ export default function Pricing({ products }: Props) {
     return (
       <section>
         <div>
-          <div></div>
+          <div>Error</div>
           <p>
             No subscription pricing plans found. Create them in your{' '}
             <a

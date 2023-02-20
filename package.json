@@ -6,7 +6,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks --project-name=saas-starter"
+    "stripe:listen": "stripe listen --forward-to=https://pantallaverde.co/api/webhooks --project-name=saas-starter"
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
