@@ -26,135 +26,134 @@ export default function Home() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <main>
+    
 
+    <>
       <MediaQuery
-       smallerThan="sm" styles={{ display: 'none' }}>
-      
-      <SimpleGrid cols={1}><Space h="xl"/><Space h="xl"/>  
+      smallerThan="sm" styles={{ display: 'none' }}>
+
+      <SimpleGrid cols={1}><Space h="xl" /><Space h="xl" />
         <Text italic align="center" color="teal.2">
-            {problemaGen}
-            </Text>
-      <Title order={1} align="center" size={80}
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
-        {tituloppal}</Title>
-<Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
-          {subtitppal}<br/>{subtitppal2}
+          {problemaGen}
         </Text>
-        <Space h="xl"/>
+        <Title order={1} align="center" size={80}
+          sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
+          {tituloppal}</Title>
+        <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
+          {subtitppal}<br />{subtitppal2}
+        </Text>
+        <Space h="xl" />
         <Center><Box sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-        textAlign: 'center',
-        borderRadius: theme.radius.md
-      })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" alt={''} /></Box></Center>
+          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+          textAlign: 'center',
+          borderRadius: theme.radius.md
+        })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" alt={''} /></Box></Center>
         <Space />
         <Center><Group spacing="xs">
-        <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
-        <Space />
-        <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
+          <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
+          <Space />
+          <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
         </Group></Center>
         <Container size="xs" px="xs">
-        <Space h="xl"/><Space h="xl"/>
-      <Text size='xl' weight={400} align="-moz-initial">{parrafo1}
-        </Text>
-        <Space h="xl"/>
-        <Text size='xl' weight={400} align="-moz-initial">{parrafo2}
-        </Text>
-        <Space h="xl"/>
-        <Text size='xl' weight={400} align="-moz-initial">{parrafo3}
-        </Text>
-        <Space h="xl"/>
-        <Text size='xl' weight={400} align="-moz-initial">{parrafo4}
-        </Text>
-        <Space h="xl"/>
-        <Text size='xl' weight={400} align="-moz-initial">{parrafo5}
-        </Text>
-        <Space h="xl"/>
-        <Text size='xl' weight={400} align="-moz-initial">{parrafo6}
-        </Text>
-        <Space h="lg"/><Space h="lg"/>    
+          <Space h="xl" /><Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo1}
+          </Text>
+          <Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo2}
+          </Text>
+          <Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo3}
+          </Text>
+          <Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo4}
+          </Text>
+          <Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo5}
+          </Text>
+          <Space h="xl" />
+          <Text size='xl' weight={400} align="-moz-initial">{parrafo6}
+          </Text>
+          <Space h="lg" /><Space h="lg" />
 
-        <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
-      <Tabs.List grow>
-        <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
-        <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
-      </Tabs.List>
+          <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+            <Tabs.List grow>
+              <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
+              <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
+            </Tabs.List>
 
-      <Tabs.Panel value="gallery" pt="xs">
-      <CardsServices />
-      </Tabs.Panel>
+            <Tabs.Panel value="gallery" pt="xs">
+              <CardsServices />
+            </Tabs.Panel>
 
-      <Tabs.Panel value="list" pt="xs">
-        <ListServices />
-        </Tabs.Panel>
-    </Tabs>
+            <Tabs.Panel value="list" pt="xs">
+              <ListServices />
+            </Tabs.Panel>
+          </Tabs>
 
-      </Container>
+        </Container>
 
       </SimpleGrid>
-        </MediaQuery>
+    </MediaQuery><MediaQuery
+      largerThan="sm" styles={{ display: 'none' }}>
 
-        <MediaQuery
-       largerThan="sm" styles={{ display: 'none' }}>
-      
-      <SimpleGrid cols={1}><Space h="xl"/>
-      
-      <Title size={30} align="center"
-      sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br/>para emprendedores<br/>inmobiliarios 📚</Title>
-<Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
-          Inyecciones de tecnología<br/>para tus proyectos
-        </Text>
-        <Center><Container><Image src="/city-low-resol.png" width={400} height={225} alt={''} /></Container></Center>
-        <Center>
-        <Group spacing="xs">
-        <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
-        <Space />
-        <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
-        </Group></Center>
-      <Space h="xl"/>
+        <SimpleGrid cols={1}><Space h="xl" />
+
+          <Title size={30} align="center"
+            sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br />para emprendedores<br />inmobiliarios 📚</Title>
+          <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
+            Inyecciones de tecnología<br />para tus proyectos
+          </Text>
+          <Center><Container><Image src="/city-low-resol.png" width={400} height={225} alt={''} /></Container></Center>
+          <Center>
+            <Group spacing="xs">
+              <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
+              <Space />
+              <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
+            </Group></Center>
+          <Space h="xl" />
 
 
-      <Container size={300} px="xs">
-      <Text size='md' weight={400} align="-moz-initial">{parrafo1}
-        </Text>
-        <Space h="md"/>
-        <Text size='md' weight={400} align="-moz-initial">{parrafo2}
-        </Text>
-        <Space h="md"/>
-        <Text size='md' weight={400} align="-moz-initial">{parrafo3}
-        </Text>
-        <Space h="md"/>
-        <Text size='md' weight={400} align="-moz-initial">{parrafo4}
-        </Text>
-        <Space h="md"/>
-        <Text size='md' weight={400} align="-moz-initial">{parrafo5}
-        </Text>
-        <Space h="md"/>
-        <Text size='md' weight={400} align="-moz-initial">{parrafo6}
-        </Text>
+          <Container size={300} px="xs">
+            <Text size='md' weight={400} align="-moz-initial">{parrafo1}
+            </Text>
+            <Space h="md" />
+            <Text size='md' weight={400} align="-moz-initial">{parrafo2}
+            </Text>
+            <Space h="md" />
+            <Text size='md' weight={400} align="-moz-initial">{parrafo3}
+            </Text>
+            <Space h="md" />
+            <Text size='md' weight={400} align="-moz-initial">{parrafo4}
+            </Text>
+            <Space h="md" />
+            <Text size='md' weight={400} align="-moz-initial">{parrafo5}
+            </Text>
+            <Space h="md" />
+            <Text size='md' weight={400} align="-moz-initial">{parrafo6}
+            </Text>
 
-        <Space h="lg"/>
-        
-        <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
-      <Tabs.List>
-        <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
-        <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
-      </Tabs.List>
+            <Space h="lg" />
 
-      <Tabs.Panel value="gallery" pt="xs">
-      <CardsServices />
-      </Tabs.Panel>
+            <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+              <Tabs.List>
+                <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
+                <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
+              </Tabs.List>
 
-      <Tabs.Panel value="list" pt="xs">
-        <ListServices />
-        </Tabs.Panel>
+              <Tabs.Panel value="gallery" pt="xs">
+                <CardsServices />
+              </Tabs.Panel>
 
-    </Tabs>
+              <Tabs.Panel value="list" pt="xs">
+                <ListServices />
+              </Tabs.Panel>
+
+            </Tabs>
           </Container>
-      </SimpleGrid>
-        </MediaQuery>
+        </SimpleGrid>
+      </MediaQuery>
+    </>
 
 
-    </main>
   );
 }
