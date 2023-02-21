@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor, Center } from '@mantine/core';
+import { AppShell, MantineProvider, Header, MediaQuery, useMantineTheme, Group, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Center } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
@@ -9,12 +9,9 @@ import { MyUserContextProvider } from 'utils/useUser';
 import type { Database } from 'types_db';
 import { Logo, LogoSmall } from '@/components/icons/Logo';
 import Link from 'next/link';
-import Listado from '@/components/Listado';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import ProMode from '@/components/ProMode';
-import ProModeSmall from '@/components/ProModeSmall';
 import Configuration from '@/components/Configuration';
-import { Cast } from 'tabler-icons-react';
 
 export default function App(props: AppProps) {
   const [supabaseClient] = useState(() =>
@@ -39,7 +36,7 @@ useEffect(() => {
   
 
   return (
-    <div>
+    
       
       <SessionContextProvider supabaseClient={supabaseClient}>
         <MyUserContextProvider supabaseClient={supabaseClient}>
@@ -87,15 +84,15 @@ useEffect(() => {
                     </Footer> 
                   } */
             header={
-            <div>
+            
               <Header height={75} p="xl" sx={{ borderBottom: 0 }} >
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-                    <div>
+                    
                     <SimpleGrid cols={3}>
-                      <div><Configuration /></div>   
-                      <div><Group><Center><LogoSmall /></Center></Group></div>
+                      <Configuration />  
+                      <Group><Center><LogoSmall /></Center></Group>
                       
-                  </SimpleGrid></div>
+                  </SimpleGrid>
                     </MediaQuery>
 
                     <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
@@ -105,7 +102,7 @@ useEffect(() => {
                       <Grid.Col span={2}><Group><Center><ProMode /><Configuration /></Center></Group></Grid.Col>
                   </Grid>
                   </MediaQuery>
-                </Header></div>}
+                </Header>}
             styles={(theme) => ({
               main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white },
             })}
@@ -117,6 +114,6 @@ useEffect(() => {
             </ColorSchemeProvider>
         </MyUserContextProvider>
         </SessionContextProvider>
-            </div>
+            
   );
 }
