@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppShell, MantineProvider, Navbar, Footer, Header, MediaQuery, Burger, useMantineTheme, Text, Group, Button, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Anchor, Center } from '@mantine/core';
 import { useEffect, useState } from 'react';
-
+import { Analytics } from '@vercel/analytics/react';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { AppProps } from 'next/app';
@@ -111,6 +111,7 @@ useEffect(() => {
             })}
           >
             <Component {...pageProps} />
+            <Analytics />
         </AppShell>
             </MantineProvider>
             </ColorSchemeProvider>
