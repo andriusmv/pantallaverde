@@ -1,10 +1,9 @@
 import { Product } from 'types';
-import { useState } from 'react';
-import { Container, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Box, Center, Tabs, Alert } from '@mantine/core';
+import { Container, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Box, Center, Tabs } from '@mantine/core';
 import { CardsServices } from 'components/CardsServices';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AlertCircle, LayoutGrid, List } from 'tabler-icons-react';
+import { LayoutGrid, List } from 'tabler-icons-react';
 import { ListServices } from '@/components/ListServices';
 
 interface Props {
@@ -23,7 +22,6 @@ const parrafo5 = "Eso es lo que hacemos aquí. Te enseñamos en tiempo récord h
 const parrafo6 = "Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más."
 
 export default function Home() {
-  const [visible, setVisible] = useState(false);
 
   return (
     

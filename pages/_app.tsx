@@ -1,45 +1,44 @@
-import React from 'react';
-import { AppShell, MantineProvider, Header, MediaQuery, useMantineTheme, Group, ColorScheme, ColorSchemeProvider, SimpleGrid, Grid, Center } from '@mantine/core';
 import { useEffect, useState } from 'react';
+import NextApp, { AppProps, AppContext } from 'next/app';
+import { getCookie, setCookie } from 'cookies-next';
+import Head from 'next/head';
+import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
+import { AppShell, MantineProvider, Header, MediaQuery, Group, ColorScheme, ColorSchemeProvider, Text, SimpleGrid, Grid, Center } from '@mantine/core';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { AppProps } from 'next/app';
 import { MyUserContextProvider } from 'utils/useUser';
 import type { Database } from 'types_db';
 import { Logo, LogoSmall } from '@/components/icons/Logo';
-import Link from 'next/link';
-import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import ProMode from '@/components/ProMode';
 import Configuration from '@/components/Configuration';
+import LightAndDarkModeButton from '@/components/LightDarkButton';
 
-export default function App(props: AppProps) {
-  const [supabaseClient] = useState(() =>
-  createBrowserSupabaseClient<Database>()
-);
+export default function App(props: AppProps & { colorScheme: ColorScheme }) {
+const [supabaseClient] = useState(() =>  createBrowserSupabaseClient<Database>());
 useEffect(() => {
   document.body.classList?.remove('loading');
 }, []);
-  const { Component, pageProps } = props;
-  const [opened, setOpened] = useState(false);
-  const theme = useMantineTheme();
+const { Component, pageProps } = props;
+const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: 'dark',
-  });
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+const toggleColorScheme = (value?: ColorScheme) => {
+  const nextColorScheme = value || (colorScheme === 'light' ? 'dark' : 'light');
+  setColorScheme(nextColorScheme);
+  setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
+};
   
 
   return (
-    
+    <>
+          <Head>
+        <title>PantallaVerde</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+      </Head>
       
       <SessionContextProvider supabaseClient={supabaseClient}>
-        <MyUserContextProvider supabaseClient={supabaseClient}>
+        <MyUserContextProvider>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
         withGlobalStyles
@@ -47,15 +46,11 @@ useEffect(() => {
         theme={{
                 // Theme is deeply merged with default theme
                 colorScheme,
-                
-                
-        
                 shadows: {
                   // other shadows (xs, sm, lg) will be merged from default theme
                   md: '1px 1px 3px rgba(0,0,0,.25)',
                   xl: '5px 5px 3px rgba(0,0,0,.25)',
                 },
-        
                 headings: {
                   fontFamily: 'DIN 1451',
                   fontWeight: 700,
@@ -69,22 +64,7 @@ useEffect(() => {
             navbarOffsetBreakpoint="sm"
             asideOffsetBreakpoint="sm"
             fixed
-            /*      navbar={<Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-
-                          <Listado />
-
-            </Navbar>} */
-            
-                  /* footer={
-                    <Footer height={60} p="md">
-                      <Grid justify="space-between" align="center" >
-                      <Grid.Col span={2}><Text>Creado por <Link href="https://github.com/andriusmv" passHref><Anchor component="a">Andrés Moreno Vásquez</Anchor></Link></Text></Grid.Col>
-                      <Grid.Col span={2}><Group><Center><Configuration /></Center></Group></Grid.Col>
-                  </Grid>
-                    </Footer> 
-                  } */
             header={
-            
               <Header height={75} p="xl" sx={{ borderBottom: 0 }} >
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                     
@@ -98,7 +78,7 @@ useEffect(() => {
                     <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
                   
                     <Grid justify="space-around" align="center" >
-                      <Grid.Col span={2}><Link href="/"><Logo /></Link></Grid.Col>
+                      <Grid.Col span={2}><Logo /></Grid.Col>
                       <Grid.Col span={2}><Group><Center><ProMode /><Configuration /></Center></Group></Grid.Col>
                   </Grid>
                   </MediaQuery>
@@ -114,6 +94,14 @@ useEffect(() => {
             </ColorSchemeProvider>
         </MyUserContextProvider>
         </SessionContextProvider>
-            
+      </>
   );
 }
+
+App.getInitialProps = async (appContext: AppContext) => {
+  const appProps = await NextApp.getInitialProps(appContext);
+  return {
+    ...appProps,
+    colorScheme: getCookie('mantine-color-scheme', appContext.ctx) || 'dark',
+  };
+};

@@ -1,8 +1,6 @@
 import React, {  useState } from 'react';
-import { SimpleGrid, Paper, ScrollArea, Stack } from '@mantine/core';
 import Link from 'next/link';
-import { Button, Space } from '@mantine/core';
-
+import { SimpleGrid, Paper, ScrollArea, Stack, Button, Space } from '@mantine/core';
 
 export default function Listado() {
 

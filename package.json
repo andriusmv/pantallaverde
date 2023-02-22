@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
-    "@emotion/react": "^11.10.0",
+    "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
     "@mantine/core": "^5.2.0",
     "@mantine/hooks": "^5.2.0",
@@ -27,6 +27,7 @@
     "@types/lodash.chunk": "^4.2.7",
     "@vercel/analytics": "^0.1.10",
     "classnames": "2.3.1",
+    "cookies-next": "^2.1.1",
     "eslint-config-next": "^13.1.6",
     "lodash": "^4.17.21",
     "lodash.chunk": "^4.2.0",

@@ -1,10 +1,9 @@
 import { NextLink } from '@mantine/next';
-import { useState } from 'react';
-import { Popover, Stack, ActionIcon, Text, Group, Menu, Button, Burger, Modal, LoadingOverlay } from '@mantine/core';
-import { ArrowsLeftRight, Bulb, Photo, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
+import { Text, Menu, Button } from '@mantine/core';
+import { ArrowsLeftRight, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
 
 export default function Configuration() {
-  const [visible, setVisible] = useState(false);
+
   
   return (
 <>

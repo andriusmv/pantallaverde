@@ -1,5 +1,5 @@
-import { Button, Container } from "@mantine/core";
 import Link from "next/link";
+import { Button, Container } from "@mantine/core";
 import { ArrowBack } from "tabler-icons-react";
 
 export function GoBack() {

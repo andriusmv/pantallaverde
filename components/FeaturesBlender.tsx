@@ -1,6 +1,6 @@
-import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col, Avatar, Space, Group } from '@mantine/core';
 import Link from 'next/link';
-import { Home2, Lock, DevicesPc, Photo, Download, ThreeDCubeSphere } from 'tabler-icons-react';
+import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col, Avatar, Space, Group } from '@mantine/core';
+import { Home2, DevicesPc, Photo, Download, ThreeDCubeSphere } from 'tabler-icons-react';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -77,16 +77,12 @@ export function FeaturesBlender() {
           <Space h="lg" />
           <Group>
           <Avatar src="amv.jfif" alt="Instructor Andres Moreno Vasquez" size="lg" radius="xl" />
-          
+          <Link href="https://drive.google.com/file/d/1-TcePaoP9HEW0RRpZKs6JeKoiRPE3A1c/view?usp=share_link">
             <Button
-            component="a"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1-TcePaoP9HEW0RRpZKs6JeKoiRPE3A1c/view?usp=share_link"
             color="gray"
             rightIcon={<Download size={14} />}>
               Contenido del curso PDF
-              </Button>
+              </Button></Link>
           </Group>
         </Col>
         <Col span={12} md={7}>

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Notification, Group, Select, Center } from '@mantine/core';
 import { CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef('icon');
@@ -81,7 +82,7 @@ export function SegmentedPricing() {
   const ref = useRef<HTMLInputElement>(null);
 
   const links = tabs[section].map((item) => (
-    <a
+    <Link
       className={cx(classes.link, { [classes.linkActive]: item.label === active })}
       href={item.link}
       key={item.label}
@@ -92,7 +93,7 @@ export function SegmentedPricing() {
     >
       <Text>{item.label}</Text>
       
-    </a>
+    </Link>
 
   ));
 

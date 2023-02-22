@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Avatar, Box, Button, Divider, Grid, Group, Stack, Text } from "@mantine/core";
+import { Avatar, Box, Button, Divider, Grid, Stack, Text } from "@mantine/core";
 
 export function ListServices() {
 

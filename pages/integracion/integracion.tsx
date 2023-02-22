@@ -1,10 +1,7 @@
-import { useContext, useState } from 'react';
-import { Box, Paper, Button, ThemeIcon, Text, Radio, Title, Anchor, Center, RingProgress, RingProgressProps, SimpleGrid, Container, Group, List, Aside, MediaQuery } from '@mantine/core'
+import { Button, Text, Title, Center, SimpleGrid, Group, Aside, MediaQuery } from '@mantine/core'
 import ReactPlayer from 'react-player';
-import { Check, Drone } from 'tabler-icons-react';
-import { useRef } from 'react';
-import { useFullscreen } from '@mantine/hooks';
 import Checkprogress from '@/components/Checkprogress';
+import Link from 'next/link';
 
 const opts = {
     height: "390",
@@ -30,15 +27,15 @@ return (
 <>
 <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#instrucciones'}>{int1}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#elefectochromakey'}>{int2}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#cameratracking'}>{int3}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#basicosdeldron'}>{int4}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#preparaciondel3d'}>{int5}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#eleditordevideo'}>{int6}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#integrarpersonasreales'}>{int7}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#fotogrametriabasica'}>{int8}</Anchor></Text>
-      <Text><Anchor variant="text" size="md" href={'/integracion/integracion#apuntesfinales'}>{int9}</Anchor></Text>
+      <Link href={'/integracion/integracion#instrucciones'}><Text>{int1}</Text></Link>
+      <Link href={'/integracion/integracion#elefectochromakey'}><Text>{int2}</Text></Link>
+      <Link href={'/integracion/integracion#cameratracking'}><Text>{int3}</Text></Link>
+      <Link href={'/integracion/integracion#basicosdeldron'}><Text>{int4}</Text></Link>
+      <Link href={'/integracion/integracion#preparaciondel3d'}><Text>{int5}</Text></Link>
+      <Link href={'/integracion/integracion#eleditordevideo'}><Text>{int6}</Text></Link>
+      <Link href={'/integracion/integracion#integrarpersonasreales'}><Text>{int7}</Text></Link>
+      <Link href={'/integracion/integracion#fotogrametriabasica'}><Text>{int8}</Text></Link>
+      <Link href={'/integracion/integracion#apuntesfinales'}><Text>{int9}</Text></Link>
       </Aside>
               </MediaQuery>
               <SimpleGrid cols={1} spacing="lg">
@@ -170,10 +167,10 @@ Renderizado desde Lumion, link de descarga: https://drive.google.com/open?id=1Pn
 </Text>
 
 <Center>
-<Anchor href="https://www.facebook.com/groups/integracionpantallaverde">
+<Link href="https://www.facebook.com/groups/integracionpantallaverde">
     <Button size="md">Grupo en Facebook del Grupo
     </Button>
-        </Anchor></Center>
+        </Link></Center>
         </SimpleGrid>     
 </>
 )}

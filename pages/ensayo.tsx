@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useUser } from '@/utils/useUser';
 import { GetStaticProps } from 'next'
 import { supabase } from '@/utils/supabase-client';
-import { Key, ReactChild, ReactFragment, ReactNode, ReactPortal } from 'react';
+import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import { Title, Text, Space, Accordion, Center, SimpleGrid, Navbar, Anchor } from '@mantine/core';
+import { Title, Text, Space, Accordion, Center, SimpleGrid } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
 import { chunk } from "lodash";
 import toursvirtuales from './toursvirtuales';
@@ -27,10 +27,6 @@ const data = chunk(
 export default function Ensayo({ toursvirtuales }: EnsayoProps) {
     return (
         <div>
-        {/* <Navbar height={600} p="xs" width={{ base: 300 }}>
-            This is the Navbar
-            <Anchor href="/">Home</Anchor>
-        </Navbar> */}
             <Center>
                 <SimpleGrid cols={1}>
             {toursvirtuales.map((toursvirtuales: {

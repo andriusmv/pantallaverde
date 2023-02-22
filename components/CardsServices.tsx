@@ -1,4 +1,4 @@
-import { Card, Group, Image, Text, Tabs, Button, Grid, Divider, MediaQuery } from "@mantine/core";
+import { Card, Group, Image, Text, Button, Grid, Divider } from "@mantine/core";
 import Link from "next/link";
 
 export function CardsServices() {

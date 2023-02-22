@@ -1,8 +1,8 @@
 import cn from 'classnames';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Center, Group, NumberInput, Paper, SegmentedControl, Select, Space, Title, Text, Button, SimpleGrid } from '@mantine/core';
-import { SegmentedPricing } from 'components/SegmentedPricing';
+import { Center, Group, NumberInput, Paper, Select, Space, Title, Text, Button, SimpleGrid } from '@mantine/core';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
@@ -52,13 +52,9 @@ export default function Pricing({ products }: Props) {
           <div>Error</div>
           <p>
             No subscription pricing plans found. Create them in your{' '}
-            <a
-              href="https://dashboard.stripe.com/products"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <Link href="https://dashboard.stripe.com/products">
               Stripe Dashboard
-            </a>
+            </Link>
             .
           </p>
         </div>

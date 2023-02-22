@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
-import { Sun, Moon, CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
+import { CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
 
 function CurrencyButton() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

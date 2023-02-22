@@ -77,15 +77,12 @@ export function FeaturesToursVirtuales() {
           <Space h="lg" />
           <Group>
           <Avatar src="amv.jfif" alt="Instructor Andres Moreno Vasquez" size="lg" radius="xl" />
+          <Link href="https://drive.google.com/file/d/1cC9jWuapmiOc-MP1p0V9y4z5LfGPaaM3/view?usp=sharing">
           <Button
-            component="a"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1cC9jWuapmiOc-MP1p0V9y4z5LfGPaaM3/view?usp=sharing"
-            color="gray"
+          color="gray"
             rightIcon={<Download size={14} />}>
               Contenido del curso PDF
-              </Button>
+              </Button></Link>
           </Group>
         </Col>
         <Col span={12} md={7}>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from 'react';
 import ReactPlayer from 'react-player/lazy';
-import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center, List, Anchor } from '@mantine/core';
+import { Title, Text, Space, Image, MediaQuery, SimpleGrid, Container, Button, Center } from '@mantine/core';
 import { FeaturesIntegracion } from '@/components/FeaturesIntegracion';
 import { GoBack } from '@/components/GoBack'
 import FaqToursVirtuales from '@/components/FaqToursVirtuales';

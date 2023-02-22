@@ -7,7 +7,7 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Anchor, Group, Paper, Space, Text, Title, Center } from '@mantine/core'
+import { Group, Paper, Space, Text, Title, Center } from '@mantine/core'
 import { BrandGithub, BrandGoogle, Key } from 'tabler-icons-react'
 
 
@@ -149,7 +149,7 @@ const SignIn = () => {
               </form>
             )}
             <Text>
-              <Anchor
+              <Link
                 href="#"
                 onClick={() => {
                   if (showPasswordInput) setPassword('');
@@ -161,7 +161,7 @@ const SignIn = () => {
                 {`... o ingresa tu  ${
                   showPasswordInput ? 'link mágico' : 'contraseña'
                 }.`}</Text>
-              </Anchor>
+              </Link>
             </Text>
                 <Space h="xl" />
         
@@ -169,11 +169,11 @@ const SignIn = () => {
             <Text>
               No te has registrado todavía?
               {` `}
-              <Anchor href="/signup">
+              <Link href="/signup">
                 
                   Regístrate aquí 👈
                 
-              </Anchor>
+              </Link>
             </Text>
           </div>
 
