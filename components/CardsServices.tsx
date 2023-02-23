@@ -1,4 +1,4 @@
-import { Card, Group, Image, Text, Button, Grid, Divider } from "@mantine/core";
+import { Card, Image, Group, Text, Button, Grid, Divider } from "@mantine/core";
 import Link from "next/link";
 
 export function CardsServices() {
@@ -13,7 +13,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/unit-min.png"
+    src="/unit.png"
     alt="Tours virtuales"
     />
 </Card.Section>
@@ -32,7 +32,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/terrain-min.png"
+    src="/terrain.png"
     alt="GIS"
     />
 </Card.Section>
@@ -55,7 +55,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/city-low-resol.png"
+    src="/city.png"
     alt="City GIS"
     />
 </Card.Section>
@@ -77,7 +77,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/Suzzane.png"
+    src="/suzane.png"
     alt="Blender"
     />
 </Card.Section>
@@ -104,7 +104,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/unit-min.png"
+    src="/unit.png"
     alt="Renders Inmersivos"
     />
 </Card.Section>
@@ -125,7 +125,7 @@ export function CardsServices() {
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
-    src="/terrain-min.png"
+    src="/terrain.png"
     alt="Terreno"
     />
 </Card.Section>

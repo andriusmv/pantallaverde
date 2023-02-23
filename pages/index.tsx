@@ -41,14 +41,14 @@ export default function Home() {
           {subtitppal}<br />{subtitppal2}
         </Text>
         <Space h="xl" />
-        <Center><Box sx={(theme) => ({
-          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-          textAlign: 'center',
-          borderRadius: theme.radius.md
-        })}><Image width={400} height={225} src="/city-low-resol.png" placeholder='blur' blurDataURL="/city-low-resol.png" alt={''} /></Box></Center>
+        <Center>
+        <div style={{borderRadius: '10px', overflow: 'hidden'}}>
+          <Image width={400} height={225} src="/city.png" placeholder='blur' blurDataURL="/city.png" alt="Ciudad Pantalla Verde" />
+          </div>
+          </Center>
         <Space />
         <Center><Group spacing="xs">
-          <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
+          <Link href={'/signin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
           <Space />
           <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
         </Group></Center>
@@ -73,7 +73,7 @@ export default function Home() {
           </Text>
           <Space h="lg" /><Space h="lg" />
 
-          <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+          <Tabs color="teal" variant="pills" radius="md" defaultValue="gallery">
             <Tabs.List grow>
               <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
               <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>
@@ -101,10 +101,10 @@ export default function Home() {
           <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
             Inyecciones de tecnología<br />para tus proyectos
           </Text>
-          <Center><Container><Image src="/city-low-resol.png" width={400} height={225} alt={''} /></Container></Center>
+          <Center><Container><Image src="/city.png" width={400} height={225} alt="Ciudad Pantalla Verde" /></Container></Center>
           <Center>
             <Group spacing="xs">
-              <Link href={'/signin#pleasesignin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
+              <Link href={'/signin'}><Button size="xl" compact variant="default">Comenzar</Button></Link>
               <Space />
               <Link href={'/pro'}><Button size="xl" compact variant="outline" color="teal">Hacerse Pro</Button></Link>
             </Group></Center>
@@ -132,7 +132,7 @@ export default function Home() {
 
             <Space h="lg" />
 
-            <Tabs color="gray" variant="pills" radius="md" defaultValue="gallery">
+            <Tabs color="teal" variant="pills" radius="md" defaultValue="gallery">
               <Tabs.List>
                 <Tabs.Tab value="gallery" icon={<LayoutGrid size={14} />}>Galería</Tabs.Tab>
                 <Tabs.Tab value="list" icon={<List size={14} />}>Lista</Tabs.Tab>

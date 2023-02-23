@@ -16,9 +16,12 @@ export default function Configuration() {
 
       <Menu.Dropdown>
         <Menu.Label>Opciones</Menu.Label>
-        <Menu.Item icon={<User size={25} />}><Link href="/account">Mi cuenta</Link></Menu.Item>
-        <Menu.Item icon={<Settings size={25} />}><Link href="/ajustes">Ajustes</Link></Menu.Item>
-        <Menu.Item icon={<Search size={25} />} rightSection={<Text size="xs" color="dimmed">Ctrl+K</Text>}>Buscar</Menu.Item>
+        <Menu.Item icon={<User size={25} />}><Link href="/account" style={{ textDecoration: 'none' }}>
+        <Text color="dimmed">Mi cuenta</Text></Link></Menu.Item>
+        <Menu.Item icon={<Settings size={25} />}><Link href="/ajustes" style={{ textDecoration: 'none' }}>
+        <Text color="dimmed">Ajustes</Text></Link></Menu.Item>
+        <Menu.Item icon={<Search size={25} />} rightSection={<Text size="xs" color="dimmed">Ctrl+K</Text>}>
+          Buscar</Menu.Item>
         <Menu.Divider />
 
         <Menu.Label>Cuidado</Menu.Label>
