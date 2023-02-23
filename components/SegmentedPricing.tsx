@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Notification, Group, Select, Center } from '@mantine/core';
+import { SegmentedControl, Text, createStyles, Paper, Title, Space, NumberInput, Button, Group, Select, Center } from '@mantine/core';
 import { CurrencyDollar, CurrencyEuro } from 'tabler-icons-react';
 import Link from 'next/link';
 

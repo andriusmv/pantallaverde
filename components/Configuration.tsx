@@ -1,6 +1,6 @@
-import { NextLink } from '@mantine/next';
 import { Text, Menu, Button } from '@mantine/core';
 import { ArrowsLeftRight, Search, Settings, Trash, User, Menu2 } from 'tabler-icons-react';
+import Link from 'next/link';
 
 export default function Configuration() {
 
@@ -16,8 +16,8 @@ export default function Configuration() {
 
       <Menu.Dropdown>
         <Menu.Label>Opciones</Menu.Label>
-        <Menu.Item icon={<User size={25} />} component={NextLink} href="/account">Mi cuenta</Menu.Item>
-        <Menu.Item icon={<Settings size={25} />} component={NextLink} href="/ajustes">Ajustes</Menu.Item>
+        <Menu.Item icon={<User size={25} />}><Link href="/account">Mi cuenta</Link></Menu.Item>
+        <Menu.Item icon={<Settings size={25} />}><Link href="/ajustes">Ajustes</Link></Menu.Item>
         <Menu.Item icon={<Search size={25} />} rightSection={<Text size="xs" color="dimmed">Ctrl+K</Text>}>Buscar</Menu.Item>
         <Menu.Divider />
 

@@ -15,6 +15,7 @@
     "@mantine/core": "^5.2.0",
     "@mantine/hooks": "^5.2.0",
     "@mantine/next": "^5.2.0",
+    "@mantine/notifications": "^5.10.4",
     "@mux/mux-node": "^6.4.0",
     "@mux/mux-uploader-react": "^1.0.0-beta.2",
     "@mux/mux-video-react": "^0.7.0",
@@ -37,9 +38,9 @@
     "react-merge-refs": "1.1.0",
     "react-player": "^2.10.1",
     "stripe": "8.201.0",
+    "stylis-plugin-rtl": "^2.1.1",
     "swr": "1.2.0",
-    "tabler-icons-react": "^1.54.0",
-    "tailwindcss": "3.0.18"
+    "tabler-icons-react": "^1.54.0"
   },
   "devDependencies": {
     "@types/classnames": "2.3.1",

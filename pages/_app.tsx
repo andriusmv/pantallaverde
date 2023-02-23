@@ -4,7 +4,7 @@ import { getCookie, setCookie } from 'cookies-next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
-import { AppShell, MantineProvider, Header, MediaQuery, Group, ColorScheme, ColorSchemeProvider, Text, SimpleGrid, Grid, Center } from '@mantine/core';
+import { AppShell, MantineProvider, createEmotionCache, Header, MediaQuery, Group, ColorScheme, ColorSchemeProvider, Text, SimpleGrid, Grid, Center } from '@mantine/core';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { MyUserContextProvider } from 'utils/useUser';
@@ -13,6 +13,10 @@ import { Logo, LogoSmall } from '@/components/icons/Logo';
 import ProMode from '@/components/ProMode';
 import Configuration from '@/components/Configuration';
 import LightAndDarkModeButton from '@/components/LightDarkButton';
+import { NotificationsProvider } from '@mantine/notifications';
+import { rtlCache } from '../rtl-cache';
+
+const myCache = createEmotionCache({ key: 'my-prefix' });
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 const [supabaseClient] = useState(() =>  createBrowserSupabaseClient<Database>());
@@ -34,16 +38,14 @@ const toggleColorScheme = (value?: ColorScheme) => {
           <Head>
         <title>PantallaVerde</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       
+      <div>
       <SessionContextProvider supabaseClient={supabaseClient}>
         <MyUserContextProvider>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
+        <MantineProvider emotionCache={myCache} withGlobalStyles withNormalizeCSS theme={{
                 // Theme is deeply merged with default theme
                 colorScheme,
                 shadows: {
@@ -59,20 +61,13 @@ const toggleColorScheme = (value?: ColorScheme) => {
                   }}
                 }}>
 
-        <AppShell
-            padding="sm"
-            navbarOffsetBreakpoint="sm"
-            asideOffsetBreakpoint="sm"
-            fixed
-            header={
+        <AppShell padding="sm" navbarOffsetBreakpoint="sm" asideOffsetBreakpoint="sm" fixed header={
               <Header height={75} p="xl" sx={{ borderBottom: 0 }} >
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-                    
                     <SimpleGrid cols={3}>
                       <Configuration />  
                       <Group><Center><LogoSmall /></Center></Group>
-                      
-                  </SimpleGrid>
+                    </SimpleGrid>
                     </MediaQuery>
 
                     <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
@@ -87,13 +82,15 @@ const toggleColorScheme = (value?: ColorScheme) => {
               main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white },
             })}
           >
+            <NotificationsProvider>
             <Component {...pageProps} />
+            </NotificationsProvider>
             <Analytics />
         </AppShell>
             </MantineProvider>
             </ColorSchemeProvider>
         </MyUserContextProvider>
-        </SessionContextProvider>
+        </SessionContextProvider></div>
       </>
   );
 }
