@@ -35,7 +35,7 @@ const toggleColorScheme = (value?: ColorScheme) => {
 
   return (
     <>
-          <Head>
+        <Head>
         <title>PantallaVerde</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="shortcut icon" href="/favicon.ico" />
@@ -45,7 +45,7 @@ const toggleColorScheme = (value?: ColorScheme) => {
       <SessionContextProvider supabaseClient={supabaseClient}>
         <MyUserContextProvider>
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider emotionCache={myCache} withGlobalStyles withNormalizeCSS theme={{
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={{
                 // Theme is deeply merged with default theme
                 colorScheme,
                 shadows: {

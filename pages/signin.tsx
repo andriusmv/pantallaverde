@@ -7,9 +7,9 @@ import Input from 'components/ui/Input';
 import LoadingDots from 'components/ui/LoadingDots';
 import { Provider } from '@supabase/supabase-js';
 import { getURL } from '@/utils/helpers';
-import { Group, Paper, Space, Text, Title, Center } from '@mantine/core'
+import { Group, Paper, Space, Text, Title, Center, SimpleGrid } from '@mantine/core'
 import { BrandGithub, BrandGoogle, Key } from 'tabler-icons-react'
-
+import { GoBack } from '@/components/GoBack'
 
 
 const SignIn = () => {
@@ -79,7 +79,10 @@ const SignIn = () => {
 
     return (
       <div>
-        <Space h={100} />
+        
+        <GoBack />
+        <Space h="lg" />  
+      <SimpleGrid cols={1} spacing="xl">      
         <Center>
         <Paper shadow="md" p="md" withBorder>
           
@@ -189,7 +192,7 @@ const SignIn = () => {
               aria-hidden="true"
             ></div>
           </div>
-<Group>
+          <Group>
           <Button
             variant="slim"
             type="submit"
@@ -211,7 +214,9 @@ const SignIn = () => {
           </Button>
           </Group>
         </Paper>
-        </Center></div>
+        </Center>
+        </SimpleGrid>
+      </div>
     );
 
   return (

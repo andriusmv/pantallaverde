@@ -95,11 +95,14 @@ export default function Home() {
       largerThan="sm" styles={{ display: 'none' }}>
 
         <SimpleGrid cols={1}><Space h="xl" />
-
-          <Title size={30} align="center"
-            sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>Tutoriales cortos<br />para emprendedores<br />inmobiliarios 📚</Title>
-          <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
-            Inyecciones de tecnología<br />para tus proyectos
+        <Text italic align="center" color="teal.2" size="sm">
+          {problemaGen}
+        </Text>
+          <Title size={45} align="center"
+            sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
+              {tituloppal}</Title>
+          <Text size="md" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
+          {subtitppal} {subtitppal2}
           </Text>
           <Center><Container><Image src="/city.png" width={400} height={225} alt="Ciudad Pantalla Verde" /></Container></Center>
           <Center>

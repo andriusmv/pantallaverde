@@ -2,11 +2,12 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Center, Group, NumberInput, Paper, Select, Space, Title, Text, Button, SimpleGrid } from '@mantine/core';
+import { Center, Group, NumberInput, Paper, Select, Space, Title, Text, Button, SimpleGrid, SegmentedControl } from '@mantine/core';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
 import { useUser } from 'utils/useUser';
 import { Price, ProductWithPrice } from 'types';
+import { GoBack } from './GoBack';
 
 interface Props {
   products: ProductWithPrice[];
@@ -62,15 +63,19 @@ export default function Pricing({ products }: Props) {
     );
 
   return (
-    <><Paper shadow="md" p="xl" withBorder>
-      <Title order={1} align="center"
+    <>
+      
+      <Space h="lg" />  
+      <SimpleGrid cols={1} spacing="xl"> 
+    <Paper p="xl">
+      <Title order={1} align="center" size={40}
         sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black, })}>
         Una inyección de tecnología,</Title>
-      <Title order={1} align="center"
+      <Title order={1} align="center" size={40}
         sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black, })}>
         infinitas posibilidades</Title>
       <Space h="xl" />
-      <Text size="xl" weight={600} align="center" color="teal">
+      <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
         El mundo se mueve rápido. Nosotros también.
       </Text>
       <Space h="xl" />
@@ -78,12 +83,9 @@ export default function Pricing({ products }: Props) {
 
 
       <Space h="xs" />
-          <SimpleGrid cols={3} spacing="xs"
-          breakpoints={[
-            { maxWidth: 980, cols: 3, spacing: 'md' },
-            { maxWidth: 755, cols: 2, spacing: 'sm' },
-            { maxWidth: 600, cols: 1, spacing: 'sm' },
-          ]}>
+      <div>
+        <Center>
+          <Button.Group>
             <Button
             variant="default"
               onClick={() => setBillingInterval('month')}
@@ -105,8 +107,7 @@ export default function Pricing({ products }: Props) {
               Anualidad
             </Button>
             <Button
-              variant="light"
-              color="teal"
+              variant="default"
               onClick={() => setBillingInterval('one_time')}
               type="button"
               className={`${billingInterval === 'one_time'
@@ -114,10 +115,15 @@ export default function Pricing({ products }: Props) {
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'} rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
               Un sólo pago
-            </Button></SimpleGrid>
+            </Button>
+            </Button.Group>
+            </Center>
+            </div>
+
       <Space h="lg" />
-      <Group>
         
+        <Center>
+      <Group>
         <div>
           {products.map((product) => {
             const price = product?.prices?.find(
@@ -172,7 +178,9 @@ export default function Pricing({ products }: Props) {
         </div>
         
       </Group>
-      <Center inline>
+      </Center>
+
+      {/* <Center>
         
         <Select
           label="Moneda"
@@ -191,9 +199,10 @@ export default function Pricing({ products }: Props) {
             size="xs"
              />
              </Center>
-      <Space h="xl" />
-      <Text color="red">Procesamiento de pagos a través de Stripe.</Text>
+      <Space h="xl" /> */}
+      <Text color="red" align='center'>Procesamiento de pagos a través de Stripe.</Text>
     </Paper>
+    </SimpleGrid>
     </>
 
   );

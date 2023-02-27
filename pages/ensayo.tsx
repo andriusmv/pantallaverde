@@ -9,7 +9,6 @@ import { Title, Text, Space, Accordion, Center, SimpleGrid } from '@mantine/core
 import { ClipboardText } from 'tabler-icons-react';
 import { chunk } from "lodash";
 import toursvirtuales from './toursvirtuales';
-import { randomId } from "@mantine/hooks";
 
 
 interface EnsayoProps {
@@ -30,9 +29,9 @@ export default function Ensayo({ toursvirtuales }: EnsayoProps) {
             <Center>
                 <SimpleGrid cols={1}>
             {toursvirtuales.map((toursvirtuales: {
-                description: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
-                id: Key | null | undefined;
-                title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; 
+                description: string;
+                id: string;
+                title: string; 
                 video_url: string;}) => (
                 <>
                 <Title key={toursvirtuales.id}>{toursvirtuales.title}</Title>
