@@ -5,13 +5,6 @@ import ReactPlayer from 'react-player';
 import Checkprogress from '@/components/Checkprogress';
 import Link from 'next/link';
 
-const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
 const int1 = "📝 Instrucciones"
 const int2 = "🔮 El Efecto Chroma Key"
 const int3 = "🎯 Camera Tracking"
@@ -29,15 +22,17 @@ return (
 <>
 <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
     <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-      <Link href={'/integracion/integracion#instrucciones'}><Text>{int1}</Text></Link>
-      <Link href={'/integracion/integracion#elefectochromakey'}><Text>{int2}</Text></Link>
-      <Link href={'/integracion/integracion#cameratracking'}><Text>{int3}</Text></Link>
-      <Link href={'/integracion/integracion#basicosdeldron'}><Text>{int4}</Text></Link>
-      <Link href={'/integracion/integracion#preparaciondel3d'}><Text>{int5}</Text></Link>
-      <Link href={'/integracion/integracion#eleditordevideo'}><Text>{int6}</Text></Link>
-      <Link href={'/integracion/integracion#integrarpersonasreales'}><Text>{int7}</Text></Link>
-      <Link href={'/integracion/integracion#fotogrametriabasica'}><Text>{int8}</Text></Link>
-      <Link href={'/integracion/integracion#apuntesfinales'}><Text>{int9}</Text></Link>
+    <Button.Group orientation="vertical">
+      <Link href={'/cursos/integracion#instrucciones'}><Button variant="light" color="teal" fullWidth>{int1}</Button></Link>
+      <Link href={'/cursos/integracion#elefectochromakey'}><Button variant="light" color="teal" fullWidth>{int2}</Button></Link>
+      <Link href={'/cursos/integracion#cameratracking'}><Button variant="light" color="teal" fullWidth>{int3}</Button></Link>
+      <Link href={'/cursos/integracion#basicosdeldron'}><Button variant="light" color="teal" fullWidth>{int4}</Button></Link>
+      <Link href={'/cursos/integracion#preparaciondel3d'}><Button variant="light" color="teal" fullWidth>{int5}</Button></Link>
+      <Link href={'/cursos/integracion#eleditordevideo'}><Button variant="light" color="teal" fullWidth>{int6}</Button></Link>
+      <Link href={'/cursos/integracion#integrarpersonasreales'}><Button variant="light" color="teal" fullWidth>{int7}</Button></Link>
+      <Link href={'/cursos/integracion#fotogrametriabasica'}><Button variant="light" color="teal" fullWidth>{int8}</Button></Link>
+      <Link href={'/cursos/integracion#apuntesfinales'}><Button variant="light" color="teal" fullWidth>{int9}</Button></Link>
+      </Button.Group>
       </Aside>
               </MediaQuery>
               <SimpleGrid cols={1} spacing="lg">
@@ -89,7 +84,8 @@ Nota: se adjunta una lista de chequeo al final del email para que la tengas en c
         url="https://vimeo.com/461172795"
         controls
       />
-
+    </Group>
+    <Group grow align="center">
     <ReactPlayer
         url="https://vimeo.com/461172090"
         controls
@@ -154,6 +150,18 @@ Renderizado desde Lumion, link de descarga: https://drive.google.com/open?id=1Pn
     </Group>
     <Center><Checkprogress /></Center>
     <Text size='md'>Integración general a la fotogrametría.
+</Text>
+
+<Title id="integrarpersonasreales" size="h2">{int7}</Title>
+<Group grow align="center">
+<ReactPlayer
+        url="https://youtu.be/XqFsyRNcI3U"
+        controls
+      />
+    </Group>
+    <Center><Checkprogress /></Center>
+    <Text size='md'>
+    Aprende a integrar personas reales a partir del efecto chroma key.
 </Text>
 
 <Title id="apuntesfinales" size="h2">{int9}</Title>

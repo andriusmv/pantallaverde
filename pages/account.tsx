@@ -115,8 +115,8 @@ export default function Account({ user }: { user: User }) {
                 </div>
               ) : subscription ? (
                 `${subscriptionPrice}/${subscription?.prices?.interval}`+
-                <Link href="/pro">
-                  <Button>Ir al contenido</Button>
+                <Link href="/cursos">
+                  <Button>Ir a tus cursos</Button>
                 </Link>
               ) : (
                 <Link href="/pro">
