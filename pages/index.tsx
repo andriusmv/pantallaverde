@@ -10,15 +10,16 @@ interface Props {
   products: Product[];
 }
 
-const tituloppal = "PantallaVerde"
-const problemaGen = "Tutoriales cortos para inmobiliarios con prisa"
+const problemaGen = "Tutoriales cortos para arquitectos con prisa"
+const tituloppal = "Nuevas Técnicas"
+const tituloppal1 = "de Visualización"
 const subtitppal = "Inyecciones de tecnología para tus proyectos inmobiliarios."
 const subtitppal2 = "Implementa nuevas técnicas en tiempo récord."
 const parrafo1 = "Estás en la oficina ahí, entregando como puedes el último diseño, el último plano, rezando un Padre Nuestro para que el render salga más rápido. Los clientes están esperando tu presentación y el estrés comienza a subir."
 const parrafo2 = "No sabes cómo pero entregas. Tu jefe está feliz y el proyecto logró fondos para comenzar obra lo antes posible. Pero adivina qué? Ya tienes que seguir con el siguiente proyecto, y con el siguiente y el siguiente del siguiente... y así infinitamente."
-const parrafo3 = "Y es que por más que lo intentes, siempre va a surgir algo más. Ya no se trata de velocidad, se trata de estrategia."
+const parrafo3 = "Y es que por más que lo intentes, siempre va a surgir algo más. Sabes que no se trata de velocidad, se trata de estrategia."
 const parrafo4 = "Esas noticias que ves por ahí sobre inteligencia artificial, robots y cosas nuevas, te llaman la atención pero sabes que no tienes tiempo para aprender una cosa más. Si pudieras inyectártelas de una sola vez como en la Matrix lo harías, pero no sabes cómo... hasta hoy."
-const parrafo5 = "Eso es lo que hacemos aquí. Te enseñamos en tiempo récord herramientas nuevas para que las lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias."
+const parrafo5 = "Eso hacemos aquí. Te enseñamos en tiempo récord herramientas nuevas para que las lleves a tu oficina y te vuelvas el mago de nuevas tecnologías inmobiliarias."
 const parrafo6 = "Location intelligence, mapas GIS, visores 3D, realidad virtual, drones y muchas cosas más."
 
 export default function Home() {
@@ -34,9 +35,9 @@ export default function Home() {
         <Text italic align="center" color="teal.2">
           {problemaGen}
         </Text>
-        <Title order={1} align="center" size={80}
+        <Title order={1} align="center" size={60}
           sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
-          {tituloppal}</Title>
+          {tituloppal}<br />{tituloppal1}</Title>
         <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
           {subtitppal}<br />{subtitppal2}
         </Text>
@@ -100,9 +101,9 @@ export default function Home() {
         </Text>
           <Title size={45} align="center"
             sx={(theme) => ({ color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>
-              {tituloppal}</Title>
+              {tituloppal}<br />{tituloppal1}</Title>
           <Text size="md" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
-          {subtitppal} {subtitppal2}
+          {subtitppal}<br />{subtitppal2}
           </Text>
           <Center><Container><Image src="/city.png" width={400} height={225} alt="Ciudad Pantalla Verde" /></Container></Center>
           <Center>

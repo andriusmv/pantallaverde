@@ -63,7 +63,7 @@ const videoURL = "https://youtu.be/h4bBsGpKKnc"
             </Text>
         <Title order={2} align="center" size={55}
         sx={(theme) => ({ lineHeight: 1, color: theme.colorScheme === 'dark' ? theme.white : theme.black })}>{tituloToursVirtuales}</Title>
-        <Text size={12} weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
+        <Text size="xl" weight={600} align="center" variant="gradient" gradient={{ from: 'teal.7', to: 'teal.2', deg: 33 }}>
             {subtituloToursVirtuales2} {subtituloToursVirtuales1}
           </Text></div>
           
