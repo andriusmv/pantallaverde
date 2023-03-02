@@ -68,7 +68,7 @@ export function FeaturesIntegracion() {
       <Grid gutter={80}>
         <Col span={12} md={5}>
           <Title className={classes.title} order={2}>
-            Un curso para integrar Blender & Lumion con drones
+            Un curso para integrar Drones con un modelo 3D
           </Title>
           <Text color="dimmed">
             Aprenderás los principios del camera tracking y el efecto chroma – Drones,

@@ -20,25 +20,25 @@ const useStyles = createStyles((theme) => ({
 const features = [
   {
     icon: ThreeDCubeSphere,
-    title: 'El Efecto Chroma',
-    description: 'Lo que se conoce como "pantalla verde". Aprenderás a reemplazar un color sólido de fondo en video usando un editor de video.',
+    title: 'El código abierto',
+    description: 'Entender la diferencia entre gratuito y de código abierto es fundamental para entender Blender y sentir su libertad.',
   },
   {
     icon: Home2,
-    title: 'Camera Tracking',
-    description: 'Traqueo de cámara con Blender con puntos de referencia. Integrarás modelos 3d en videos reales tomados con tu dron.',
+    title: 'Blender CRUD',
+    description: 'Herramientas básicas para comenzar a modelar. Girar, extruir, borrar, añadir. CRUD (crear, leer, actualizar y borrar).',
   },
   {
     icon: Photo,
-    title: 'Realizar las tomas',
+    title: 'Fotorealismo',
     description:
-      'Cómo realizar las tomas con tu dron para que se integren correctamente con tu modelo 3d. Cómo te desplazarte con tu dron.',
+      'Blender incluye dos motores de renderizado: Eeve y Cycles. Veremos la diferencia y veremos las claves para el fotorealismo.',
   },
   {
     icon: DevicesPc,
-    title: 'Procesamiento y edición',
+    title: 'Procedurales & Nodos',
     description:
-      '¿Cómo hacer la edición de video y publicar tu video finalizado?¿Cómo usar un editor de video desde cero?',
+      'Texturas procedurales y nodos de geometría para que tus modelos corran ligeros como el viento.',
   },
 ];
 
@@ -71,8 +71,8 @@ export function FeaturesBlender() {
             Un curso para aprender Blender desde cero
           </Title>
           <Text color="dimmed">
-            Aprenderás los principios del camera tracking y el efecto chroma – Drones,
-            cómo volarlos para integrar con tu modelo 3D desde cualquier software.
+            Aprenderás a modelar, aplicar texturas, nodos de geometría – Renderizado,
+            cómo vincular otros programas de código abierto y mantenerlo actualizado.
           </Text>
           <Space h="lg" />
           <Group>

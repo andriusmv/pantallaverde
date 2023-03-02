@@ -9,7 +9,7 @@ export default function Configuration() {
 <>
 
         
-    <Menu shadow="md" width={200} trigger="hover" openDelay={100} closeDelay={400}>
+    <Menu shadow="md" width={200} trigger="hover" withArrow position="left-start" openDelay={100} closeDelay={400}>
       <Menu.Target>
         <Button variant="subtle" color="dark" style={{ fontSize:20}}><Menu2 size={25} strokeWidth={2} /></Button>
       </Menu.Target>
@@ -20,13 +20,6 @@ export default function Configuration() {
         <Text color="dimmed">Mi cuenta</Text></Link></Menu.Item>
         <Menu.Item icon={<Settings size={25} />}><Link href="/ajustes" style={{ textDecoration: 'none' }}>
         <Text color="dimmed">Ajustes</Text></Link></Menu.Item>
-        <Menu.Item icon={<Search size={25} />} rightSection={<Text size="xs" color="dimmed">Ctrl+K</Text>}>
-          Buscar</Menu.Item>
-        <Menu.Divider />
-
-        <Menu.Label>Cuidado</Menu.Label>
-        <Menu.Item icon={<ArrowsLeftRight size={25} />}>Descargar mis datos</Menu.Item>
-        <Menu.Item color="red" icon={<Trash size={25} />}>Eliminar mi cuenta</Menu.Item>
       </Menu.Dropdown>
     </Menu>
       

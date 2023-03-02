@@ -7,7 +7,7 @@ import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import Button from 'components/ui/Button';
 import Input from 'components/ui/Input';
 import { updateUserName } from 'utils/supabase-client';
-import { Center } from '@mantine/core';
+import { Center, Text, Title } from '@mantine/core';
 
 const SignUp = () => {
   const supabaseClient = useSupabaseClient();
@@ -100,15 +100,16 @@ const SignUp = () => {
             </Button>
           </div>
 
-          <span className="pt-1 text-center text-sm">
-            <span className="text-zinc-200">Tienes una cuenta?</span>
-            {` `}
+          
+            <Text>
+            Ya tienes una cuenta?
+            
             <Link href="/signin">
-              
-                Inicia sesión.
+            
+                Inicia sesión
               
             </Link>
-          </span>
+            </Text>
         </form>
       </div></Center>
     </div>

@@ -200,7 +200,7 @@ const SignIn = () => {
             onClick={() => handleOAuthSignIn('github')}
           >
             
-            <Group><BrandGithub /> Identifícate con GitHub</Group>
+            <Group><BrandGithub />Identifícate con GitHub</Group>
           </Button>
 
           <Button
@@ -210,7 +210,7 @@ const SignIn = () => {
             onClick={() => handleOAuthSignIn('google')}
           >
             
-            <Group><BrandGoogle /> Identifícate con Google</Group>
+            <Group><BrandGoogle />Identifícate con Google</Group>
           </Button>
           </Group>
         </Paper>

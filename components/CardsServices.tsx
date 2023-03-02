@@ -61,7 +61,7 @@ export function CardsServices() {
 </Card.Section>
 
 <Group position="center" mt="md" mb="xs">
-  <Text weight={500}>Integración 3D con Drones</Text>
+  <Text weight={500}>Integración Drones con 3D</Text>
 </Group>
 
 <Text size="sm" color="dimmed">
