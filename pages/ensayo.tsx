@@ -2,25 +2,16 @@ import Link from 'next/link';
 import { useUser } from '@/utils/useUser';
 import { GetStaticProps } from 'next'
 import { supabase } from '@/utils/supabase-client';
-import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
 import { Title, Text, Space, Accordion, Center, SimpleGrid } from '@mantine/core';
 import { ClipboardText } from 'tabler-icons-react';
-import { chunk } from "lodash";
-import toursvirtuales from './toursvirtuales';
+
 
 
 interface EnsayoProps {
     toursvirtuales: {id: string; title: string; description: string; video_url: string}[];
 }
-
-const data = chunk(
-    Array(10)
-      .fill(0)
-      .map(toursvirtuales),
-    5
-  );
 
 
 export default function Ensayo({ toursvirtuales }: EnsayoProps) {
