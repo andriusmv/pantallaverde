@@ -6,7 +6,7 @@ import Checkprogress from '@/components/Checkprogress';
 import Link from 'next/link';
 
 const int1 = "📝 Introducción"
-const int2 = "🔮 Preparar el sitio"
+const int2 = "🔮 Preparar el equipo"
 const int3 = "🎯 Realizar las tomas"
 const int4 = "🚁 Procesar y Editar"
 const int5 = "🧊 Publicar y Compartir"
@@ -28,10 +28,10 @@ return (
       <Link href={'/cursos/toursvirtuales#realizarlastomas'}><Button variant="light" color="teal" fullWidth>{int3}</Button></Link>
       <Link href={'/cursos/toursvirtuales#procesaryeditar'}><Button variant="light" color="teal" fullWidth>{int4}</Button></Link>
       <Link href={'/cursos/toursvirtuales#publicarcompartir'}><Button variant="light" color="teal" fullWidth>{int5}</Button></Link>
-      <Link href={'/cursos/toursvirtuales#renders360'}><Button variant="light" color="teal" fullWidth>{int6}</Button></Link>
-      <Link href={'/cursos/toursvirtuales#integrarfotosconrenders'}><Button variant="light" color="teal" fullWidth>{int7}</Button></Link>
+      {/* <Link href={'/cursos/toursvirtuales#renders360'}><Button variant="light" color="teal" fullWidth>{int6}</Button></Link>
       <Link href={'/cursos/toursvirtuales#creatupropiaplataforma'}><Button variant="light" color="teal" fullWidth>{int8}</Button></Link>
-      <Link href={'/cursos/toursvirtuales#apuntesfinales'}><Button variant="light" color="teal" fullWidth>{int9}</Button></Link>
+      <Link href={'/cursos/toursvirtuales#apuntesfinales'}><Button variant="light" color="teal" fullWidth>{int9}</Button></Link> */}
+      <Link href={'/cursos/toursvirtuales#integrarfotosconrenders'}><Button variant="light" color="teal" fullWidth>{int7}</Button></Link>
       </Button.Group>
       </Aside>
               </MediaQuery>
@@ -116,7 +116,7 @@ Vuelo Dron 03, link de descarga: https://drive.google.com/open?id=1RRBf_S340Rqhs
 Modelo 3d de la casa del ejemplo, link de descarga: https://drive.google.com/open?id=1dFfsdMqCB3Nj4xLq3ivaD295sYek1MrE
 </Text>
 
-<Title id="renders360" size="h2">{int6}</Title>
+{/* <Title id="renders360" size="h2">{int6}</Title>
 <Group grow align="center">
 <ReactPlayer
         url="https://youtu.be/TPpIiUoC67c"
@@ -132,10 +132,21 @@ Material Descargable para ejecutar el Ejercicio 4
 Vuelo Dron 04, link de descarga: https://drive.google.com/open?id=1SIUG5aEJXBvTW3K0EMH71ypN6HHuaoo6
 Renderizado desde Lumion, link de descarga: https://drive.google.com/open?id=1PnJ0tFwDKgoMkDGPw8QwHo51_3anxOMh
 
+</Text> */}
+
+<Title id="integrarfotosconrenders" size="h2">{int7}</Title>
+<Group grow align="center">
+<ReactPlayer
+        url="https://www.youtube.com/watch?v=9hh8hXGWf-Q"
+        controls
+      />
+    </Group>
+    <Center><Checkprogress /></Center>
+    <Text size='md'>
+    Aprende a integrar personas reales a partir del efecto chroma key.
 </Text>
 
-
-<Title id="integrarfotosconrenders" size="h2">{int8}</Title>
+{/* <Title id="creatupropiaplataforma" size="h2">{int8}</Title>
 <Group grow align="center">
 <ReactPlayer
         url="https://youtu.be/TPpIiUoC67c"
@@ -146,17 +157,6 @@ Renderizado desde Lumion, link de descarga: https://drive.google.com/open?id=1Pn
     <Text size='md'>Integración general a la fotogrametría.
 </Text>
 
-<Title id="creatupropiaplataforma" size="h2">{int7}</Title>
-<Group grow align="center">
-<ReactPlayer
-        url="https://youtu.be/TPpIiUoC67c"
-        controls
-      />
-    </Group>
-    <Center><Checkprogress /></Center>
-    <Text size='md'>
-    Aprende a integrar personas reales a partir del efecto chroma key.
-</Text>
 
 <Title id="apuntesfinales" size="h2">{int9}</Title>
 <Group grow align="center">
@@ -168,7 +168,7 @@ Renderizado desde Lumion, link de descarga: https://drive.google.com/open?id=1Pn
     <Center><Checkprogress /></Center>
     <Text size='md'>
     Cuánto cobrar por un video con la técnica de integración de Lumion con Drones?
-</Text>
+</Text> */}
 
 {/* <Center>
 <Link href="/">
