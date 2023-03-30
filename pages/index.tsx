@@ -1,5 +1,5 @@
 import { Product } from 'types';
-import { Container, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Box, Center, Tabs } from '@mantine/core';
+import { Container, Title, Text, SimpleGrid, Space, Button, MediaQuery, Group, Box, Center, Tabs, Avatar } from '@mantine/core';
 import { CardsServices } from 'components/CardsServices';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -88,9 +88,16 @@ export default function Home() {
               <ListServices />
             </Tabs.Panel>
           </Tabs>
-
+          <Space h="xl" />
+          <Space h="xl" />
+          <Group position="center">
+        <Text size='xl' weight={400} align="-moz-initial">Escrito por
+        <Link href="https://andresmoreno.vercel.app/"> Andrés Moreno Vásquez</Link>
+          </Text>
+          <Avatar src="amv.jfif" alt="AMV" />
+          </Group>
         </Container>
-
+        
       </SimpleGrid>
     </MediaQuery><MediaQuery
       largerThan="sm" styles={{ display: 'none' }}>
