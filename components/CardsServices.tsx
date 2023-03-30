@@ -46,8 +46,8 @@ export function CardsServices() {
   Buscar bases de datos públicas para tu próximo proyecto.
 </Text>
 
-<Link href={'/gis'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
-<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
+<Link href={'/gis'}><Button color="teal" fullWidth mt="xs" radius="md" disabled>Me interesa</Button></Link>
+<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Card></Grid.Col></Grid>
 
 <Grid>
@@ -69,8 +69,8 @@ export function CardsServices() {
   Usa Lumion o Blender.
 </Text>
 
-<Link href={'/integracion'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
-<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
+<Link href={'/integracion'}><Button color="teal" fullWidth mt="xs" radius="md" disabled>Me interesa</Button></Link>
+<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Card></Grid.Col>
 
 <Grid.Col span="auto" md={9} lg={6}>
@@ -90,8 +90,8 @@ export function CardsServices() {
   Blender desde cero. Aprende el software de código abierto más poderoso del mundo.
 </Text>
 
-<Link href={'/blender'}><Button color="teal" fullWidth mt="xs" radius="md">Me interesa</Button></Link>
-<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
+<Link href={'/blender'}><Button color="teal" fullWidth mt="xs" radius="md" disabled>Me interesa</Button></Link>
+<Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Card></Grid.Col>
 
 </Grid>

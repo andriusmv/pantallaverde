@@ -27,10 +27,10 @@ export function ListServices() {
 </Grid.Col>
       <Grid.Col span={6}><Box><Text>Curso GIS de Código Abierto</Text></Box></Grid.Col>
       <Grid.Col span="auto"><Link href={'/gis'}>
-        <Button color="teal" mt="xs" radius="md">Me interesa</Button></Link>
+        <Button color="teal" mt="xs" radius="md" disabled>Me interesa</Button></Link>
 </Grid.Col>
       <Grid.Col span="auto"><Link href={'/account'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 
@@ -40,10 +40,10 @@ export function ListServices() {
 </Grid.Col>
       <Grid.Col span={6}><Box><Text>Curso Drones con 3D</Text></Box></Grid.Col>
       <Grid.Col span="auto"><Link href={'/integracion'}>
-        <Button color="teal" mt="xs" radius="md">Me interesa</Button></Link>
+        <Button color="teal" mt="xs" radius="md" disabled>Me interesa</Button></Link>
 </Grid.Col>
       <Grid.Col span="auto"><Link href={'/account'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 
@@ -53,10 +53,10 @@ export function ListServices() {
 </Grid.Col>
       <Grid.Col span={6}><Box><Text>Curso Blender 3D desde Cero</Text></Box></Grid.Col>
       <Grid.Col span="auto"><Link href={'/blender'}>
-        <Button color="teal" mt="xs" radius="md">Me interesa</Button></Link>
+        <Button color="teal" mt="xs" radius="md" disabled>Me interesa</Button></Link>
 </Grid.Col>
       <Grid.Col span="auto"><Link href={'/account'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 

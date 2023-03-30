@@ -19,7 +19,7 @@ export default function ListCourses() {
       <Grid.Col span={6}><Box><Text>Curso GIS de Código Abierto</Text></Box></Grid.Col>
 
       <Grid.Col span="auto"><Link href={'/cursos/gis'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 
@@ -28,7 +28,7 @@ export default function ListCourses() {
       <Grid.Col span={6}><Box><Text>Curso Integración Drones con 3D</Text></Box></Grid.Col>
 
       <Grid.Col span="auto"><Link href={'/cursos/integracion'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 
@@ -36,7 +36,7 @@ export default function ListCourses() {
 
       <Grid.Col span={6}><Box><Text>Curso Blender 3D desde Cero</Text></Box></Grid.Col>
       <Grid.Col span="auto"><Link href={'/cursos/blender'}>
-        <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
+        <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
     </Grid>
 
