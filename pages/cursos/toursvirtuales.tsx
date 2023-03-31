@@ -18,7 +18,7 @@ const int8 = "⛰️ Crea tu propia plataforma"
 const int9 = "🧾 Apuntes Finales"
 
 interface ToursProps {
-  module: {id: string; title: string; description: string; video_url: string, duration: string, subtitle: string, file: string, course_id: string}[];
+  module: {id: string; title: string; description: string; video_url: string, duration: string, subtitle: string, file: string, course_id: string; thumbnail: string;}[];
 }
 
 
@@ -46,13 +46,17 @@ return (
                 description: string;
                 id: string;
                 title: string; 
+                thumbnail: string; 
                 video_url: string;}) => (
     <>
-    <div key={module.title} id={module.id}>
+    <div key={module.id} id={module.id}>
     <Title size="h3">{module.title}</Title>
                   <MuxVideo
                     style={{ height: '100%', maxWidth: '100%' }}
                     playbackId={module.video_url}
+                    poster="/placeholderpv.png"
+                    placeholder="/placeholderpvblur.png"
+                    title={module.title}
                     streamType="on-demand"
                     controls
                     muted
