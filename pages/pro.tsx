@@ -19,7 +19,7 @@ export default function PricingPage({ products }: Props) {
             <Container size={500}>
     <Alert icon={<AlertCircle size="1rem" />} title="Alerta" color="red">
       Los cursos están en modo beta (prueba).
-      Puedes inscribirte en este modo experimental para aprovechar un precio más bajo, o esperar a que estén publicados al 100% en Marzo 25.
+      Puedes inscribirte en este modo experimental para aprovechar un precio más bajo, o esperar a que estén publicados al 100%.
       Gracias por tu paciencia.
     </Alert>
     </Container>  

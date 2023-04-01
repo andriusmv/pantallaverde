@@ -10,10 +10,10 @@ interface Props {
   products: Product[];
 }
 
-const problemaGen = "Tutoriales cortos para arquitectos con prisa"
-const tituloppal = "Nuevas Técnicas"
-const tituloppal1 = "de Visualización"
-const subtitppal = "Inyecciones de tecnología para tus proyectos inmobiliarios."
+const problemaGen = "Tutoriales cortos en video"
+const tituloppal = "Técnicas Nuevas,"
+const tituloppal1 = "Un video a la vez."
+const subtitppal = "Inyecciones de tecnología para vender tus proyectos inmobiliarios"
 const subtitppal2 = "Implementa nuevas técnicas en tiempo récord."
 const parrafo1 = "Estás en la oficina ahí, entregando como puedes el último diseño, el último plano, rezando un Padre Nuestro para que el render salga más rápido. Los clientes están esperando tu presentación y el estrés comienza a subir."
 const parrafo2 = "No sabes cómo pero entregas. Tu jefe está feliz y el proyecto logró fondos para comenzar obra lo antes posible. Pero adivina qué? Ya tienes que seguir con el siguiente proyecto, y con el siguiente y el siguiente del siguiente... y así infinitamente."
@@ -31,7 +31,7 @@ export default function Home() {
       <MediaQuery
       smallerThan="sm" styles={{ display: 'none' }}>
 
-      <SimpleGrid cols={1}><Space h="xl" /><Space h="xl" />
+      <SimpleGrid cols={1}>
         <Text italic align="center" color="teal.2">
           {problemaGen}
         </Text>
