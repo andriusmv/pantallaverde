@@ -33,7 +33,7 @@ export default function Cursos() {
                     <Grid.Col span="auto"><Link href={'/cursos/toursvirtuales'}>
                         <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
                     </Grid.Col>
-                </Grid>
+{/*                 </Grid>
                 <Grid  align="center" gutter={5}>
                     <Grid.Col span={6}><Box><Text>Curso Integración Drones con 3D</Text></Box></Grid.Col>
                     <Grid.Col span="auto"><Link href={'/cursos/integracion'}>
@@ -50,7 +50,7 @@ export default function Cursos() {
                     <Grid.Col span={6}><Box><Text>Curso Blender 3D desde Cero</Text></Box></Grid.Col>
                     <Grid.Col span="auto"><Link href={'/cursos/blender'}>
                         <Button variant="light" color="teal" mt="xs" radius="md">Acceder</Button></Link>
-                    </Grid.Col>
+                    </Grid.Col> */}
                 </Grid>
             </Stack>
             </Container>

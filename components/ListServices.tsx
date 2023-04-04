@@ -21,7 +21,7 @@ export function ListServices() {
 </Grid.Col>
     </Grid>
 
-    <Grid grow align="center" gutter={5}>
+    {/* <Grid grow align="center" gutter={5}>
 <Grid.Col span="auto">
     <Avatar src="/terrain-min.png" alt="Curso GIS" size="md" radius="xl" />
 </Grid.Col>
@@ -58,7 +58,7 @@ export function ListServices() {
       <Grid.Col span="auto"><Link href={'/account'}>
         <Button variant="light" color="teal" mt="xs" radius="md" disabled>Acceder</Button></Link>
 </Grid.Col>
-    </Grid>
+    </Grid> */}
 
 <Divider my="xl" label="SERVICIOS" labelPosition="center" labelProps={{ size: '12', weight: '500' }} />
 

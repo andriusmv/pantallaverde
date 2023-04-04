@@ -94,12 +94,13 @@ export default function Home() {
         <Text size='xl' weight={400} align="-moz-initial">Escrito por
         <Link href="https://andresmoreno.vercel.app/"> Andrés Moreno Vásquez</Link>
           </Text>
-          <Avatar src="amv.jfif" alt="AMV" />
+          <Avatar src="amv.jfif" alt="AMV" radius={100} />
           </Group>
         </Container>
         
       </SimpleGrid>
-    </MediaQuery><MediaQuery
+    </MediaQuery>
+    <MediaQuery
       largerThan="sm" styles={{ display: 'none' }}>
 
         <SimpleGrid cols={1}><Space h="xl" />

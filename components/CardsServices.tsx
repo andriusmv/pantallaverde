@@ -28,7 +28,7 @@ export function CardsServices() {
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md">Acceder</Button></Link>
 </Card></Grid.Col>
 
-<Grid.Col span="auto" md={9} lg={6}>
+{/* <Grid.Col span="auto" md={9} lg={6}>
 <Card shadow="sm" p="lg" radius="md" withBorder>
 <Card.Section>
   <Image
@@ -92,7 +92,7 @@ export function CardsServices() {
 
 <Link href={'/blender'}><Button color="teal" fullWidth mt="xs" radius="md" disabled>Me interesa</Button></Link>
 <Link href={'/account'}><Button variant="light" color="teal" fullWidth mt="xs" radius="md" disabled>Acceder</Button></Link>
-</Card></Grid.Col>
+</Card></Grid.Col> */}
 
 </Grid>
 
