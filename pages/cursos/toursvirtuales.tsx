@@ -33,7 +33,8 @@ return (
                 description: string;
                 id: string;
                 title: string; 
-                video_url: string;}) => (
+                video_url: string;
+                thumbnail: string;}) => (
     <Button.Group orientation="vertical" key={module.id} >
       <Link href={`/cursos/toursvirtuales#${module.id}`}><Button variant="light" color="teal" fullWidth>{module.title}</Button></Link>
       </Button.Group>
@@ -54,12 +55,11 @@ return (
                   <MuxVideo
                     style={{ height: '100%', maxWidth: '100%' }}
                     playbackId={module.video_url}
-                    poster="/placeholderpv.png"
+                    poster={module.thumbnail}
                     placeholder="/placeholderpvblur.png"
                     title={module.title}
                     streamType="on-demand"
                     controls
-                    muted
                   />
                   </div>
                   <Space />
